@@ -9,7 +9,7 @@ keys:
     - &arcturus age1zsl5d4vj6gl3h96y5p53sq5y4vr4vtlwp727h7rp9a4xfkxm53lqrh6r50
     - &alpha age145uq9emlxqzm3wqauy9zqj78wqx9e6h09xag6wust7jjgn4upfzsaemcvx
     - &vega age1ydkclhk9kwqdq74utesqdfupt43lz64d5k65gz2z9uyljcqq9fcq3hv28l
-    - &capella age1sjnqsxdqyqngt52asc4cmrf0nkvmxvp8v4zrvrmtuftz3uffyskszjhqm5
+    - &capella age1y4luzn2jls7rvgphej23srvdlx563lxq29tvf66vhwwzaf7c3f3qzvresh
 
 creation_rules:
   - path_regex: hosts/common/secrets.yaml$
