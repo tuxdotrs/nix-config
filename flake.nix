@@ -125,6 +125,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    tnvim = {
+      url = "github:tuxdotrs/tnvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     tfolio = {
       url = "git+ssh://git@github.com/tuxdotrs/tfolio.git";
       inputs.nixpkgs.follows = "nixpkgs";

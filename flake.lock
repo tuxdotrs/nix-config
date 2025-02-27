@@ -873,6 +873,7 @@
         "nur": "nur",
         "sops-nix": "sops-nix",
         "tfolio": "tfolio",
+        "tnvim": "tnvim",
         "wezterm-flake": "wezterm-flake"
       }
     },
@@ -1026,6 +1027,26 @@
       "original": {
         "type": "git",
         "url": "ssh://git@github.com/tuxdotrs/tfolio.git"
+      }
+    },
+    "tnvim": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740652309,
+        "narHash": "sha256-Ag5MrswBfHtxjlxyHmR/gESGnposwHYNO/Nppf+CeLk=",
+        "owner": "tuxdotrs",
+        "repo": "tnvim",
+        "rev": "5a820f6457fa1b8aebb46abff560c0d7da2eea34",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tuxdotrs",
+        "repo": "tnvim",
+        "type": "github"
       }
     },
     "treefmt-nix": {

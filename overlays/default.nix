@@ -4,6 +4,7 @@
   modifications = final: prev: {
     awesome = inputs.nixpkgs-f2k.packages.${prev.system}.awesome-git;
     ghostty = inputs.ghostty.packages.${prev.system}.default;
+    tnvim = inputs.tnvim.packages.${prev.system}.default;
     tfolio = inputs.tfolio.packages.${prev.system}.default;
     cyber-tux = inputs.cyber-tux.packages.${prev.system}.default;
     discord = prev.discord.override {

@@ -2,7 +2,7 @@
   home.file = {
     ".config/nvim" = {
       recursive = true;
-      source = "${pkgs.tux-nvim-config}";
+      source = "${pkgs.tnvim}";
     };
   };
 
