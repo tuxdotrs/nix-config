@@ -2,7 +2,7 @@
   home.file = {
     ".config/awesome" = {
       recursive = true;
-      source = "${pkgs.tux-awesome-wm-config}";
+      source = "${pkgs.tawm}";
     };
   };
 }
