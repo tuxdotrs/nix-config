@@ -15,8 +15,12 @@
   tux.services.openssh.enable = true;
   tux.services.openssh.ports = [23];
 
-  tux.services.trok.enable = true;
-  tux.services.trok.openFirewall = true;
+  tux.services.trok = {
+    enable = true;
+    host = "0.0.0.0";
+    port = 1337;
+    openFirewall = true;
+  };
 
   tux.services.tfolio.enable = true;
 
@@ -48,7 +52,7 @@
     hostName = "alpha";
 
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [80 443 22];
     };
   };
