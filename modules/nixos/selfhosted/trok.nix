@@ -10,6 +10,12 @@ in {
   options.tux.services.trok = {
     enable = mkEnableOption "Enable trok";
 
+    host = mkOption {
+      type = lib.types.str;
+      default = "0.0.0.0";
+      description = "Host addr on which the trok service will listen.";
+    };
+
     port = mkOption {
       type = lib.types.port;
       default = 1337;
@@ -44,7 +50,7 @@ in {
           Type = "simple";
           User = "trok";
           Group = "trok";
-          ExecStart = "${getExe pkgs.trok} server -p ${toString cfg.port}";
+          ExecStart = "${getExe pkgs.trok} server -a ${cfg.host}:${toString cfg.port}";
           Restart = "always";
 
           LockPersonality = true;
