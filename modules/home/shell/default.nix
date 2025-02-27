@@ -75,5 +75,6 @@
     templ
     ffmpeg
     deploy-rs
+    trok
   ];
 }
