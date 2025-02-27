@@ -16,6 +16,7 @@
     ../../modules/nixos/selfhosted/tfolio.nix
     ../../modules/nixos/selfhosted/cyber-tux.nix
     ../../modules/nixos/networking/ssh.nix
+    ../../modules/nixos/selfhosted/trok.nix
   ];
 
   sops.secrets.tux-password = {

@@ -15,6 +15,9 @@
   tux.services.openssh.enable = true;
   tux.services.openssh.ports = [23];
 
+  tux.services.trok.enable = true;
+  tux.services.trok.openFirewall = true;
+
   tux.services.tfolio.enable = true;
 
   sops.secrets = {

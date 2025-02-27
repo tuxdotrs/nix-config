@@ -872,8 +872,10 @@
         "nixpkgs-stable": "nixpkgs-stable_3",
         "nur": "nur",
         "sops-nix": "sops-nix",
+        "tawm": "tawm",
         "tfolio": "tfolio",
         "tnvim": "tnvim",
+        "trok": "trok",
         "wezterm-flake": "wezterm-flake"
       }
     },
@@ -1009,6 +1011,26 @@
         "type": "github"
       }
     },
+    "tawm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740652942,
+        "narHash": "sha256-PTt6a/UQJTIbOUyHWw2mjVrPzIPsPA8rllJjNM5RoEo=",
+        "owner": "tuxdotrs",
+        "repo": "tawm",
+        "rev": "5f70161a1975096182518e5a8738d618465cf754",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tuxdotrs",
+        "repo": "tawm",
+        "type": "github"
+      }
+    },
     "tfolio": {
       "inputs": {
         "nixpkgs": [
@@ -1068,6 +1090,23 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "type": "github"
+      }
+    },
+    "trok": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740655111,
+        "narHash": "sha256-kDIolURbhhIYPteFKgND+4MPmLbtkJBh6T/gpavYA28=",
+        "path": "/home/tux/Projects/trok",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/tux/Projects/trok",
+        "type": "path"
       }
     },
     "utils": {

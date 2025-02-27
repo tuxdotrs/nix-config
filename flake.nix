@@ -133,6 +133,11 @@
       url = "github:tuxdotrs/tnvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    trok = {
+      # url = "git+ssh://git@github.com/tuxdotrs/trok.git";
+      url = "path:/home/tux/Projects/trok";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     tfolio = {
       url = "git+ssh://git@github.com/tuxdotrs/tfolio.git";
       inputs.nixpkgs.follows = "nixpkgs";
