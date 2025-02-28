@@ -1099,14 +1099,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1740677973,
-        "narHash": "sha256-VXRxyaBJ6HQ/Ts5cURES+glF+SBRJzPPZXBIEvNYD+8=",
-        "path": "/home/tux/Projects/trok",
-        "type": "path"
+        "lastModified": 1740692705,
+        "narHash": "sha256-HFJw/yrYQp6WdWZt/9k8TYPpkFrLh9gyw9rZVWnW23Y=",
+        "ref": "refs/heads/main",
+        "rev": "4fe87421334307b20b66194c32f3e1e27b18f169",
+        "revCount": 15,
+        "type": "git",
+        "url": "ssh://git@github.com/tuxdotrs/trok.git"
       },
       "original": {
-        "path": "/home/tux/Projects/trok",
-        "type": "path"
+        "type": "git",
+        "url": "ssh://git@github.com/tuxdotrs/trok.git"
       }
     },
     "utils": {
