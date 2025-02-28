@@ -1099,11 +1099,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740692705,
-        "narHash": "sha256-HFJw/yrYQp6WdWZt/9k8TYPpkFrLh9gyw9rZVWnW23Y=",
+        "lastModified": 1740765983,
+        "narHash": "sha256-qPCQyGodpxBBYb5ZBc+BsP8njRCM8G/I8IuGp3UY8qM=",
         "ref": "refs/heads/main",
-        "rev": "4fe87421334307b20b66194c32f3e1e27b18f169",
-        "revCount": 15,
+        "rev": "eb4f430ad7b6139db36bf9dcfd777157d80d4047",
+        "revCount": 18,
         "type": "git",
         "url": "ssh://git@github.com/tuxdotrs/trok.git"
       },
