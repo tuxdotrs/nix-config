@@ -44,6 +44,7 @@
     git
     neovim
     openssh
+    inputs.trok.packages."aarch64-linux".default
   ];
 
   home-manager = {
