@@ -1038,11 +1038,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740197906,
-        "narHash": "sha256-G4H/c91GlHhUG7joDXxmvtcWz1xepzwRR4J+gQGLH+k=",
+        "lastModified": 1740818426,
+        "narHash": "sha256-Ew6I/vG06yekJoVqB6RmXjgJj+9OIQhTCaawX5q/mu0=",
         "ref": "refs/heads/main",
-        "rev": "23cf45aa50e8db9533d8ca432bcd7b4d2bc2b421",
-        "revCount": 13,
+        "rev": "b4037d1b1fd36e0d81845bb0744b1a9a390fd66e",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://git@github.com/tuxdotrs/tfolio.git"
       },
