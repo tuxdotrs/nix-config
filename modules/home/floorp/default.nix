@@ -31,7 +31,7 @@
           user_pref("media.rdd-vpx.enabled", true);
         '';
 
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           facebook-container
           metamask
