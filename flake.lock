@@ -443,10 +443,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1738161919,
-        "narHash": "sha256-EKyY5XwFmgkEYElZEpNGEl6UsJO4jYvqtzZYtQPvD18=",
+        "lastModified": 1740994343,
+        "narHash": "sha256-DdVqkB3y0EO6akaBET4Al0qZWs8qZiZcrp+7KXPm0R0=",
         "ref": "refs/heads/main",
-        "rev": "5f6314b52859812eb877b54ddf158098cf21c8c0",
+        "rev": "0a5113f8c0159e3215c063ad43b5429adaf47fbc",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/tuxdotrs/nix-secrets.git"
