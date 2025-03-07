@@ -16,6 +16,7 @@
     ../../modules/nixos/desktop
     ../../modules/nixos/virtualisation/docker.nix
     ../../modules/nixos/selfhosted/open-webui.nix
+    ../../modules/nixos/selfhosted/glance
   ];
 
   tux.services.openssh.enable = true;
