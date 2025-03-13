@@ -12,6 +12,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     inputs.disko.nixosModules.default
     (import ./disko.nix {device = "/dev/sda";})
+    (import ./disko.nix {device = "/dev/vda";})
 
     ../common
     ../../modules/nixos/virtualisation/docker.nix
