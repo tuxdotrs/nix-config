@@ -11,7 +11,6 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     inputs.disko.nixosModules.default
-    (import ./disko.nix {device = "/dev/sda";})
     (import ./disko.nix {device = "/dev/vda";})
 
     ../common
@@ -197,6 +196,7 @@
       "/var/lib/private"
       "/var/lib/nextcloud"
       "/var/lib/silverbullet"
+      "/var/lib/kasmweb"
     ];
     files = [
       "/etc/ssh/ssh_host_ed25519_key"
