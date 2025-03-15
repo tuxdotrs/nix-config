@@ -30,6 +30,7 @@
     ../../modules/nixos/selfhosted/silver-bullet.nix
     ../../modules/nixos/selfhosted/rustdesk-server.nix
     ../../modules/nixos/selfhosted/kasmweb.nix
+    ../../modules/nixos/selfhosted/open-webui.nix
   ];
 
   tux.services.openssh.enable = true;
