@@ -1,4 +1,9 @@
-{username, ...}: let
+{
+  username,
+  lib,
+  config,
+  ...
+}: let
   home = import ./home.nix;
 in {
   services = {
@@ -19,20 +24,20 @@ in {
       };
     };
 
-    # nginx = {
-    #   enable = lib.mkForce true;
-    #   virtualHosts = {
-    #     "dashboard.tux.rs" = {
-    #       forceSSL = true;
-    #       useACMEHost = "tux.rs";
-    #       locations = {
-    #         "/" = {
-    #           proxyPass = "http://${config.services.glance.settings.server.host}:${toString config.services.glance.settings.server.port}";
-    #           proxyWebsockets = true;
-    #         };
-    #       };
-    #     };
-    #   };
-    # };
+    nginx = {
+      enable = lib.mkForce true;
+      virtualHosts = {
+        "home.tux.rs" = {
+          forceSSL = true;
+          useACMEHost = "tux.rs";
+          locations = {
+            "/" = {
+              proxyPass = "http://${config.services.glance.settings.server.host}:${toString config.services.glance.settings.server.port}";
+              proxyWebsockets = true;
+            };
+          };
+        };
+      };
+    };
   };
 }

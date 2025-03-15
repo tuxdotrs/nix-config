@@ -31,6 +31,7 @@
     ../../modules/nixos/selfhosted/rustdesk-server.nix
     ../../modules/nixos/selfhosted/kasmweb.nix
     ../../modules/nixos/selfhosted/open-webui.nix
+    ../../modules/nixos/selfhosted/glance
   ];
 
   tux.services.openssh.enable = true;
