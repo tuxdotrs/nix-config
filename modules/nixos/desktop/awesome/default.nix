@@ -61,6 +61,7 @@
     xdg-utils
     playerctl
     pulsemixer
+    easyeffects
     procps
     sct
     slop
