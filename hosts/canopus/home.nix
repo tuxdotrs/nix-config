@@ -71,6 +71,7 @@
       "Videos"
       "Projects"
       "Stuff"
+      "go"
       ".mozilla"
       ".ssh"
       ".wakatime"
