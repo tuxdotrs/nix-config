@@ -20,6 +20,7 @@
     ../../modules/home/mopidy
     ../../modules/home/thunderbird
     ../../modules/home/floorp
+    ../../modules/home/easyeffects
   ];
 
   home.pointerCursor = {
