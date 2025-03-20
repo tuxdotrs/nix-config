@@ -14,12 +14,11 @@
     ../../modules/home/desktop/rofi
     ../../modules/home/barrier
     ../../modules/home/firefox
-    ../../modules/home/librewolf
+    ../../modules/home/brave
     ../../modules/home/kdeconnect
     ../../modules/home/vs-code
     ../../modules/home/mopidy
     ../../modules/home/thunderbird
-    ../../modules/home/floorp
     ../../modules/home/easyeffects
   ];
 
@@ -78,6 +77,7 @@
       ".wakatime"
       ".rustup"
       ".cargo"
+      ".config/BraveSoftware"
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
