@@ -15,7 +15,6 @@
     ../../modules/home/barrier
     ../../modules/home/firefox
     ../../modules/home/brave
-    ../../modules/home/kdeconnect
     ../../modules/home/vs-code
     ../../modules/home/mopidy
     ../../modules/home/thunderbird
