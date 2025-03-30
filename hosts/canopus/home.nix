@@ -47,7 +47,7 @@
     discord
     telegram-desktop
     anydesk
-    rustdesk-flutter
+    stable.rustdesk-flutter
     rawtherapee
     beekeeper-studio
     obs-studio
