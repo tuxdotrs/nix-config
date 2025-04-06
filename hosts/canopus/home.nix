@@ -49,7 +49,7 @@
     anydesk
     stable.rustdesk-flutter
     rawtherapee
-    beekeeper-studio
+    stable.beekeeper-studio
     obs-studio
     flameshot
     libreoffice-qt
