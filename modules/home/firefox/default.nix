@@ -39,7 +39,7 @@
         name = "tux";
         search = {
           force = true;
-          default = "Google";
+          default = "google";
         };
         settings = {
           "general.smoothScroll" = true;

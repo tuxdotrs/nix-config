@@ -8,7 +8,7 @@
       };
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
-      initExtra = ''
+      initContent = ''
         nitch
         export WINIT_X11_SCALE_FACTOR=1
         bindkey "^A" vi-beginning-of-line
