@@ -32,8 +32,8 @@
   };
 
   user = {
-    uid = 10395;
-    gid = 10395;
+    uid = 10225;
+    gid = 10225;
     shell = "${pkgs.zsh}/bin/zsh";
   };
 
