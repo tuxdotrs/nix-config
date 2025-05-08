@@ -66,7 +66,6 @@
       alpha = nixosSystem (mkNixOSConfig "alpha");
       sirius = nixosSystem (mkNixOSConfig "sirius");
       vega = nixosSystem (mkNixOSConfig "vega");
-      capella = nixosSystem (mkNixOSConfig "capella");
       vps = nixosSystem (mkNixOSConfig "vps");
       isoImage = nixosSystem (mkNixOSConfig "isoImage");
       homelab = nixosSystem (mkNixOSConfig "homelab");
@@ -75,6 +74,7 @@
     # NixOnDroid configuration entrypoint
     # 'nix-on-droid switch --flake .#your-hostname'
     nixOnDroidConfigurations = {
+      capella = nixOnDroidConfiguration (mkDroidConfig "capella");
       rigel = nixOnDroidConfiguration (mkDroidConfig "rigel");
     };
 
@@ -85,8 +85,8 @@
         alpha = mkNixOSNode "alpha";
         sirius = mkNixOSNode "sirius";
         vega = mkNixOSNode "vega";
-        capella = mkNixOSNode "capella";
         homelab = mkNixOSNode "homelab";
+        capella = mkDroidNode "capella";
         rigel = mkDroidNode "rigel";
       };
     };
