@@ -19,7 +19,7 @@
     nextcloud = {
       enable = true;
       hostName = "cloud.tux.rs";
-      package = pkgs.nextcloud30;
+      package = pkgs.nextcloud31;
       database.createLocally = true;
       configureRedis = true;
       maxUploadSize = "16G";
@@ -44,5 +44,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [nextcloud30];
+  environment.systemPackages = with pkgs; [nextcloud31];
 }
