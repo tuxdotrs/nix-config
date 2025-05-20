@@ -227,15 +227,20 @@
       enable = true;
       settings = {
         battery = {
+          platform_profile = "quiet";
           governor = "powersave";
+          energy_performance_preference = "power";
           turbo = "never";
           scaling_min_freq = 400000;
           scaling_max_freq = 3800000;
         };
         charger = {
-          governor = "powersave";
-          turbo = "never";
-          scaling_max_freq = 3800000;
+          platform_profile = "performance";
+          governor = "performance";
+          energy_performance_preference = "performance";
+          turbo = "auto";
+          scaling_min_freq = 400000;
+          scaling_max_freq = 4500000;
         };
       };
     };
