@@ -47,7 +47,7 @@
         sshUser = "nix-on-droid";
         user = "nix-on-droid";
         magicRollback = true;
-        sshOpts = ["-p" "8022"];
+        sshOpts = ["-p" "8033"];
         path = activateNixOnDroid self.nixOnDroidConfigurations.${hostname};
       };
     };
