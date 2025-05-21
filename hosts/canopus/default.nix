@@ -316,6 +316,7 @@
       "/var/lib/bluetooth"
       "/var/lib/tailscale"
       "/var/lib/nixos"
+      "/var/lib/docker"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
