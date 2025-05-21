@@ -59,6 +59,7 @@
     copyq
     vlc
     tor-browser
+    distrobox
   ];
 
   home.persistence."/persist/home/${username}" = {
