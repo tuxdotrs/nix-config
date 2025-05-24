@@ -24,7 +24,7 @@
 
       selection.save_to_clipboard = false;
 
-      live_config_reload = true;
+      general.live_config_reload = true;
 
       colors = {
         primary = {
