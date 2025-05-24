@@ -2,6 +2,7 @@
   imports = [
     ../../modules/home/git
     ../../modules/home/starship
+    ../../modules/home/fastfetch
   ];
 
   programs = {
