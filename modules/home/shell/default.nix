@@ -9,7 +9,7 @@
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
       initContent = ''
-        nitch
+        fastfetch
         export WINIT_X11_SCALE_FACTOR=1
         bindkey "^A" vi-beginning-of-line
         bindkey "^E" vi-end-of-line
@@ -40,7 +40,6 @@
   home.packages = with pkgs; [
     service-wrapper
     lsd
-    nitch
     ranger
     wget
     portal

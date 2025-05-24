@@ -11,6 +11,7 @@
     ../../modules/home/shell
     ../../modules/home/git
     ../../modules/home/starship
+    ../../modules/home/fastfetch
     ../../modules/home/nvim
     ../../modules/home/tmux
     ../../modules/home/helix
