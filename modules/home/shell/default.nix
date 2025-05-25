@@ -3,23 +3,31 @@
     bat.enable = true;
     zsh = {
       enable = true;
-      shellAliases = {
-        ls = "lsd";
+      history = {
+        append = true;
+        share = true;
+        expireDuplicatesFirst = true;
+        ignoreDups = true;
+        size = 1000000;
+        save = 1000000;
       };
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
       initContent = ''
         fastfetch
         export WINIT_X11_SCALE_FACTOR=1
+        PATH=$PATH:~/.cargo/bin:~/.local/bin
+
         bindkey "^A" vi-beginning-of-line
         bindkey "^E" vi-end-of-line
-        PATH=$PATH:~/.cargo/bin:~/.local/bin
+        bindkey '^R' fzf-history-widget
       '';
     };
     lazygit.enable = true;
     zoxide = {
       enable = true;
       options = ["--cmd cd"];
+      enableZshIntegration = true;
     };
     ripgrep.enable = true;
     btop = {
@@ -35,11 +43,18 @@
       enable = true;
       enableZshIntegration = true;
     };
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    lsd = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 
   home.packages = with pkgs; [
     service-wrapper
-    lsd
     ranger
     wget
     portal
@@ -51,7 +66,6 @@
     nvtopPackages.full
     zellij
     nix-output-monitor
-    fzf
     duf
     jq
     atac
