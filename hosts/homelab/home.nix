@@ -7,11 +7,11 @@
       ".wakatime"
       ".config/sops"
       ".local/share/nvim"
+      ".local/share/zsh"
       ".local/share/zoxide"
       ".local/state/lazygit"
     ];
     files = [
-      ".zsh_history"
       ".wakatime.cfg"
     ];
     allowOther = true;

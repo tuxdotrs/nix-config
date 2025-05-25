@@ -4,9 +4,7 @@
       "Projects"
       "Stuff"
       ".ssh"
-    ];
-    files = [
-      ".zsh_history"
+      ".local/share/zsh"
     ];
     allowOther = true;
   };

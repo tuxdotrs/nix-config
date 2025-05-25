@@ -86,6 +86,7 @@
       ".config/rustdesk"
       ".config/spotify"
       ".local/share/nvim"
+      ".local/share/zsh"
       ".local/share/zoxide"
       ".local/share/Smart\ Code\ ltd"
       ".local/share/GalaxyBudsClient"
@@ -94,7 +95,6 @@
       ".cache/spotify"
     ];
     files = [
-      ".zsh_history"
       ".wakatime.cfg"
     ];
     allowOther = true;
