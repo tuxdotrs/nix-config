@@ -20,17 +20,17 @@
 
 ## Hosts
 
-|     | Type    | Name     | Hardware                                 | Purpose                                                                            |
-| --- | ------- | -------- | ---------------------------------------- | ---------------------------------------------------------------------------------- |
-| 💻  | Desktop | sirius   | Ryzen 7 5700X3D - 64GB RAM - RTX 3080 TI | Multi-monitor desktop running Windows Subsystem for Linux.                         |
-| 🖥️  | Laptop  | canopus  | Ryzen 9 5900HS - 16 GB RAM - RTX 3060    | Optimized for productivity on the go and some gaming.                              |
-| 🖥️  | Server  | homelab  | Ryzen 7 8700G - 32 GB RAM - Radeon 780M  | WIP                                                                                |
-| ☁️  | VPS     | arcturus | 4 Core - 8 GB RAM                        | Primary server responsible for exposing my homelab applications to the internet.   |
-| 🥔  | VPS     | alpha    | 2 Core - 4 GB RAM                        | Monitors uptime and health status of all services across the infrastructure.       |
-| 🥔  | Server  | vega     | Cortex A53 - 1 GB RAM                    | Running AdGuard Home for network-wide ad blocking.                                 |
-| 📱  | Phone   | capella  | S25 Ultra - 12 GB RAM                    | Yes, I run nix on my android device. lol                                           |
-| 📱  | Phone   | rigel    | Edge 30 - 8 GB RAM (Rooted)              | Yes, I run nix on my android device. lol                                           |
-| ☁️  | VPS     | node     | i9-13900 - 64 GB RAM                     | Running Ethereum and BSC nodes. Currently in the process of migrating from Ubuntu. |
+|     | Hostname	|Board			| CPU			| RAM	| GPU                           | Purpose										|
+| --- |	---------------	| ---------------------	| --------------------- | -----	| ----------------------------	| -------------------------------------------------------------------------------------	|
+| 🖥️  | `sirius` 	| MSI X570-A Pro	| Ryzen 7 5700X3D	| 64GB	| RTX 3080 TI + RTX 3060 TI	| Triple-monitor desktop running Windows Subsystem for Linux.                         	|
+| 💻  | `canopus`	| Asus Zephyrus G15	| Ryzen 9 5900HS	| 16GB	| RTX 3060    			| Optimized for productivity on the go and some gaming.             			|
+| ☁️  | `homelab`  	| Minisforum MS-A1	| Ryzen 7 8700G		| 32GB	| Radeon 780M  			| WIP                                                                                	|
+| ☁️  | `arcturus` 	| KVM 			| 4 Core		| 8GB	|     	                  	| Primary server responsible for exposing my homelab applications to the internet.   	|
+| ☁️  | `alpha`    	| KVM			| 2 Core		| 4GB	|              	           	| Monitors uptime and health status of all services across the infrastructure.       	|
+| 🥔  | `vega`     	| Raspberry Pi 3B+	| Cortex A53		| 1GB	|                    		| Running AdGuard Home for network-wide ad blocking.					|
+| 📱  | `capella`  	| Samsung S25 Ultra	| Snapdragon 8 Elite	| 12GB	| Adreno 830                   	| Primary mobile for daily usage. (Locked)						|
+| 📱  | `rigel`    	| Motorola Edge 30	| Snapdragon 778G+	| 8GB	| Adreno 642L            	| Secondary mobile for some fun. (Rooted)						|
+| ☁️  | `node`     	| KVM			| i9-13900		| 64GB	|                     		| Running Ethereum and BSC nodes. Currently in the process of migrating from Ubuntu. 	|
 
 ## Installation
 
