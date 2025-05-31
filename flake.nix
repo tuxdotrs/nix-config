@@ -137,6 +137,10 @@
       url = "git+ssh://git@github.com/tuxdotrs/trok.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tpanel = {
+      url = "github:tuxdotrs/tpanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     tfolio = {
       url = "git+ssh://git@github.com/tuxdotrs/tfolio.git";
       inputs.nixpkgs.follows = "nixpkgs";
