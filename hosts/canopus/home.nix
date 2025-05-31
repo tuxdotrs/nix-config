@@ -6,7 +6,6 @@
   imports = [
     ../../modules/home/desktop/awesome
     ../../modules/home/desktop/hyprland
-    ../../modules/home/desktop/waybar
     ../../modules/home/picom
     ../../modules/home/alacritty
     ../../modules/home/wezterm
