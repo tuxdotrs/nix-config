@@ -64,17 +64,17 @@ reboot
 
 ## Components
 
-|               | Wayland | Xorg             |
-| ------------- | ------- | ---------------- |
-| DM            | /       | SDDM             |
-| WM/DE         | /       | AwesomeWM        |
-| Compositor    | /       | Picom (Jonaburg) |
-| Bar           | /       | Wibar            |
-| Hotkeys       | /       | Awful            |
-| Launcher      | /       | Rofi             |
-| Notifications | /       | Naughty          |
-| Terminal      | /       | Wezterm          |
-| Editor        | /       | Neovim           |
+|               | Wayland	| Xorg             |
+| ------------- | -------------	| ---------------- |
+| DM            | /       	| SDDM             |
+| WM/DE         | Hyprland      | AwesomeWM        |
+| Compositor    | Hyprland      | Picom (Jonaburg) |
+| Bar           | Astal       	| Wibar            |
+| Hotkeys       | Hyprland      | Awful            |
+| Launcher      | Astal       	| Rofi             |
+| Notifications | Astal		| Naughty          |
+| Terminal      | Wezterm       | Wezterm          |
+| Editor        | Neovim	| Neovim           |
 
 ## Showcase
 
