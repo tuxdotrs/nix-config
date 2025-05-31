@@ -16,7 +16,7 @@
 
       # Apps
       terminal = "wezterm";
-      editor = "neovim";
+      editor = "wezterm -e nvim";
       browser = "firefox";
       filemanager = "thunar";
     in {
