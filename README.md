@@ -66,7 +66,7 @@ reboot
 
 |               | Wayland	| Xorg             |
 | ------------- | -------------	| ---------------- |
-| DM            | /       	| SDDM             |
+| DM            | ly       	| ly		   |
 | WM/DE         | Hyprland      | AwesomeWM        |
 | Compositor    | Hyprland      | Picom (Jonaburg) |
 | Bar           | Astal       	| Wibar            |
