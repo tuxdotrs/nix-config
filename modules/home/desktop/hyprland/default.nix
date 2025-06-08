@@ -58,8 +58,8 @@
       # See https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
         rounding = rounding;
-        active_opacity = 0.8;
-        inactive_opacity = 0.8;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
         fullscreen_opacity = 1.0;
 
         blur = {
@@ -154,10 +154,25 @@
         "SUPER_ALT, right, moveactive, 20 0"
         "SUPER_ALT, up,    moveactive, 0 -20"
         "SUPER_ALT, down,  moveactive, 0 20"
+
+        # speaker and mic volume control
+        " , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+"
+        " , XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-"
+        " , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        " , XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+        # display and keyboard brightness control
+        " , XF86MonBrightnessUp, exec, brightnessctl s +20%"
+        " , XF86MonBrightnessDown, exec, brightnessctl s 20%-"
+        " , XF86KbdBrightnessUp, exec, asusctl -n"
+        " , XF86KbdBrightnessDown, exec, asusctl -p"
+
+        # performance
+        " , XF86Launch4, exec, asusctl profile -n"
       ];
 
       "exec-once" = [
-        "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/ALLqk82.png"
+        "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/island-night.png"
         "${pkgs.tpanel}/bin/tpanel"
       ];
     };
