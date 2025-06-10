@@ -2,6 +2,7 @@
   home.file = {
     ".config/ghostty/config" = {
       text = ''
+        confirm-close-surface = false
         gtk-titlebar = false
         window-padding-x = 10
         window-padding-y = 10
