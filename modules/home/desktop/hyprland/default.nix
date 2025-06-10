@@ -122,7 +122,6 @@
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
-        "SUPER_SHIFT, Return, exec, ${floating_terminal}"
         "SUPER, A, exec, astal -t app-launcher"
         "SUPER, F, exec, ${filemanager}"
         "SUPER, E, exec, ${editor}"
@@ -130,6 +129,9 @@
         "SUPER, G, exec, GalaxyBudsClient"
         "SUPER, D, exec, discord"
         "SUPER, V, exec, copyq show"
+
+        "SUPER_SHIFT, Return, exec, ${floating_terminal}"
+        "SUPER_SHIFT, S, exec, flameshot gui"
 
         # astal
         "SUPER_SHIFT, R, exec, astal -q; ${pkgs.tpanel}/bin/tpanel"
