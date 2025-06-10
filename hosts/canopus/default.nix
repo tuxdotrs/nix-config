@@ -250,6 +250,7 @@
     supergfxd = {
       enable = true;
       settings = {
+        mode = "Integrated";
         vfio_enable = false;
         vfio_save = false;
         always_reboot = false;
