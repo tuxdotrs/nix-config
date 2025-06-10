@@ -71,6 +71,10 @@
           xray = true;
           special = true;
         };
+
+        shadow = {
+          enabled = false;
+        };
       };
 
       #-- Animations
