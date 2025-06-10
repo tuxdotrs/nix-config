@@ -128,6 +128,7 @@
         "SUPER, B, exec, ${browser}"
         "SUPER, G, exec, GalaxyBudsClient"
         "SUPER, D, exec, discord"
+        "SUPER, S, exec, spotify"
         "SUPER, V, exec, copyq show"
 
         "SUPER_SHIFT, Return, exec, ${floating_terminal}"
