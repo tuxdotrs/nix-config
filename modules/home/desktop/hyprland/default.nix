@@ -15,8 +15,9 @@
       inactive_border_col = "rgba(86aaeccc) rgba(93cee9cc) 45deg";
 
       # Apps
-      terminal = "wezterm";
-      editor = "wezterm -e nvim";
+      terminal = "ghostty";
+      floating_terminal = "ghostty --class=com.ghostty.floating";
+      editor = "ghostty -e nvim";
       browser = "firefox";
       filemanager = "thunar";
     in {
@@ -98,22 +99,42 @@
         drop_at_cursor = true;
       };
 
+      #-- Window Rules
+      # See https://wiki.hyprland.org/Configuring/Window-Rules
+      windowrulev2 = [
+        "float, class:com.github.hluk.copyq"
+        "size 800 600, class:com.github.hluk.copyq"
+
+        "float, class:org.pulseaudio.pavucontrol"
+        "size 800 600, class:org.pulseaudio.pavucontrol"
+
+        "float, class:com.ghostty.floating"
+        "size 900 700, class:com.ghostty.floating"
+
+        "workspace 3 silent, class:(firefox|Brave-browser)"
+        "workspace 5 silent, class:(discord|Spotify|org.telegram.desktop)"
+      ];
+
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
+        "SUPER_SHIFT, Return, exec, ${floating_terminal}"
         "SUPER, A, exec, astal -t app-launcher"
         "SUPER, F, exec, ${filemanager}"
         "SUPER, E, exec, ${editor}"
         "SUPER, B, exec, ${browser}"
         "SUPER, G, exec, GalaxyBudsClient"
+        "SUPER, D, exec, discord"
+        "SUPER, V, exec, copyq show"
 
         # astal
         "SUPER_SHIFT, R, exec, astal -q; ${pkgs.tpanel}/bin/tpanel"
 
         # hyprland
-        "SUPER, Q, killactive,"
+        "SUPER, Q, killactive"
+        "SUPER_SHIFT, Q, forcekillactive"
         "SUPER_SHIFT, F, fullscreen, 0"
-        "SUPER_SHIFT, Space, togglefloating,"
+        "SUPER_SHIFT, Space, togglefloating"
 
         # shutdown
         "SUPER_SHIFT, P, exec, poweroff"
@@ -138,11 +159,11 @@
         "SUPER, 5, workspace, 5"
 
         # send to workspaces
-        "SUPER_SHIFT, 1, movetoworkspace, 1"
-        "SUPER_SHIFT, 2, movetoworkspace, 2"
-        "SUPER_SHIFT, 3, movetoworkspace, 3"
-        "SUPER_SHIFT, 4, movetoworkspace, 4"
-        "SUPER_SHIFT, 5, movetoworkspace, 5"
+        "SUPER_SHIFT, 1, movetoworkspacesilent, 1"
+        "SUPER_SHIFT, 2, movetoworkspacesilent, 2"
+        "SUPER_SHIFT, 3, movetoworkspacesilent, 3"
+        "SUPER_SHIFT, 4, movetoworkspacesilent, 4"
+        "SUPER_SHIFT, 5, movetoworkspacesilent, 5"
       ];
 
       binde = [
@@ -177,6 +198,7 @@
       "exec-once" = [
         "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/island-night.png"
         "${pkgs.tpanel}/bin/tpanel"
+        "copyq"
       ];
     };
   };
