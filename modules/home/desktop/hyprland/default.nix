@@ -8,7 +8,7 @@
       # Hyprland
       border_size = 2;
       gaps_in = 5;
-      gaps_out = 5;
+      gaps_out = 10;
       gaps_ws = -10;
       rounding = 8;
       active_border_col = "rgba(90ceaaff) rgba(ecd3a0ff) 45deg";
