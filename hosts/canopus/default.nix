@@ -250,7 +250,6 @@
     supergfxd = {
       enable = true;
       settings = {
-        mode = "Integrated";
         vfio_enable = false;
         vfio_save = false;
         always_reboot = false;
@@ -317,6 +316,7 @@
       "/var/lib/tailscale"
       "/var/lib/nixos"
       "/var/lib/docker"
+      "/var/lib/waydroid"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
