@@ -3,14 +3,17 @@
   modulesPath,
   inputs,
   username,
+  lib,
   ...
 }: {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     inputs.home-manager.nixosModules.home-manager
 
-    ../../modules/nixos/default.nix
+    ../common
+    ../../modules/nixos/desktop
     ../../modules/nixos/desktop/awesome
+    ../../modules/nixos/desktop/hyprland
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
@@ -78,6 +81,11 @@
     imports = [
       ./home.nix
     ];
+  };
+
+  users.users.${username} = {
+    hashedPasswordFile = lib.mkForce null;
+    initialPassword = username;
   };
 
   system.stateVersion = "23.11";
