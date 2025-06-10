@@ -42,6 +42,11 @@
     };
   };
 
+  services.flameshot = {
+    enable = true;
+    package = pkgs.flameshot.override {enableWlrSupport = true;};
+  };
+
   home.packages = with pkgs; [
     discord
     telegram-desktop
@@ -50,7 +55,6 @@
     rawtherapee
     stable.beekeeper-studio
     obs-studio
-    flameshot
     libreoffice-qt
     spotify
     stremio
