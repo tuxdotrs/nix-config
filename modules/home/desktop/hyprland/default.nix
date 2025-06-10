@@ -115,6 +115,9 @@
         "SUPER_SHIFT, F, fullscreen, 0"
         "SUPER_SHIFT, Space, togglefloating,"
 
+        # shutdown
+        "SUPER_SHIFT, P, exec, poweroff"
+
         # change focus
         "SUPER, left,  movefocus, l"
         "SUPER, right, movefocus, r"
