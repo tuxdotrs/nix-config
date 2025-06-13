@@ -160,5 +160,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     impermanence.url = "github:nix-community/impermanence";
     deploy-rs.url = "github:serokell/deploy-rs";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 }

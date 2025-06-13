@@ -15,6 +15,7 @@
       withOpenASAR = true;
       withVencord = true;
     };
+    hyprland-git = inputs.hyprland.packages.${prev.system};
   };
 
   # When applied, the stable nixpkgs set (declared in the flake inputs) will

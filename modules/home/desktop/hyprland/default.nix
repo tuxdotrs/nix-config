@@ -3,7 +3,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs.hyprland-git.hyprland;
+    portalPackage = pkgs.hyprland-git.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
+
     settings = let
       # Hyprland
       border_size = 2;
