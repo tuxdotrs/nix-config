@@ -3,9 +3,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.hyprland-git.hyprland;
-    portalPackage = pkgs.hyprland-git.xdg-desktop-portal-hyprland;
+    package = null;
+    portalPackage = null;
     xwayland.enable = true;
+    systemd.variables = ["--all"];
 
     settings = let
       # Hyprland
