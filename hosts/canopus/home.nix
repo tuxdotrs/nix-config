@@ -18,6 +18,7 @@
     ../../modules/home/mopidy
     ../../modules/home/thunderbird
     ../../modules/home/easyeffects
+    ../../modules/home/discord
   ];
 
   home.pointerCursor = {
@@ -48,7 +49,6 @@
   };
 
   home.packages = with pkgs; [
-    discord
     telegram-desktop
     anydesk
     stable.rustdesk-flutter

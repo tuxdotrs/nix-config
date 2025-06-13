@@ -161,5 +161,6 @@
     impermanence.url = "github:nix-community/impermanence";
     deploy-rs.url = "github:serokell/deploy-rs";
     hyprland.url = "github:hyprwm/Hyprland";
+    nixcord.url = "github:kaylorben/nixcord";
   };
 }
