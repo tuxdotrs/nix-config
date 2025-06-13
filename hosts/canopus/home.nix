@@ -84,6 +84,7 @@
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
+      ".config/vesktop"
       ".config/sops"
       ".config/obs-studio"
       ".config/rustdesk"
