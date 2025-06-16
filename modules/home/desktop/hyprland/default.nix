@@ -10,7 +10,7 @@
 
     settings = let
       # Hyprland
-      border_size = 2;
+      border_size = 0;
       gaps_in = 5;
       gaps_out = 10;
       gaps_ws = -10;
