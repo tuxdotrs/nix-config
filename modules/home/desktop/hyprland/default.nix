@@ -140,6 +140,7 @@
 
         # astal
         "SUPER_SHIFT, R, exec, astal -q; ${pkgs.tpanel}/bin/tpanel"
+        "SUPER_SHIFT, B, exec, astal toggle-bar"
 
         # hyprland
         "SUPER, Q, killactive"
