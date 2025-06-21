@@ -119,6 +119,9 @@
         "float, class:com.ghostty.floating"
         "size 900 700, class:com.ghostty.floating"
 
+        "float, class:GalaxyBudsClient"
+        "size 900 700, class:GalaxyBudsClient"
+
         "workspace 3 silent, class:(firefox|Brave-browser)"
         "workspace 5 silent, class:(discord|Spotify|org.telegram.desktop)"
       ];
