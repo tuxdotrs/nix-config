@@ -19,6 +19,7 @@
     ../../modules/home/thunderbird
     ../../modules/home/easyeffects
     ../../modules/home/discord
+    ../../modules/home/kdeconnect
   ];
 
   home.pointerCursor = {
