@@ -153,6 +153,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     ghostty.url = "github:ghostty-org/ghostty";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs-f2k.url = "github:moni-dz/nixpkgs-f2k";
@@ -160,7 +165,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     impermanence.url = "github:nix-community/impermanence";
     deploy-rs.url = "github:serokell/deploy-rs";
-    hyprland.url = "github:hyprwm/Hyprland";
     nixcord.url = "github:kaylorben/nixcord";
   };
 }

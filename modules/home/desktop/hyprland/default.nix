@@ -8,6 +8,10 @@
     xwayland.enable = true;
     systemd.variables = ["--all"];
 
+    plugins = with pkgs.hyprland-plugins; [
+      hyprexpo
+    ];
+
     settings = let
       # Hyprland
       border_size = 0;
@@ -126,6 +130,20 @@
         "workspace 5 silent, class:(discord|Spotify|org.telegram.desktop)"
       ];
 
+      plugin = {
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          bg_col = "rgb(111111)";
+          workspace_method = "center current";
+
+          enable_gesture = true;
+          gesture_fingers = 3;
+          gesture_distance = 300;
+          gesture_positive = true;
+        };
+      };
+
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
@@ -147,6 +165,7 @@
 
         # hyprland
         "SUPER, Q, killactive"
+        "SUPER, grave, hyprexpo:expo, toggle"
         "SUPER_SHIFT, Q, forcekillactive"
         "SUPER_SHIFT, F, fullscreen, 0"
         "SUPER_SHIFT, Space, togglefloating"
@@ -211,6 +230,9 @@
       ];
 
       "exec-once" = [
+        # load hyprland plugins
+        "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
+
         "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/island-night.png"
         "${pkgs.tpanel}/bin/tpanel"
         "copyq"

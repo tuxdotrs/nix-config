@@ -12,6 +12,7 @@
     trok = inputs.trok.packages.${prev.system}.default;
     cyber-tux = inputs.cyber-tux.packages.${prev.system}.default;
     hyprland-git = inputs.hyprland.packages.${prev.system};
+    hyprland-plugins = inputs.hyprland-plugins.packages.${prev.system};
   };
 
   # When applied, the stable nixpkgs set (declared in the flake inputs) will
