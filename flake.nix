@@ -134,7 +134,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     trok = {
-      url = "git+ssh://git@github.com/tuxdotrs/trok.git";
+      url = "github:tuxdotrs/trok";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     tpanel = {
