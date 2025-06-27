@@ -20,6 +20,7 @@
     ../../modules/home/easyeffects
     ../../modules/home/discord
     ../../modules/home/kdeconnect
+    ../../modules/home/obs-studio
   ];
 
   home.pointerCursor = {
@@ -55,7 +56,6 @@
     stable.rustdesk-flutter
     rawtherapee
     stable.beekeeper-studio
-    obs-studio
     libreoffice-qt
     spotify
     stremio
