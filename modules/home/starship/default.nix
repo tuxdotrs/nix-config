@@ -13,6 +13,8 @@
         disabled = false;
         symbols.NixOS = "󰊠";
         symbols.Linux = "󰊠";
+        symbols.Arch = "󰣇";
+        symbols.Ubuntu = "󰕈";
       };
       directory = {
         format = "[$path]($style)[$read_only ]($read_only_style)";
