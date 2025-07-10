@@ -28,7 +28,7 @@
 | 💻  | `canopus`  | Asus Zephyrus G15 | Ryzen 9 5900HS     | 16GB | RTX 3060                  | Optimized for productivity on the go and some gaming.                              |
 | ☁️  | `homelab`  | Minisforum MS-A1  | Ryzen 7 8700G      | 32GB | Radeon 780M               | WIP                                                                                |
 | ☁️  | `arcturus` | KVM               | 4 Core             | 8GB  |                           | Primary server responsible for exposing my homelab applications to the internet.   |
-| ☁️  | `alpha`    | KVM               | 2 Core             | 4GB  |                           | Monitors uptime and health status of all services across the infrastructure.       |
+| ☁️  | `alpha`    | KVM               | 4 Core             | 4GB  |                           | Monitors uptime and health status of all services across the infrastructure.       |
 | 🥔  | `vega`     | Raspberry Pi 3B+  | Cortex A53         | 1GB  |                           | Running AdGuard Home for network-wide ad blocking.                                 |
 | 📱  | `capella`  | Samsung S25 Ultra | Snapdragon 8 Elite | 12GB | Adreno 830                | Primary mobile for daily usage. (Locked)                                           |
 | 📱  | `rigel`    | Motorola Edge 30  | Snapdragon 778G+   | 8GB  | Adreno 642L               | Secondary mobile for some fun. (Rooted)                                            |
