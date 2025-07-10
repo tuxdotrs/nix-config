@@ -67,14 +67,14 @@
       # See https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
         rounding = rounding;
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
+        active_opacity = 0.95;
+        inactive_opacity = 0.95;
         fullscreen_opacity = 1.0;
 
         blur = {
           enabled = true;
-          size = 7;
-          passes = 4;
+          size = 6;
+          passes = 3;
           new_optimizations = true;
           xray = true;
           special = true;
