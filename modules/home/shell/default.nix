@@ -55,7 +55,7 @@
   };
 
   home.packages = with pkgs; [
-    service-wrapper
+    systemctl-tui
     ranger
     wget
     portal
