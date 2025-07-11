@@ -262,7 +262,7 @@
         # load hyprland plugins
         "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
 
-        "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/island-night.png"
+        "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/city.png"
         "${pkgs.tpanel}/bin/tpanel"
         "copyq"
       ];
