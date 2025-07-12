@@ -290,7 +290,56 @@
       '';
       profileConfig.text = ''
         (
-          active_profile: Quiet,
+          active_profile: Balanced,
+        )
+      '';
+      fanCurvesConfig.text = ''
+        (
+          profiles: (
+            balanced: [
+              (
+                fan: CPU,
+                pwm: (2, 22, 45, 68, 91, 153, 153, 153),
+                temp: (55, 62, 66, 70, 74, 78, 78, 78),
+                enabled: true,
+              ),
+              (
+                fan: GPU,
+                pwm: (2, 25, 48, 71, 94, 165, 165, 165)
+                temp: (55, 62, 66, 70, 74, 78, 78, 78),
+                enabled: true,
+              ),
+            ],
+            performance: [
+              (
+                fan: CPU,
+                pwm: (35, 68, 79, 91, 114, 175, 175, 175),
+                temp: (58, 62, 66, 70, 74, 78, 78, 78),
+                enabled: true,
+              ),
+              (
+                fan: GPU,
+                pwm: (35, 71, 84, 94, 119, 188, 188, 188),
+                temp: (58, 62, 66, 70, 74, 78, 78, 78),
+                enabled: true,
+              ),
+            ],
+            quiet: [
+              (
+                fan: CPU,
+                pwm: (2, 12, 25, 35, 48, 61, 84, 90),
+                temp: (55, 62, 66, 70, 74, 78, 82, 82),
+                enabled: true,
+              ),
+              (
+                fan: GPU,
+                pwm: (2, 12, 25, 35, 48, 61, 84, 84),
+                temp: (55, 62, 66, 70, 74, 78, 82, 82),
+                enabled: true,
+              ),
+            ],
+            custom: [],
+          ),
         )
       '';
     };
