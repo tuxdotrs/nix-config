@@ -233,9 +233,9 @@
       enable = true;
       settings = {
         battery = {
-          platform_profile = "quiet";
+          platform_profile = "balanced";
           governor = "powersave";
-          energy_performance_preference = "power";
+          energy_performance_preference = "performance";
           turbo = "never";
           scaling_min_freq = 400000;
           scaling_max_freq = 3800000;
@@ -246,7 +246,7 @@
           energy_performance_preference = "performance";
           turbo = "auto";
           scaling_min_freq = 400000;
-          scaling_max_freq = 4500000;
+          scaling_max_freq = 3800000;
         };
       };
     };
