@@ -176,7 +176,6 @@
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
       recommendedProxySettings = true;
-      recommendedZstdSettings = true;
     };
   };
 
