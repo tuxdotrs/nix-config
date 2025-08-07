@@ -144,5 +144,7 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [go-wol];
+
   system.stateVersion = "24.11";
 }
