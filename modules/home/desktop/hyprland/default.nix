@@ -23,9 +23,9 @@
       inactive_border_col = "rgba(86aaeccc) rgba(93cee9cc) 45deg";
 
       # Apps
-      terminal = "ghostty";
-      floating_terminal = "ghostty --class=com.ghostty.floating";
-      editor = "ghostty -e nvim";
+      terminal = "wezterm";
+      floating_terminal = "wezterm start --class wezterm-floating";
+      editor = "wezterm -e nvim";
       browser = "firefox";
       filemanager = "thunar";
     in {
