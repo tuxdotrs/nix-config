@@ -346,7 +346,8 @@
 
     gvfs.enable = true;
     tumbler.enable = true;
-    gnome.gnome-keyring.enable = true;
+    # @FIX gnome gcr agent conflicts with programs.ssh.startAgent;
+    # gnome.gnome-keyring.enable = true;
     tailscale = {
       enable = true;
       extraUpFlags = ["--login-server https://hs.tux.rs"];
