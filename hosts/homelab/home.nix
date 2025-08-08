@@ -6,6 +6,7 @@
       ".ssh"
       ".wakatime"
       ".config/sops"
+      ".config/go-wol"
       ".local/share/nvim"
       ".local/share/zsh"
       ".local/share/zoxide"
