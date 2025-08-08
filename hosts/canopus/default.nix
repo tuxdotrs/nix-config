@@ -31,7 +31,7 @@
       owner = "${username}";
     };
 
-    google_api_key = {
+    gemini_api_key = {
       sopsFile = ./secrets.yaml;
       owner = "${username}";
     };
