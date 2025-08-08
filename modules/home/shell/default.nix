@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  imports = [
+    ./lazygit.nix
+    ./aichat.nix
+  ];
+
   programs = {
     bat.enable = true;
     zsh = {
@@ -24,7 +29,6 @@
         bindkey '^R' fzf-history-widget
       '';
     };
-    lazygit.enable = true;
     zoxide = {
       enable = true;
       options = ["--cmd cd"];
