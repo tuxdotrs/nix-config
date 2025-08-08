@@ -101,6 +101,7 @@
     ];
     files = [
       ".wakatime.cfg"
+      ".config/aichat/.env"
     ];
     allowOther = true;
   };
