@@ -26,7 +26,7 @@
       terminal = "wezterm";
       floating_terminal = "wezterm start --class wezterm-floating";
       editor = "wezterm -e nvim";
-      browser = "firefox";
+      browser = "brave";
       filemanager = "thunar";
     in {
       #-- Output
