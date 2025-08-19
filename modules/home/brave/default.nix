@@ -25,6 +25,7 @@ in {
     package = pkgs.brave;
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
+      "--force-device-scale-factor=1.05"
     ];
   };
 
