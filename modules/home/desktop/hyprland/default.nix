@@ -31,7 +31,7 @@
     in {
       #-- Output
       # See https://wiki.hyprland.org/Configuring/Monitors
-      monitor = ",preferred,auto,1";
+      monitor = "eDP-1,2560x1440@90,auto,1";
 
       #-- Input: Keyboard, Mouse, Touchpad
       input = {
