@@ -1568,11 +1568,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755419486,
-        "narHash": "sha256-s1By+h0Bj+CG/waMRRAKtooURD3qKq9roDMlPU1dN5E=",
+        "lastModified": 1756904097,
+        "narHash": "sha256-niQjPQi2tdbKHtWuEe5dRiB+wXcXu/qlEbRzgsBbxtE=",
         "owner": "tuxdotrs",
         "repo": "tawm",
-        "rev": "06975c66b077fde66be8594c2ee583ecbf1963a2",
+        "rev": "1424e3718d9298addb30664dbc23dbd932fa44d6",
         "type": "github"
       },
       "original": {
