@@ -45,7 +45,14 @@
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [80 443 22 3000 6666 8081];
+      allowedTCPPorts = [
+        80
+        443
+        22
+        3000
+        6666
+        8081
+      ];
 
       # Facilitate firewall punching
       allowedUDPPorts = [41641];
@@ -174,7 +181,10 @@
     file-roller.enable = true;
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
     };
     nix-ld = {
       enable = true;
@@ -197,7 +207,9 @@
     };
 
     logind = {
-      extraConfig = "HandlePowerKey=suspend";
+      settings.Login = {
+        HandlePowerKey = "suspend";
+      };
       lidSwitch = "suspend";
       lidSwitchExternalPower = "suspend";
     };
