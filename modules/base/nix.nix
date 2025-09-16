@@ -4,7 +4,8 @@
   ...
 }: {
   nix = {
-    package = pkgs.lix;
+    # @TODO enable when lix is patched
+    # package = pkgs.lix;
 
     gc = {
       automatic = true;

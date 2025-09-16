@@ -209,9 +209,9 @@
     logind = {
       settings.Login = {
         HandlePowerKey = "suspend";
+        HanldeLidSwitch = "suspend";
+        HandleLidSwitchExternalPower = "suspend";
       };
-      lidSwitch = "suspend";
-      lidSwitchExternalPower = "suspend";
     };
 
     xrdp = {
