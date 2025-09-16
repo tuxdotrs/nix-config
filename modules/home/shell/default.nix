@@ -2,6 +2,7 @@
   imports = [
     ./lazygit.nix
     ./aichat.nix
+    ./superfile.nix
   ];
 
   programs = {
