@@ -122,7 +122,7 @@
           "layersOut, 1, 1.6, menu_accel"
           "fadeLayersIn, 1, 3, menu_decel"
           "fadeLayersOut, 1, 1.6, menu_accel"
-          "workspaces, 1, 7, menu_decel, slide"
+          "workspaces, 1, 3, menu_decel, slide"
           "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
