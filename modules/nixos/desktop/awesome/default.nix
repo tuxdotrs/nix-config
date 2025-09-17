@@ -6,7 +6,12 @@
   services = {
     displayManager = {
       defaultSession = "none+awesome";
-      ly.enable = true;
+      ly = {
+        enable = true;
+        settings = {
+          session_log = "null";
+        };
+      };
     };
 
     xserver = {
