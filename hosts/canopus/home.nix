@@ -89,6 +89,7 @@
       ".wakatime"
       ".rustup"
       ".cargo"
+      ".cache/spotify-player"
       ".config/BraveSoftware"
       ".config/copyq"
       ".config/discord"
