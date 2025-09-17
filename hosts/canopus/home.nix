@@ -21,6 +21,7 @@
     ../../modules/home/discord
     ../../modules/home/kdeconnect
     ../../modules/home/obs-studio
+    ../../modules/home/spotify
   ];
 
   home.pointerCursor = {
@@ -96,7 +97,6 @@
       ".config/sops"
       ".config/obs-studio"
       ".config/rustdesk"
-      ".config/spotify"
       ".local/share/nvim"
       ".local/share/zsh"
       ".local/share/zoxide"
@@ -104,7 +104,6 @@
       ".local/share/GalaxyBudsClient"
       ".local/share/TelegramDesktop"
       ".local/state/lazygit"
-      ".cache/spotify"
     ];
     files = [
       ".wakatime.cfg"

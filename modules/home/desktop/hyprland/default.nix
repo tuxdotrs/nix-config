@@ -27,6 +27,7 @@
       floating_terminal = "wezterm start --class wezterm-floating";
       editor = "wezterm -e nvim";
       browser = "brave";
+      spotify = "wezterm start --class wezterm-floating -e spotify_player";
       filemanager = "thunar";
     in {
       #-- Output
@@ -150,13 +151,16 @@
         "size 800 600, class:org.pulseaudio.pavucontrol"
 
         "float, class:com.ghostty.floating"
-        "size 900 700, class:com.ghostty.floating"
+        "size 1400 1000, class:com.ghostty.floating"
+
+        "float, class:wezterm-floating"
+        "size 1400 1000, class:wezterm-floating"
 
         "float, class:GalaxyBudsClient"
         "size 900 700, class:GalaxyBudsClient"
 
         "workspace 3 silent, class:(firefox|Brave-browser)"
-        "workspace 5 silent, class:(discord|Spotify|org.telegram.desktop)"
+        "workspace 5 silent, class:(discord|org.telegram.desktop)"
       ];
 
       plugin = {
@@ -182,7 +186,7 @@
         "SUPER, B, exec, ${browser}"
         "SUPER, G, exec, GalaxyBudsClient"
         "SUPER, D, exec, discord"
-        "SUPER, S, exec, spotify"
+        "SUPER, S, exec, ${spotify}"
         "SUPER, V, exec, copyq show"
 
         "SUPER_SHIFT, Return, exec, ${floating_terminal}"
