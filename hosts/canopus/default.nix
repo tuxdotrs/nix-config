@@ -35,6 +35,11 @@
       sopsFile = ./secrets.yaml;
       owner = "${username}";
     };
+
+    open_router_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
   };
 
   networking = {

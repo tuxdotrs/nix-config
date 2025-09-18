@@ -99,6 +99,7 @@
       ".config/obs-studio"
       ".config/rustdesk"
       ".local/share/nvim"
+      ".local/share/opencode"
       ".local/share/zsh"
       ".local/share/zoxide"
       ".local/share/Smart\ Code\ ltd"
