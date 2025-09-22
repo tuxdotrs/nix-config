@@ -75,7 +75,7 @@ reboot
 | Hotkeys       | Hyprland | Awful            |
 | Launcher      | Astal    | Rofi             |
 | Notifications | Astal    | Naughty          |
-| Terminal      | Ghostty  | Wezterm          |
+| Terminal      | Wezterm  | Wezterm          |
 | Editor        | Neovim   | Neovim           |
 
 ## Showcase
