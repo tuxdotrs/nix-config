@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [./hyprlock.nix];
+
   home.packages = with pkgs; [astal];
 
   wayland.windowManager.hyprland = {
@@ -205,6 +207,9 @@
 
         # shutdown
         "SUPER_SHIFT, P, exec, poweroff"
+
+        # lock
+        "SUPER_SHIFT, L, exec, hyprlock"
 
         # change focus
         "SUPER, left,  movefocus, l"
