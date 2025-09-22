@@ -15,6 +15,7 @@
     ../../modules/home/firefox
     ../../modules/home/brave
     ../../modules/home/vs-code
+    ../../modules/home/zed
     ../../modules/home/mopidy
     ../../modules/home/thunderbird
     ../../modules/home/easyeffects
