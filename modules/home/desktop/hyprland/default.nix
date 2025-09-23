@@ -282,6 +282,8 @@
         "hyprpaper"
         "${pkgs.tpanel}/bin/tpanel"
         "copyq"
+        "kdeconnectd"
+        "kdeconnect-indicator"
       ];
     };
   };
