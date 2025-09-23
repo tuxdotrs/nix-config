@@ -160,15 +160,14 @@
         "float, class:org.pulseaudio.pavucontrol"
         "size 800 600, class:org.pulseaudio.pavucontrol"
 
-        "float, class:com.ghostty.floating"
-        "size 1400 1000, class:com.ghostty.floating"
-
-        "float, class:wezterm-floating"
-        "size 1400 1000, class:wezterm-floating"
+        # Wezterm and Ghostty floating terminal
+        "float, class:(com.ghostty.floating|wezterm-floating)"
+        "size 1400 1000, class:(com.ghostty.floating|wezterm-floating)"
 
         "float, class:GalaxyBudsClient"
         "size 900 700, class:GalaxyBudsClient"
 
+        # KDE Conenct
         "float, class:(org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
         "size 900 700, class:(org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
