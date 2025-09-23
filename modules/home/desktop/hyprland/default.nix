@@ -167,7 +167,7 @@
         "float, class:GalaxyBudsClient"
         "size 900 700, class:GalaxyBudsClient"
 
-        # KDE Conenct
+        # KDE Connect
         "float, class:(org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
         "size 900 700, class:(org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
