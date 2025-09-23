@@ -200,6 +200,8 @@
   };
 
   services = {
+    fwupd.enable = true;
+    fstrim.enable = true;
     resolved.enable = true;
     flatpak.enable = true;
 

@@ -114,6 +114,9 @@
   };
 
   services = {
+    fwupd.enable = true;
+    fstrim.enable = true;
+
     tailscale = {
       enable = true;
       extraUpFlags = ["--login-server https://hs.tux.rs"];
