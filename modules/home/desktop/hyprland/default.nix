@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  imports = [./hyprlock.nix];
+  imports = [
+    ./hyprlock.nix
+    ./hyprpaper.nix
+  ];
 
   home.packages = with pkgs; [astal];
 
@@ -59,6 +62,11 @@
 
         "col.active_border" = active_border_col;
         "col.inactive_border" = inactive_border_col;
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        force_default_wallpaper = 1;
       };
 
       ecosystem = {
@@ -271,7 +279,7 @@
         # load hyprland plugins
         "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
 
-        "${pkgs.swaybg}/bin/swaybg -i ~/Wallpapers/mountain.jpg"
+        "hyprpaper"
         "${pkgs.tpanel}/bin/tpanel"
         "copyq"
       ];
