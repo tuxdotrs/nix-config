@@ -9,13 +9,22 @@
 
     gc = {
       automatic = true;
-      options = "--delete-older-than 3d";
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+
+    optimise = {
+      automatic = true;
+      dates = ["weekly"];
     };
 
     channel.enable = false;
 
     settings = {
-      extra-platforms = ["aarch64-linux" "arm-linux"];
+      extra-platforms = [
+        "aarch64-linux"
+        "arm-linux"
+      ];
       auto-optimise-store = true;
       allowed-users = ["${username}"];
       trusted-users = ["${username}"];
