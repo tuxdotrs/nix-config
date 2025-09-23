@@ -99,6 +99,7 @@
       ".config/sops"
       ".config/obs-studio"
       ".config/rustdesk"
+      ".config/kdeconnect"
       ".local/share/nvim"
       ".local/share/opencode"
       ".local/share/zsh"
