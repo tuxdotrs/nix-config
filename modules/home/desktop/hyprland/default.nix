@@ -192,7 +192,7 @@
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
-        "SUPER, A, exec, ags toggle app-launcher"
+        "SUPER, A, exec, ags toggle launcher"
         "SUPER, F, exec, ${filemanager}"
         "SUPER, E, exec, ${editor}"
         "SUPER, B, exec, ${browser}"
