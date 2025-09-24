@@ -4,7 +4,7 @@
     ./hyprpaper.nix
   ];
 
-  home.packages = with pkgs; [astal];
+  home.packages = with pkgs; [ags];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -192,7 +192,7 @@
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
-        "SUPER, A, exec, astal -t app-launcher"
+        "SUPER, A, exec, ags toggle app-launcher"
         "SUPER, F, exec, ${filemanager}"
         "SUPER, E, exec, ${editor}"
         "SUPER, B, exec, ${browser}"
@@ -204,9 +204,9 @@
         "SUPER_SHIFT, Return, exec, ${floating_terminal}"
         "SUPER_SHIFT, S, exec, flameshot gui"
 
-        # astal
-        "SUPER_SHIFT, R, exec, astal -q; ${pkgs.tpanel}/bin/tpanel"
-        "SUPER_SHIFT, B, exec, astal toggle-bar"
+        # ags
+        "SUPER_SHIFT, R, exec, ags quit; ${pkgs.tpanel}/bin/tpanel"
+        "SUPER_SHIFT, B, exec, ags toggle bar"
 
         # hyprland
         "SUPER, Q, killactive"

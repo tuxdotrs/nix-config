@@ -7,7 +7,7 @@
     tawm = inputs.tawm.packages.${prev.system}.default;
     tnvim = inputs.tnvim.packages.${prev.system}.default;
     tpanel = inputs.tpanel.packages.${prev.system}.default;
-    astal = inputs.tpanel.packages.${prev.system}.astal.default;
+    ags = inputs.tpanel.packages.${prev.system}.ags.default;
     tfolio = inputs.tfolio.packages.${prev.system}.default;
     trok = inputs.trok.packages.${prev.system}.default;
     cyber-tux = inputs.cyber-tux.packages.${prev.system}.default;
