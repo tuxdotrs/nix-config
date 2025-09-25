@@ -380,6 +380,7 @@
   fonts.packages = with pkgs.nerd-fonts; [
     fira-code
     jetbrains-mono
+    bigblue-terminal
   ];
 
   programs.fuse.userAllowOther = true;
