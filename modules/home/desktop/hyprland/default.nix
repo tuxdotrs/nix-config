@@ -192,7 +192,6 @@
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
-        "SUPER, A, exec, ags toggle launcher"
         "SUPER, F, exec, ${filemanager}"
         "SUPER, E, exec, ${editor}"
         "SUPER, B, exec, ${browser}"
@@ -205,6 +204,8 @@
         "SUPER_SHIFT, S, exec, flameshot gui"
 
         # ags
+        "SUPER, A, exec, ags toggle launcher"
+        "SUPER, C, exec, ags toggle control-center"
         "SUPER_SHIFT, R, exec, ags quit; ${pkgs.tpanel}/bin/tpanel"
         "SUPER_SHIFT, B, exec, ags toggle bar"
 
