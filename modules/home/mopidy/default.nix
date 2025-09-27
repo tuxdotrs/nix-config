@@ -18,7 +18,6 @@
       visualizer_type = "spectrum";
       visualizer_look = "▄▍";
       visualizer_spectrum_smooth_look = "yes";
-      visualizer_sync_interval = 0;
       song_status_format = "$b$7♫ $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b ";
       header_visibility = "no";
       color1 = "white";
