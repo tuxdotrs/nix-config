@@ -77,6 +77,7 @@
     vlc
     tor-browser
     distrobox
+    bluetui
   ];
 
   home.persistence."/persist/home/${username}" = {
