@@ -78,6 +78,7 @@
     tor-browser
     distrobox
     bluetui
+    impala
   ];
 
   home.persistence."/persist/home/${username}" = {
