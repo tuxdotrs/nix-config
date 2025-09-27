@@ -394,6 +394,7 @@
       "/var/lib/nixos"
       "/var/lib/docker"
       "/var/lib/waydroid"
+      "/var/lib/iwd"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
