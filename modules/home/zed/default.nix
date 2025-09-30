@@ -11,8 +11,8 @@
       }
     ];
     userSettings = {
-      ui_font_size = 8;
-      buffer_font_size = 8;
+      ui_font_size = 18;
+      buffer_font_size = 18;
       theme = {
         mode = "dark";
         light = "Ayu Light";
