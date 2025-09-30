@@ -261,6 +261,7 @@
         "SUPER_ALT, right, moveactive, 20 0"
         "SUPER_ALT, up,    moveactive, 0 -20"
         "SUPER_ALT, down,  moveactive, 0 20"
+        "SUPER_ALT, equal, exec, hyprctl dispatch centerwindow;"
 
         # speaker and mic volume control
         " , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+"
