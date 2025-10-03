@@ -10,7 +10,7 @@
       default_open_file_preview = true;
       show_image_preview = true;
       show_panel_footer_info = true;
-      default_directory = ".";
+      default_directory = "~";
       file_size_use_si = false;
       default_sort_type = 0;
       sort_order_reversed = false;
