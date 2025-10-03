@@ -33,7 +33,7 @@
       editor = "wezterm -e nvim";
       browser = "brave";
       spotify = "wezterm start --class wezterm-floating -e spotify_player";
-      filemanager = "thunar";
+      filemanager = "wezterm start --class wezterm-floating -e superfile";
     in {
       #-- Output
       # See https://wiki.hyprland.org/Configuring/Monitors
