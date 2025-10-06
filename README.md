@@ -80,7 +80,21 @@ reboot
 
 ## Showcase
 
-### Desktop
+### Desktop Hyprland
+
+![Desktop](https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/desktop.png)
+
+### tPanel
+
+![tPanel](https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/tPanel.png)
+
+### Workflow
+
+![Workflow](https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/workflow.png)
+
+## Showcase
+
+### Desktop AwesomeWM
 
 ![2024-08-08_18-33](https://github.com/user-attachments/assets/1cdcc387-0f68-486c-a76c-a36ad2acb78d)
 
