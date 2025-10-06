@@ -71,10 +71,10 @@ reboot
 | DM            | ly       | ly               |
 | WM/DE         | Hyprland | AwesomeWM        |
 | Compositor    | Hyprland | Picom (Jonaburg) |
-| Bar           | AGS      | Wibar            |
+| Bar           | tPanel   | Wibar            |
 | Hotkeys       | Hyprland | Awful            |
-| Launcher      | AGS      | Rofi             |
-| Notifications | AGS      | Naughty          |
+| Launcher      | tPanel   | Rofi             |
+| Notifications | tPanel   | Naughty          |
 | Terminal      | Wezterm  | Wezterm          |
 | Editor        | Neovim   | Neovim           |
 
