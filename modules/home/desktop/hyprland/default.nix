@@ -41,13 +41,17 @@
 
       #-- Input: Keyboard, Mouse, Touchpad
       input = {
-        sensitivity = 0;
+        sensitivity = -0.5;
         scroll_method = "2 fg";
-        natural_scroll = true;
         touchpad = {
           natural_scroll = true;
           clickfinger_behavior = false;
         };
+      };
+
+      device = {
+        name = "asue1209:00-04f3:319f-touchpad";
+        sensitivity = 0;
       };
 
       #-- General
