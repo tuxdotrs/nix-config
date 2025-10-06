@@ -193,6 +193,11 @@
         };
       };
 
+      bindm = [
+        "SUPER,mouse:273,resizewindow"
+        "SUPER,mouse:272,movewindow"
+      ];
+
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
