@@ -244,6 +244,7 @@
     };
 
     libinput.touchpad.naturalScrolling = true;
+    libinput.mouse.accelProfile = "flat";
 
     # To use Auto-cpufreq we need to
     # disable TLP because it's enabled by nixos-hardware

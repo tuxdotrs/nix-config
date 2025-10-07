@@ -65,6 +65,7 @@
     };
 
     libinput.touchpad.naturalScrolling = true;
+    libinput.mouse.accelProfile = "flat";
 
     blueman.enable = true;
 
