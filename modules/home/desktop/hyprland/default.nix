@@ -41,7 +41,7 @@
 
       #-- Input: Keyboard, Mouse, Touchpad
       input = {
-        sensitivity = -0.5;
+        sensitivity = -0.7;
         scroll_method = "2 fg";
         touchpad = {
           natural_scroll = true;
