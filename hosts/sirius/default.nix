@@ -14,6 +14,23 @@
 
   tux.services.openssh.enable = true;
 
+  sops.secrets = {
+    hyperbolic_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
+
+    gemini_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
+
+    open_router_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
+  };
+
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   nixpkgs = {
