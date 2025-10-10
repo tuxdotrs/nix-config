@@ -166,7 +166,7 @@
 
         # Wezterm and Ghostty floating terminal
         "float, class:(com.ghostty.floating|wezterm-floating)"
-        "size 1400 1000, class:(com.ghostty.floating|wezterm-floating)"
+        "size 1200 800, class:(com.ghostty.floating|wezterm-floating)"
 
         "float, class:GalaxyBudsClient"
         "size 900 700, class:GalaxyBudsClient"
@@ -224,7 +224,7 @@
         "SUPER, grave, hyprexpo:expo, toggle"
         "SUPER_SHIFT, Q, forcekillactive"
         "SUPER_SHIFT, F, fullscreen, 0"
-        "SUPER_SHIFT, Space, exec, hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 1600 1200; hyprctl dispatch centerwindow;"
+        "SUPER_SHIFT, Space, exec, hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 1200 800; hyprctl dispatch centerwindow;"
 
         # shutdown
         "SUPER_SHIFT, P, exec, poweroff"
