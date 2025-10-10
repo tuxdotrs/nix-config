@@ -259,6 +259,14 @@
         "SUPER_SHIFT, 5, movetoworkspacesilent, 5"
       ];
 
+      workspace = [
+        "1, monitor:HDMI-A-1"
+        "2, monitor:HDMI-A-1"
+        "3, monitor:HDMI-A-1"
+        "4, monitor:eDP-1"
+        "5, monitor:eDP-1"
+      ];
+
       binde = [
         # resize active
         "SUPER_CTRL, left,  resizeactive, -20 0"
