@@ -7,13 +7,25 @@
       partitions = {
         # EFI Partition
         ESP = {
-          size = "512M";
+          size = "1G";
           type = "EF00";
           content = {
             type = "filesystem";
             format = "vfat";
             mountpoint = "/boot";
-            mountOptions = ["defaults" "umask=0077"];
+            mountOptions = [
+              "defaults"
+              "umask=0077"
+            ];
+          };
+        };
+        # Swap Partition
+        swap = {
+          size = "32G";
+          content = {
+            type = "swap";
+            discardPolicy = "both";
+            resumeDevice = true; # Enable hibernation
           };
         };
         # Btrfs Root Partition
@@ -24,11 +36,19 @@
             type = "btrfs";
             subvolumes = {
               "/root" = {
-                mountOptions = ["compress=zstd"]; # Compression for better performance
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                  "space_cache=v2"
+                ]; # Compression for better performance
                 mountpoint = "/"; # Root subvolume
               };
               "/persist" = {
-                mountOptions = ["compress=zstd"]; # Compression for persistent data
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                  "space_cache=v2"
+                ]; # Compression for persistent data
                 mountpoint = "/persist"; # Persistent subvolume
               };
               "/nix" = {
@@ -36,6 +56,7 @@
                   "compress=zstd"
                   "noatime"
                   "noacl"
+                  "space_cache=v2"
                 ]; # Optimize for Nix store
                 mountpoint = "/nix"; # Nix subvolume
               };
