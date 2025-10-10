@@ -4,7 +4,7 @@ keys:
 
   - &hosts
     - &sirius age1f860dfewlx5jtt9ejr47gywx70p3dmyc8mat29gpr75psljwjv8q5xyxkq
-    - &canopus age1udt3cssu7ahdrhsvckt8450rswrr6mknn36xpq74dkfp9lpajvnq84kdzj
+    - &canopus age1x36yr8h993srfj29sfpzt4wyz52nztvncpmhgmfs0j26qvfecq3qvcm0an
     - &homelab age1jg642q775gmnmxeu29gcf3lph8vem4xr8t84cxe809dpd0myrussh49h60
     - &arcturus age1zsl5d4vj6gl3h96y5p53sq5y4vr4vtlwp727h7rp9a4xfkxm53lqrh6r50
     - &alpha age1zujp5gxy7suv8ysnygv43cmzuvv36nxfg0ch7r3xg2emc6fz3vmqqujheq
