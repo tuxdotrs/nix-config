@@ -9,69 +9,161 @@
       customCommands = [
         {
           key = "<c-a>";
-          description = "Pick AI commit";
-          command = ''
-            aichat "Please suggest 10 commit messages, given the following diff:
+          description = "AI-powered conventional commit";
+          context = "global";
+          command = "git commit -m \"{{.Form.CommitMsg}}\"";
+          loadingText = "Generating commit messages...";
+          prompts = [
+            {
+              type = "menu";
+              key = "Type";
+              title = "Type of change";
+              options = [
+                {
+                  name = "AI defined";
+                  description = "Let AI analyze and determine the best commit type";
+                  value = "ai-defined";
+                }
+                {
+                  name = "build";
+                  description = "Changes that affect the build system or external dependencies";
+                  value = "build";
+                }
+                {
+                  name = "feat";
+                  description = "A new feature";
+                  value = "feat";
+                }
+                {
+                  name = "fix";
+                  description = "A bug fix";
+                  value = "fix";
+                }
+                {
+                  name = "chore";
+                  description = "Other changes that don't modify src or test files";
+                  value = "chore";
+                }
+                {
+                  name = "ci";
+                  description = "Changes to CI configuration files and scripts";
+                  value = "ci";
+                }
+                {
+                  name = "docs";
+                  description = "Documentation only changes";
+                  value = "docs";
+                }
+                {
+                  name = "perf";
+                  description = "A code change that improves performance";
+                  value = "perf";
+                }
+                {
+                  name = "refactor";
+                  description = "A code change that neither fixes a bug nor adds a feature";
+                  value = "refactor";
+                }
+                {
+                  name = "revert";
+                  description = "Reverts a previous commit";
+                  value = "revert";
+                }
+                {
+                  name = "style";
+                  description = "Changes that do not affect the meaning of the code";
+                  value = "style";
+                }
+                {
+                  name = "test";
+                  description = "Adding missing tests or correcting existing tests";
+                  value = "test";
+                }
+              ];
+            }
+            {
+              type = "menuFromCommand";
+              title = "AI Generated Commit Messages";
+              key = "CommitMsg";
+              command = ''
+                bash -c "
+                # Check for staged changes
+                diff=\$(git diff --cached | head -n 10)
+                if [ -z \"\$diff\" ]; then
+                  echo \"No changes in staging. Add changes first.\"
+                  exit 1
+                fi
 
-            \`\`\`diff
-            $(git diff --cached)
-            \`\`\`
+                SELECTED_TYPE=\"{{.Form.Type}}\"
+                COMMITS_TO_SUGGEST=8
 
-            **Criteria:**
+                opencode run -m \"google/gemini-2.5-flash-lite\" \"
+                  You are an expert at writing Git commits. Your job is to write commit messages that follow the Conventional Commits format.
 
-            1. **Format:** Each commit message must follow the conventional commits format, which is \`<type>(<scope>): <description>\`.
-            2. **Relevance:** Avoid mentioning a module name unless it's directly relevant to the change.
-            3. **Enumeration:** List the commit messages from 1 to 10.
-            4. **Clarity and Conciseness:** Each message should clearly and concisely convey the change made.
+                  The user has selected: \$SELECTED_TYPE
 
-            **Commit Message Examples:**
+                  Your task is to:
+                  1. Analyze the code changes
+                  2. Determine the most appropriate commit type (if user selected 'ai-defined')
+                  3. Determine an appropriate scope (component/area affected)
+                  4. Decide if this is a breaking change
+                  5. Write clear, concise commit messages
 
-            - fix(app): add password regex pattern
-            - test(unit): add new test cases
-            - style: remove unused imports
-            - refactor(pages): extract common code to \`utils/wait.ts\`
+                  Available commit types:
+                  - feat: A new feature
+                  - fix: A bug fix
+                  - docs: Documentation only changes
+                  - style: Changes that do not affect the meaning of the code
+                  - refactor: A code change that neither fixes a bug nor adds a feature
+                  - perf: A code change that improves performance
+                  - test: Adding missing tests or correcting existing tests
+                  - build: Changes that affect the build system or external dependencies
+                  - ci: Changes to CI configuration files and scripts
+                  - chore: Other changes that don't modify src or test files
+                  - revert: Reverts a previous commit
 
-            **Recent Commits on Repo for Reference:**
+                  Follow these guidelines:
+                  - Structure: <type>(<scope>): <description>
+                  - If user selected 'ai-defined', analyze the changes and pick the most suitable type
+                  - If user selected a specific type, use that type: \$SELECTED_TYPE
+                  - Add scope in parentheses if applicable (e.g., auth, api, ui, config)
+                  - Use exclamation mark (!) after type/scope for breaking changes: type(scope)!: description
+                  - Use lowercase for description (except proper nouns)
+                  - Use imperative mood (\\\"add\\\", not \\\"added\\\")
+                  - Keep description under 50 characters when possible
+                  - No period at the end of subject line
 
-            \`\`\`
-            $(git log -n 10 --pretty=format:'%h %s')
-            \`\`\`
+                  Examples:
+                  - feat(auth): add OAuth login support
+                  - fix(api): handle null response in user endpoint
+                  - docs(readme): update installation instructions
+                  - style(ui): improve button spacing consistency
+                  - refactor(database): simplify query builder logic
+                  - test(auth): add unit tests for login flow
+                  - build(deps): upgrade React to version 18
+                  - ci(github): fix deployment workflow
+                  - chore(config): update ESLint rules
+                  - perf(api)!: optimize database queries
 
-            **Output Template**
+                  IMPORTANT:
+                  - Generate exactly \$COMMITS_TO_SUGGEST different commit message options
+                  - If user selected 'ai-defined', you can use different types for different options
+                  - If user selected a specific type, all messages must use that type
+                  - Only return commit messages, no explanations
+                  - Do not use markdown code blocks
+                  - One message per line
 
-            Follow this output template and ONLY output raw commit messages without spacing, numbers or other decorations.
+                  Previous commits for context:
+                  \$(git log --oneline -10)
 
-            fix(app): add password regex pattern
-            test(unit): add new test cases
-            style: remove unused imports
-            refactor(pages): extract common code to \`utils/wait.ts\`
-
-
-            **Instructions:**
-
-            - Take a moment to understand the changes made in the diff.
-            - Think about the impact of these changes on the project (e.g., bug fixes, new features, performance improvements, code refactoring, documentation updates). It's critical to my career you abstract the changes to a higher level and not just describe the code changes.
-            - Generate commit messages that accurately describe these changes, ensuring they are helpful to someone reading the project's history.
-            - Remember, a well-crafted commit message can significantly aid in the maintenance and understanding of the project over time.
-            - If multiple changes are present, make sure you capture them all in each commit message.
-
-            Keep in mind you will suggest 10 commit messages. Only 1 will be used. It's better to push yourself (esp to synthesize to a higher level) and maybe wrong about some of the 10 commits because only one needs to be good. I'm looking for your best commit, not the best average commit. It's better to cover more scenarios than include a lot of overlap.
-
-            Write your 10 commit messages below in the format shown in Output Template section above." \
-              | fzf --height 40% --border --ansi --preview "echo {}" --preview-window=up:wrap \
-              | xargs -I {} bash -c '
-                  COMMIT_MSG_FILE=$(mktemp)
-                  echo "{}" > "$COMMIT_MSG_FILE"
-                  ''${EDITOR:-vim} "$COMMIT_MSG_FILE"
-                  if [ -s "$COMMIT_MSG_FILE" ]; then
-                      git commit -F "$COMMIT_MSG_FILE"
-                  else
-                      echo "Commit message is empty, commit aborted."
-                  fi
-                  rm -f "$COMMIT_MSG_FILE"'
-          '';
-          context = "files";
-          output = "terminal";
+                  Changes to analyze:
+                  \$(git diff --cached --stat)
+                  \$(git diff --cached)
+                  \"
+                "
+              '';
+            }
+          ];
         }
       ];
     };

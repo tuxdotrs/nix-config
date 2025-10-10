@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./lazygit.nix
-    ./aichat.nix
     ./superfile.nix
     ./open-code.nix
   ];
