@@ -235,14 +235,6 @@
       openDefaultPorts = true;
     };
 
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "in";
-        variant = "eng";
-      };
-    };
-
     libinput.touchpad.naturalScrolling = true;
     libinput.mouse.accelProfile = "flat";
 
