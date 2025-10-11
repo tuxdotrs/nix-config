@@ -35,7 +35,10 @@
     ssh.startAgent = true;
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
     };
     nm-applet.enable = true;
   };
@@ -51,16 +54,10 @@
     };
 
     logind = {
-      extraConfig = "HandlePowerKey=suspend";
-      lidSwitch = "suspend";
-      lidSwitchExternalPower = "suspend";
-    };
-
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "in";
-        variant = "eng";
+      settings.Login = {
+        HandlePowerKey = "suspend";
+        HanldeLidSwitch = "suspend";
+        HandleLidSwitchExternalPower = "suspend";
       };
     };
 
@@ -76,6 +73,7 @@
   fonts.packages = with pkgs.nerd-fonts; [
     fira-code
     jetbrains-mono
+    bigblue-terminal
   ];
 
   home-manager.users.${username} = {
