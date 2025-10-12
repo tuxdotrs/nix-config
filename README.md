@@ -36,33 +36,116 @@
 
 ## Installation
 
-Boot into NixOS bootable USB and then enter the following commands
+> **Note:** This will get your base system ready, but keep in mind that many things might not work correctly — such as monitor resolution, font size, and more.
+
+### Prerequisites
+
+Boot into the NixOS bootable USB before proceeding with the installation steps.
+
+### Installation Steps
+
+#### 1. Clone the repository
+
+```bash
+git clone https://github.com/tuxdotrs/nix-config.git
+cd nix-config
+```
+
+#### 2. Gain root privileges
+
+```bash
+sudo su
 
 ```
-# Clone this repositry
-git clone https://github.com/tuxdotrs/nix-config.git
 
-# Navigate to the repository directory
-cd nix-config
+#### 3. Set up disk partitioning
 
-# Install disko for disk partitioning
-nix-shell -p disko
+Install the required tools:
 
-# Partition the disk and make sure to replace DISK_PATH (eg. /dev/vda)
+```bash
+nix-shell -p disko neovim
+```
+
+Partition your disk using disko. **This will wipe your drive.** Replace `DISK_PATH` with your actual disk path (e.g., `/dev/vda` or `/dev/nvme0n1`):
+
+```bash
 disko --mode disko ./hosts/canopus/disko.nix --arg device '"DISK_PATH"'
+```
 
-# Generate the hardware.nix file for your system
+#### 4. Configure your disk
+
+Edit the configuration file:
+
+```bash
+nvim ./hosts/canopus/default.nix
+```
+
+In the imports statement, replace:
+
+```nix
+(import ./disko.nix {device = "/dev/nvme0n1";})
+```
+
+with:
+
+```nix
+(import ./disko.nix {device = "DISK_PATH";})
+```
+
+Make sure to replace `DISK_PATH` with your actual disk path.
+
+#### 5. Generate hardware configuration
+
+```bash
 nixos-generate-config --no-filesystems --root /mnt
+```
 
-# Replace the hardware.nix with generated one
+Copy the generated hardware configuration to the repository:
+
+```bash
 cp /mnt/etc/nixos/hardware-configuration.nix ./hosts/canopus/hardware.nix
+```
 
-# Install
+#### 6. Install NixOS
+
+```bash
 nixos-install --root /mnt --flake .#canopus
+```
 
-# Reboot to your beautiful DE
+#### 7. Enter into the new system
+
+```bash
+nixos-enter --root /mnt
+```
+
+#### 8. Set up directories and permissions
+
+```bash
+mkdir -p /persist/home
+chown -R tux:users /persist/home
+```
+
+#### 9. Set passwords
+
+Set the root password:
+
+```bash
+passwd root
+```
+
+Set the user password:
+
+```bash
+passwd tux
+```
+
+#### 10. Reboot
+
+```bash
 reboot
 ```
+
+Your NixOS system should now boot into a beautiful DE.
 
 ## Components
 
