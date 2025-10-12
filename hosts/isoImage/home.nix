@@ -12,6 +12,7 @@
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
+    size = 28;
   };
 
   home.stateVersion = "24.11";
