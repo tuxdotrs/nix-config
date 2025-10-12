@@ -166,5 +166,6 @@
     impermanence.url = "github:nix-community/impermanence";
     deploy-rs.url = "github:serokell/deploy-rs";
     nixcord.url = "github:kaylorben/nixcord";
+    lan-mouse.url = "github:feschber/lan-mouse";
   };
 }
