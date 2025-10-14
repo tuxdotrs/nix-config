@@ -23,6 +23,21 @@
     discord_token = {
       sopsFile = ./secrets.yaml;
     };
+
+    hyperbolic_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
+
+    gemini_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
+
+    open_router_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
   };
 
   tux.services.cyber-tux = {
