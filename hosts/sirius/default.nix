@@ -12,6 +12,8 @@
     ../../modules/nixos/virtualisation/docker.nix
   ];
 
+  hardware.nvidia-container-toolkit.suppressNvidiaDriverAssertion = true;
+
   tux.services.openssh.enable = true;
 
   sops.secrets = {
