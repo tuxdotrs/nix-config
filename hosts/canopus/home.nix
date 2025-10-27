@@ -12,7 +12,6 @@
     ../../modules/home/ghostty
     ../../modules/home/desktop/rofi
     ../../modules/home/lan-mouse
-    ../../modules/home/barrier
     ../../modules/home/firefox
     ../../modules/home/brave
     ../../modules/home/vs-code
