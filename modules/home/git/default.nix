@@ -5,13 +5,15 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "${username}";
-    userEmail = "${email}";
     signing = {
       key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "${username}";
+        email = "${email}";
+      };
       init.defaultBranch = "main";
       commit.gpgSign = true;
       gpg.format = "ssh";
