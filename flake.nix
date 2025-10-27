@@ -66,6 +66,7 @@
       alpha = nixosSystem (mkNixOSConfig "alpha");
       sirius = nixosSystem (mkNixOSConfig "sirius");
       vega = nixosSystem (mkNixOSConfig "vega");
+      node = nixosSystem (mkNixOSConfig "node");
       vps = nixosSystem (mkNixOSConfig "vps");
       isoImage = nixosSystem (mkNixOSConfig "isoImage");
       homelab = nixosSystem (mkNixOSConfig "homelab");
@@ -85,6 +86,7 @@
         alpha = mkNixOSNode "alpha";
         sirius = mkNixOSNode "sirius";
         vega = mkNixOSNode "vega";
+        node = mkNixOSNode "node";
         homelab = mkNixOSNode "homelab";
         capella = mkDroidNode "capella";
         rigel = mkDroidNode "rigel";
