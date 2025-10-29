@@ -12,7 +12,10 @@
     ../../modules/nixos/virtualisation/docker.nix
   ];
 
-  hardware.nvidia-container-toolkit.suppressNvidiaDriverAssertion = true;
+  hardware.nvidia-container-toolkit = {
+    enable = true;
+    suppressNvidiaDriverAssertion = true;
+  };
 
   tux.services.openssh.enable = true;
 

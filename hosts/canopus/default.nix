@@ -21,8 +21,8 @@
     ../../modules/nixos/steam.nix
   ];
 
+  hardware.nvidia-container-toolkit.enable = true;
   tux.services.openssh.enable = true;
-
   nixpkgs.config.cudaSupport = true;
 
   sops.secrets = {
