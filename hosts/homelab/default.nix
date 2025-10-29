@@ -156,6 +156,7 @@
     ];
   };
 
+  users.users.${username} = {linger = true;};
   home-manager.users.${username} = {
     imports = [
       ./home.nix
