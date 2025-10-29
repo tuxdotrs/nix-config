@@ -36,7 +36,8 @@
 
 ## Installation
 
-> **Note:** This will get your base system ready, but keep in mind that many things might not work correctly — such as monitor resolution, font size, and more.
+> [!NOTE]  
+> This will get your base system ready, but keep in mind that many things might not work correctly — such as monitor resolution, font size, and more.
 
 ### Prerequisites
 
