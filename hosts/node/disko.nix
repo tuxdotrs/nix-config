@@ -1,6 +1,7 @@
 {
   device ? throw "Set this to the disk device, e.g. /dev/nvme0n1",
   device2 ? throw "Set this to the disk device2, e.g. /dev/nvme1n1",
+  device3 ? throw "Set this to the disk device3, e.g. /dev/nvme1n1",
   ...
 }: {
   disko.devices = {
@@ -40,6 +41,23 @@
               content = {
                 type = "mdraid";
                 name = "raid0";
+              };
+            };
+          };
+        };
+      };
+      hdd = {
+        type = "disk";
+        device = "${device3}";
+        content = {
+          type = "gpt";
+          partitions = {
+            data = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/mnt/hdd";
               };
             };
           };

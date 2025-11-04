@@ -9,7 +9,7 @@ keys:
     - &arcturus age1zsl5d4vj6gl3h96y5p53sq5y4vr4vtlwp727h7rp9a4xfkxm53lqrh6r50
     - &alpha age1zujp5gxy7suv8ysnygv43cmzuvv36nxfg0ch7r3xg2emc6fz3vmqqujheq
     - &vega age1ydkclhk9kwqdq74utesqdfupt43lz64d5k65gz2z9uyljcqq9fcq3hv28l
-    - &node age1cltj5wl3evxq57d7rpdglptexejgefs39njtcvmsm4fuc8kn5p8sqpef4z
+    - &node age1put942dyhly8nk9c8n0h8tq0x6xplrg3uw5q0d2jmvwez3zq79qsapl7he
     - &capella age1y4luzn2jls7rvgphej23srvdlx563lxq29tvf66vhwwzaf7c3f3qzvresh
 
 creation_rules:

@@ -1,7 +1,6 @@
 {
   inputs,
   username,
-  lib,
   ...
 }: {
   imports = [
@@ -10,6 +9,7 @@
     (import ./disko.nix {
       device = "/dev/nvme0n1";
       device2 = "/dev/nvme1n1";
+      device3 = "/dev/sda";
     })
     ./hardware.nix
 
