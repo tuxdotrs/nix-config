@@ -8,11 +8,11 @@
       splash_offset = 2.0;
 
       preload = [
-        "~/Wallpapers/mountain.jpg"
+        "~/Wallpapers/new/sunset-pixel.png"
       ];
 
       wallpaper = [
-        ", ~/Wallpapers/mountain.jpg"
+        ", ~/Wallpapers/new/sunset-pixel.png"
       ];
     };
   };
