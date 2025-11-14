@@ -19,7 +19,7 @@
     ../../modules/nixos/selfhosted/headscale.nix
     ../../modules/nixos/selfhosted/vaultwarden.nix
     ../../modules/nixos/selfhosted/gitea.nix
-    ../../modules/nixos/selfhosted/plausible.nix
+    ../../modules/nixos/selfhosted/umami.nix
     ../../modules/nixos/selfhosted/monitoring/grafana.nix
     ../../modules/nixos/selfhosted/monitoring/loki.nix
     ../../modules/nixos/selfhosted/monitoring/promtail.nix
@@ -95,6 +95,10 @@
     };
 
     aiostreams = {
+      sopsFile = ./secrets.yaml;
+    };
+
+    umami = {
       sopsFile = ./secrets.yaml;
     };
   };
