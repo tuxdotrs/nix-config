@@ -2,7 +2,8 @@
   inputs,
   username,
   ...
-}: {
+}:
+{
   imports = [
     inputs.disko.nixosModules.default
 
@@ -28,7 +29,13 @@
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [22];
+      allowedTCPPorts = [
+        22
+        8545
+        8546
+        9545
+        9546
+      ];
     };
   };
 
