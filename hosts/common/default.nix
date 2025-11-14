@@ -15,6 +15,7 @@
     ../../modules/nixos/selfhosted/upstream-proxy.nix
     ../../modules/nixos/selfhosted/tfolio.nix
     ../../modules/nixos/selfhosted/cyber-tux.nix
+    ../../modules/nixos/selfhosted/containers/aiostreams.nix
     ../../modules/nixos/networking/ssh.nix
   ];
 
@@ -48,7 +49,14 @@
   home-manager = {
     backupFileExtension = "hm-backup";
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs outputs username email;};
+    extraSpecialArgs = {
+      inherit
+        inputs
+        outputs
+        username
+        email
+        ;
+    };
     users.${username} = {
       imports = [
         ./home.nix
