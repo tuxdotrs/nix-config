@@ -23,6 +23,7 @@
 
   hardware.nvidia-container-toolkit.enable = true;
   tux.services.openssh.enable = true;
+  tux.packages.distrobox.enable = true;
   nixpkgs.config.cudaSupport = true;
 
   sops.secrets = {

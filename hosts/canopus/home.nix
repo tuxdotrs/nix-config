@@ -77,7 +77,6 @@
     copyq
     vlc
     tor-browser
-    distrobox
     bluetui
     impala
   ];
@@ -91,6 +90,7 @@
       "Videos"
       "Projects"
       "Stuff"
+      "Distrobox"
       "go"
       ".mozilla"
       ".ssh"

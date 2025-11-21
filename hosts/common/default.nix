@@ -17,6 +17,7 @@
     ../../modules/nixos/selfhosted/cyber-tux.nix
     ../../modules/nixos/selfhosted/containers/aiostreams.nix
     ../../modules/nixos/networking/ssh.nix
+    ../../modules/nixos/distrobox.nix
   ];
 
   sops.secrets.tux-password = {
