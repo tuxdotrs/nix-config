@@ -58,7 +58,7 @@
     nix-ld = {
       enable = true;
       libraries = config.hardware.graphics.extraPackages;
-      package = pkgs.nix-ld-rs;
+      package = pkgs.nix-ld;
     };
 
     dconf.enable = true;

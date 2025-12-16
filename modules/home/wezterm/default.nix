@@ -1,11 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.wezterm = {
     enable = true;
-    package = inputs.wezterm-flake.packages."${pkgs.system}".default;
+    package = pkgs.wezterm-git;
     enableZshIntegration = false;
 
     extraConfig = ''

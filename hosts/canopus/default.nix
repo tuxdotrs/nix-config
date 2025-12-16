@@ -184,7 +184,6 @@
   programs = {
     ssh.startAgent = true;
     xfconf.enable = true;
-    file-roller.enable = true;
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
@@ -194,7 +193,7 @@
     };
     nix-ld = {
       enable = true;
-      package = pkgs.nix-ld-rs;
+      package = pkgs.nix-ld;
     };
     nm-applet.enable = true;
     noisetorch.enable = true;
