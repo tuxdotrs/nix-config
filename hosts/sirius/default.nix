@@ -47,6 +47,7 @@
     enable = true;
     defaultUser = "${username}";
     useWindowsDriver = true;
+    interop.register = true;
   };
 
   networking.hostName = "sirius";
