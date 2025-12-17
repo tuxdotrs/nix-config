@@ -150,7 +150,6 @@
         mfact = 0.5;
         new_on_top = false;
         orientation = "left";
-        inherit_fullscreen = true;
         smart_resizing = true;
         drop_at_cursor = true;
       };
