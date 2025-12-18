@@ -156,26 +156,20 @@
 
       #-- Window Rules
       # See https://wiki.hyprland.org/Configuring/Window-Rules
-      windowrulev2 = [
-        "float, class:com.github.hluk.copyq"
-        "size 800 600, class:com.github.hluk.copyq"
-
-        "float, class:org.pulseaudio.pavucontrol"
-        "size 800 600, class:org.pulseaudio.pavucontrol"
+      windowrule = [
+        "float on, center on, size 900 700, match:class com.github.hluk.copyq"
+        "float on, center on, size 800 600, match:class org.pulseaudio.pavucontrol"
 
         # Wezterm and Ghostty floating terminal
-        "float, class:(com.ghostty.floating|wezterm-floating)"
-        "size 1200 800, class:(com.ghostty.floating|wezterm-floating)"
+        "float on, center on, size 1200 800, match:class (com.ghostty.floating|wezterm-floating)"
 
-        "float, class:GalaxyBudsClient"
-        "size 900 700, class:GalaxyBudsClient"
+        "float on, center on, size 900 700, match:class GalaxyBudsClient"
 
         # KDE Connect
-        "float, class:(org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
-        "size 900 700, class:(org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
+        "float on, center on, size 900 700, match:class (org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
-        "workspace 3 silent, class:(firefox|Brave-browser)"
-        "workspace 5 silent, class:(discord|org.telegram.desktop)"
+        "match:workspace 3 silent, match:class (firefox|Brave-browser)"
+        "match:workspace 5 silent, match:class (discord|org.telegram.desktop)"
       ];
 
       plugin = {
