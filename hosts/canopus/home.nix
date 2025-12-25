@@ -66,6 +66,7 @@
     telegram-desktop
     anydesk
     rustdesk-flutter
+    moonlight-qt
     rawtherapee
     stable.beekeeper-studio
     libreoffice-qt
@@ -108,6 +109,7 @@
       ".config/obs-studio"
       ".config/rustdesk"
       ".config/kdeconnect"
+      ".config/Moonlight\ Game\ Streaming\ Project"
       ".local/share/nvim"
       ".local/share/opencode"
       ".local/share/zsh"
