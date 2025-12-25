@@ -10,6 +10,7 @@
         swtpm.enable = true;
       };
     };
+    spiceUSBRedirection.enable = true;
   };
 
   users.users.${username}.extraGroups = ["libvirtd"];
