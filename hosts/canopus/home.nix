@@ -65,7 +65,7 @@
   home.packages = with pkgs; [
     telegram-desktop
     anydesk
-    stable.rustdesk-flutter
+    rustdesk-flutter
     rawtherapee
     stable.beekeeper-studio
     libreoffice-qt
