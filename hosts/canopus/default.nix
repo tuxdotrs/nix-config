@@ -393,6 +393,7 @@
       "/var/lib/docker"
       "/var/lib/waydroid"
       "/var/lib/iwd"
+      "/var/lib/libvirt"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
