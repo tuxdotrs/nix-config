@@ -118,6 +118,7 @@
       ".local/share/GalaxyBudsClient"
       ".local/share/TelegramDesktop"
       ".local/state/lazygit"
+      ".local/share/steam"
     ];
     files = [
       ".wakatime.cfg"
