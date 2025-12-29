@@ -190,6 +190,10 @@
         };
       };
 
+      gesture = [
+        "3, horizontal, workspace"
+      ];
+
       bindm = [
         "SUPER,mouse:273,resizewindow"
         "SUPER,mouse:272,movewindow"
