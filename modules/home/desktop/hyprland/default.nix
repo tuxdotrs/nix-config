@@ -36,8 +36,7 @@
       filemanager = "wezterm start --class wezterm-floating -e superfile";
     in {
       # See https://wiki.hyprland.org/Configuring/Multi-GPU
-      # @TODO: use card by path instead off symlink
-      env = "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1";
+      env = "AQ_DRM_DEVICES,/dev/dri/card2";
 
       #-- Output
       # See https://wiki.hyprland.org/Configuring/Monitors
