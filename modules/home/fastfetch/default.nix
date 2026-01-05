@@ -43,10 +43,6 @@
           "type": "shell",
         },
         {
-          "key": "  │           │\u001b[11D{#35}󰏖  pkgs",
-          "type": "packages",
-        },
-        {
           "key": "  │           │\u001b[11D{#35}  memory",
           "type": "memory",
         },
