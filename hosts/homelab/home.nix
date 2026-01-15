@@ -1,5 +1,5 @@
-{username, ...}: {
-  home.persistence."/persist/home/${username}" = {
+{...}: {
+  home.persistence."/persist" = {
     directories = [
       "Projects"
       "Stuff"
@@ -15,7 +15,6 @@
     files = [
       ".wakatime.cfg"
     ];
-    allowOther = true;
   };
 
   home.stateVersion = "24.11";

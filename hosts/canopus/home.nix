@@ -1,8 +1,4 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../modules/home/desktop/awesome
     ../../modules/home/desktop/hyprland
@@ -82,7 +78,7 @@
     impala
   ];
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [
       "Downloads"
       "Music"
@@ -124,7 +120,6 @@
       ".wakatime.cfg"
       ".config/aichat/.env"
     ];
-    allowOther = true;
   };
 
   home.stateVersion = "24.11";

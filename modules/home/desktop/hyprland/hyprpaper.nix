@@ -5,15 +5,13 @@
     settings = {
       ipc = "on";
       splash = false;
-      splash_offset = 2.0;
+      splash_offset = 20;
 
-      preload = [
-        "~/Wallpapers/new/sunset-pixel.png"
-      ];
-
-      wallpaper = [
-        ", ~/Wallpapers/new/sunset-pixel.png"
-      ];
+      wallpaper = {
+        monitor = "";
+        path = "~/Wallpapers/new/sunset-pixel.png";
+        fit_mode = "";
+      };
     };
   };
 
