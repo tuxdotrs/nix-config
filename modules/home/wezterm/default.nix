@@ -8,6 +8,8 @@
       local wezterm = require 'wezterm'
       local config = {}
 
+      config.check_for_updates = false
+
       config.window_close_confirmation = 'NeverPrompt'
       config.color_scheme = 'Poimandres'
       config.colors = {
