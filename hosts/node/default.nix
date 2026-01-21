@@ -2,8 +2,7 @@
   inputs,
   username,
   ...
-}:
-{
+}: {
   imports = [
     inputs.disko.nixosModules.default
 
