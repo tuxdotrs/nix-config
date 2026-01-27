@@ -1774,11 +1774,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765486106,
-        "narHash": "sha256-zeUFIAb07Dgg/ClkI92wb1YFGtLnvTi4Is4A1CkVt3Q=",
+        "lastModified": 1769515279,
+        "narHash": "sha256-uEUJVeCeFV7r0dd4sdQCXSwqFaB5ryCAuD6/xj9fpHc=",
         "owner": "tuxdotrs",
         "repo": "trok",
-        "rev": "cb31ac762c404f8edb6edd2e985666009f9952fe",
+        "rev": "f586506180cbe16dafeb286ff766715f68851a5b",
         "type": "github"
       },
       "original": {
