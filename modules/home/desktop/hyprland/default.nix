@@ -171,8 +171,8 @@
         # KDE Connect
         "float on, center on, size 900 700, match:class (org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
-        "match:workspace 3 silent, match:class (firefox|Brave-browser)"
-        "match:workspace 5 silent, match:class (discord|org.telegram.desktop)"
+        "workspace 3 silent, match:class (firefox|brave-browser)"
+        "workspace 5 silent, match:class (discord|org.telegram.desktop)"
       ];
 
       plugin = {
@@ -202,6 +202,7 @@
         "SUPER, B, exec, ${browser}"
         "SUPER, G, exec, GalaxyBudsClient"
         "SUPER, D, exec, discord"
+        "SUPER, T, exec, Telegram"
         "SUPER, S, exec, ${spotify}"
         "SUPER, V, exec, copyq show"
 
@@ -269,6 +270,7 @@
         "SUPER_CTRL, right, resizeactive, 20 0"
         "SUPER_CTRL, up,    resizeactive, 0 -20"
         "SUPER_CTRL, down,  resizeactive, 0 20"
+        "SUPER_CTRL, equal, exec, hyprctl dispatch layoutmsg mfact exact 0.5;"
 
         # move active (Floating Only)
         "SUPER_ALT, left,  moveactive, -20 0"
