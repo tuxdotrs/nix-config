@@ -59,6 +59,7 @@
   };
 
   home.packages = with pkgs; [
+    antigravity
     telegram-desktop
     anydesk
     rustdesk-flutter
