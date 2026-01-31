@@ -59,6 +59,7 @@
   };
 
   home.packages = with pkgs; [
+    antigravity
     telegram-desktop
     anydesk
     rustdesk-flutter
@@ -97,6 +98,7 @@
       ".steam"
       ".cache/spotify-player"
       ".config/BraveSoftware"
+      ".config/Antigravity"
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
