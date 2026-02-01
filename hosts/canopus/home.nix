@@ -75,6 +75,7 @@
     copyq
     vlc
     tor-browser
+    vivaldi
     bluetui
     impala
   ];
@@ -98,6 +99,7 @@
       ".steam"
       ".cache/spotify-player"
       ".config/BraveSoftware"
+      ".config/vivaldi"
       ".config/Antigravity"
       ".config/copyq"
       ".config/discord"
