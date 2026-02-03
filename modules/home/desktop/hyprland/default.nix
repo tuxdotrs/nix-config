@@ -31,7 +31,7 @@
       terminal = "wezterm";
       floating_terminal = "wezterm start --class wezterm-floating";
       editor = "wezterm -e nvim";
-      browser = "brave";
+      browser = "vivaldi";
       spotify = "wezterm start --class wezterm-floating -e spotify_player";
       filemanager = "wezterm start --class wezterm-floating -e superfile";
     in {
