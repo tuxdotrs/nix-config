@@ -7,7 +7,7 @@
         window-padding-x = 10
         window-padding-y = 10
         background-opacity = 0.9
-        font-size = 14
+        font-size = 12
 
         palette = 0=#252b37
         palette = 1=#d0679d
