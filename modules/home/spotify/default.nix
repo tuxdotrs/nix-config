@@ -6,7 +6,7 @@
         device_name = "canopus";
         device_type = "computer";
         bitrate = 320;
-        volume_normalisation = true;
+        initial_volume = 100;
         autoplay = true;
       };
     };
