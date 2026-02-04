@@ -197,6 +197,7 @@
       bind = [
         # apps
         "SUPER, Return, exec, ${terminal}"
+        "SUPER, Space, exec, vicinae toggle"
         "SUPER, F, exec, ${filemanager}"
         "SUPER, E, exec, ${editor}"
         "SUPER, B, exec, ${browser}"
@@ -210,8 +211,6 @@
         "SUPER_SHIFT, S, exec, flameshot gui"
 
         # tpanel
-        "SUPER, A, exec, ags toggle launcher"
-        "SUPER, Space, exec, vicinae toggle"
         "SUPER_SHIFT, B, exec, ags toggle bar"
         "SUPER_SHIFT, C, exec, ags toggle control-center"
         "SUPER_SHIFT, W, exec, ags toggle wallpaper-manager"
