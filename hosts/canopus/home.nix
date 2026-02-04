@@ -3,6 +3,7 @@
     ../../modules/home/desktop/awesome
     ../../modules/home/desktop/hyprland
     ../../modules/home/desktop/vicinae
+    ../../modules/home/desktop/utils
     ../../modules/home/picom
     ../../modules/home/alacritty
     ../../modules/home/wezterm
