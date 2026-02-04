@@ -79,6 +79,7 @@
     vivaldi
     bluetui
     impala
+    pulseaudio
   ];
 
   home.persistence."/persist" = {
