@@ -2,6 +2,7 @@
   imports = [
     ../../modules/home/desktop/awesome
     ../../modules/home/desktop/hyprland
+    ../../modules/home/desktop/vicinae
     ../../modules/home/picom
     ../../modules/home/alacritty
     ../../modules/home/wezterm
@@ -119,6 +120,7 @@
       ".local/share/TelegramDesktop"
       ".local/state/lazygit"
       ".local/share/steam"
+      ".local/share/vicinae"
     ];
     files = [
       ".wakatime.cfg"

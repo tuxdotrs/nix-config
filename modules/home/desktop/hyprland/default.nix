@@ -160,7 +160,6 @@
       #-- Window Rules
       # See https://wiki.hyprland.org/Configuring/Window-Rules
       windowrule = [
-        "float on, center on, size 900 700, match:class com.github.hluk.copyq"
         "float on, center on, size 800 600, match:class org.pulseaudio.pavucontrol"
 
         # Wezterm and Ghostty floating terminal
@@ -204,13 +203,14 @@
         "SUPER, D, exec, discord"
         "SUPER, T, exec, Telegram"
         "SUPER, S, exec, ${spotify}"
-        "SUPER, V, exec, copyq show"
+        "SUPER, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
 
         "SUPER_SHIFT, Return, exec, ${floating_terminal}"
         "SUPER_SHIFT, S, exec, flameshot gui"
 
         # tpanel
         "SUPER, A, exec, ags toggle launcher"
+        "SUPER, Space, exec, vicinae toggle"
         "SUPER_SHIFT, B, exec, ags toggle bar"
         "SUPER_SHIFT, C, exec, ags toggle control-center"
         "SUPER_SHIFT, W, exec, ags toggle wallpaper-manager"
@@ -301,7 +301,6 @@
 
         "hyprpaper"
         "${pkgs.tpanel}/bin/tpanel"
-        "copyq"
         "kdeconnectd"
         "kdeconnect-indicator"
       ];
