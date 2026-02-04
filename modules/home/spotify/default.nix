@@ -1,4 +1,17 @@
 {
+  services.spotifyd = {
+    enable = true;
+    settings = {
+      global = {
+        device_name = "canopus";
+        device_type = "computer";
+        bitrate = 320;
+        volume_normalisation = true;
+        autoplay = true;
+      };
+    };
+  };
+
   programs.spotify-player = {
     enable = true;
     settings = {

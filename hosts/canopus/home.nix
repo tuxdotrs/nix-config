@@ -99,6 +99,7 @@
       ".rustup"
       ".cargo"
       ".steam"
+      ".cache/spotifyd"
       ".cache/spotify-player"
       ".config/BraveSoftware"
       ".config/vivaldi"
