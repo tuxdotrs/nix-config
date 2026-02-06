@@ -207,7 +207,7 @@
         "SUPER, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
 
         "SUPER_SHIFT, Return, exec, ${floating_terminal}"
-        "SUPER_SHIFT, S, exec, flameshot gui"
+        "SUPER_SHIFT, S, exec, hypr-screenshot"
 
         # tpanel
         "SUPER_SHIFT, B, exec, ags toggle bar"
