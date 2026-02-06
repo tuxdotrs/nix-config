@@ -26,7 +26,6 @@
     ../../modules/nixos/selfhosted/ntfy-sh.nix
     ../../modules/nixos/selfhosted/searx.nix
     ../../modules/nixos/selfhosted/wakapi.nix
-    ../../modules/nixos/selfhosted/nextcloud.nix
     ../../modules/nixos/selfhosted/silver-bullet.nix
     ../../modules/nixos/selfhosted/rustdesk-server.nix
     # ../../modules/nixos/selfhosted/kasmweb.nix
@@ -71,11 +70,6 @@
 
     wakapi_salt = {
       sopsFile = ./secrets.yaml;
-    };
-
-    nextcloud_password = {
-      sopsFile = ./secrets.yaml;
-      owner = "nextcloud";
     };
 
     silver_bullet = {
