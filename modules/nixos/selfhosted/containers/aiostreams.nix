@@ -14,6 +14,12 @@ in {
       default = 3000;
     };
 
+    dataDir = mkOption {
+      type = types.path;
+      default = "/var/lib/aiostreams";
+      description = "Directory to store persistent AIOStreams data";
+    };
+
     environment = mkOption {
       type = with types; attrsOf str;
       default = {};
@@ -35,6 +41,9 @@ in {
 
       environment = cfg.environment;
       environmentFiles = cfg.environmentFiles;
+      volumes = [
+        "${cfg.dataDir}:/app/data"
+      ];
     };
 
     services.nginx.virtualHosts = {
