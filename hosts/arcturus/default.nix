@@ -28,7 +28,6 @@
     ../../modules/nixos/selfhosted/wakapi.nix
     ../../modules/nixos/selfhosted/silver-bullet.nix
     ../../modules/nixos/selfhosted/rustdesk-server.nix
-    # ../../modules/nixos/selfhosted/kasmweb.nix
     ../../modules/nixos/selfhosted/open-webui.nix
     ../../modules/nixos/selfhosted/glance
   ];
