@@ -114,6 +114,7 @@
       ".config/rustdesk"
       ".config/kdeconnect"
       ".config/Moonlight\ Game\ Streaming\ Project"
+      ".local/lib/vivaldi"
       ".local/share/nvim"
       ".local/share/opencode"
       ".local/share/zsh"
