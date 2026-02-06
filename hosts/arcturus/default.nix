@@ -224,6 +224,7 @@
       "/var/lib/nextcloud"
       "/var/lib/silverbullet"
       "/var/lib/kasmweb"
+      "/var/lib/aiostreams"
     ];
     files = [
       "/etc/ssh/ssh_host_ed25519_key"
