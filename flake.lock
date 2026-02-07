@@ -1733,11 +1733,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759575396,
-        "narHash": "sha256-wFybL+I7KyCsb8g9PvJVmLAiIgFocCbYcH0z4B4V/JM=",
+        "lastModified": 1770425169,
+        "narHash": "sha256-n5rt2eF6HVYHDx0sONH2u4w9zq8JGIkCVT8JVLyJOXk=",
         "owner": "tuxdotrs",
         "repo": "tnvim",
-        "rev": "13801bd8608abc9903fadcc240b143007d51dc32",
+        "rev": "afd150b869298b788387c04031cccffac11da5de",
         "type": "github"
       },
       "original": {
