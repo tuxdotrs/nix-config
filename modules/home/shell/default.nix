@@ -78,6 +78,7 @@
     termshark
     solc
     dig
+    lsof
 
     python312
     python312Packages.pipx
