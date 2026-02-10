@@ -123,7 +123,7 @@
       ".local/share/GalaxyBudsClient"
       ".local/share/TelegramDesktop"
       ".local/state/lazygit"
-      ".local/share/steam"
+      ".local/share/Steam"
       ".local/share/vicinae"
     ];
     files = [
