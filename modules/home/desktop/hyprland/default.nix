@@ -40,7 +40,10 @@
 
       #-- Output
       # See https://wiki.hyprland.org/Configuring/Monitors
-      monitor = "eDP-1,2560x1440@90,0x0,1";
+      monitor = [
+        "eDP-1,2560x1440@90,0x0,1"
+        "HDMI-A-1,preferred,0x-1440,1"
+      ];
 
       #-- Input: Keyboard, Mouse, Touchpad
       input = {
@@ -171,7 +174,7 @@
         "float on, center on, size 900 700, match:class (org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
         "workspace 3 silent, match:class (firefox|brave-browser)"
-        "workspace 5 silent, match:class (discord|org.telegram.desktop)"
+        "workspace 6 silent, match:class (discord|org.telegram.desktop)"
       ];
 
       plugin = {
@@ -246,6 +249,7 @@
         "SUPER, 3, workspace, 3"
         "SUPER, 4, workspace, 4"
         "SUPER, 5, workspace, 5"
+        "SUPER, 6, workspace, 6"
 
         # send to workspaces
         "SUPER_SHIFT, 1, movetoworkspacesilent, 1"
@@ -253,14 +257,16 @@
         "SUPER_SHIFT, 3, movetoworkspacesilent, 3"
         "SUPER_SHIFT, 4, movetoworkspacesilent, 4"
         "SUPER_SHIFT, 5, movetoworkspacesilent, 5"
+        "SUPER_SHIFT, 6, movetoworkspacesilent, 6"
       ];
 
       workspace = [
         "1, monitor:HDMI-A-1"
         "2, monitor:HDMI-A-1"
         "3, monitor:HDMI-A-1"
-        "4, monitor:eDP-1"
-        "5, monitor:eDP-1"
+        "4, monitor:HDMI-A-1"
+        "5, monitor:HDMI-A-1"
+        "6, monitor:eDP-1"
       ];
 
       binde = [
