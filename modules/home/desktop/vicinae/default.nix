@@ -57,7 +57,7 @@
             "tailscalePath" = "${pkgs.tailscale}/bin/tailscale";
           };
         };
-        "@sovereign/store.vicinae.awww-switcher" = {
+        "@sovereign/vicinae-extension-awww-switcher-0" = {
           "preferences" = {
             "transitionDuration" = "1";
             "transitionType" = "center";
