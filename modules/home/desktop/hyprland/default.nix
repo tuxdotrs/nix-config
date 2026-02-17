@@ -1,10 +1,9 @@
 {pkgs, ...}: {
   imports = [
     ./hyprlock.nix
-    ./hyprpaper.nix
   ];
 
-  home.packages = with pkgs; [ags];
+  home.packages = with pkgs; [ags awww];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -211,11 +210,11 @@
 
         "SUPER_SHIFT, Return, exec, ${floating_terminal}"
         "SUPER_SHIFT, S, exec, hypr-screenshot"
+        "SUPER_SHIFT, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"
 
         # tpanel
         "SUPER_SHIFT, B, exec, ags toggle bar"
         "SUPER_SHIFT, C, exec, ags toggle control-center"
-        "SUPER_SHIFT, W, exec, ags toggle wallpaper-manager"
         "SUPER_SHIFT, R, exec, ags quit; ${pkgs.tpanel}/bin/tpanel"
 
         # hyprland
@@ -304,7 +303,7 @@
         # load hyprland plugins
         "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
 
-        "hyprpaper"
+        "awww-daemon"
         "${pkgs.tpanel}/bin/tpanel"
         "kdeconnectd"
         "kdeconnect-indicator"

@@ -100,6 +100,7 @@
       ".rustup"
       ".cargo"
       ".steam"
+      ".cache/awww"
       ".cache/spotifyd"
       ".cache/spotify-player"
       ".config/BraveSoftware"
