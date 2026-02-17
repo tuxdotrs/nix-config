@@ -160,6 +160,11 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     awww.url = "git+https://codeberg.org/LGFae/awww";
     ghostty.url = "github:ghostty-org/ghostty";
     nixos-hardware.url = "github:nixos/nixos-hardware";

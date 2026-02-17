@@ -15,6 +15,7 @@
     hyprland-plugins = inputs.hyprland-plugins.packages.${prev.stdenv.hostPlatform.system};
     wezterm-git = inputs.wezterm-flake.packages.${prev.stdenv.hostPlatform.system}.default;
     awww = inputs.awww.packages.${prev.stdenv.hostPlatform.system}.awww;
+    vicinae-extensions = inputs.vicinae-extensions.packages.${prev.stdenv.hostPlatform.system};
   };
 
   # When applied, the stable nixpkgs set (declared in the flake inputs) will

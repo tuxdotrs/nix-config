@@ -1,4 +1,8 @@
-{...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.vicinae = {
     enable = true;
     systemd = {
@@ -6,6 +10,18 @@
       autoStart = true;
     };
     useLayerShell = true;
+
+    extensions = with pkgs.vicinae-extensions; [
+      bluetooth
+      nix
+      ssh
+      awww-switcher
+      process-manager
+      pulseaudio
+      wifi-commander
+      port-killer
+      silverbullet
+    ];
 
     settings = {
       close_on_focus_loss = false;
@@ -31,6 +47,21 @@
       };
       launcher_window = {
         opacity = 0.98;
+      };
+
+      providers = {
+        "@samlinville/store.raycast.tailscale" = {
+          "preferences" = {
+            "tailscalePath" = "${pkgs.tailscale}/bin/tailscale";
+          };
+        };
+        "@sovereign/store.vicinae.awww-switcher" = {
+          "preferences" = {
+            "transitionDuration" = "1";
+            "transitionType" = "center";
+            "wallpaperPath" = "/home/tux/Wallpapers/";
+          };
+        };
       };
     };
   };
