@@ -49,6 +49,8 @@
         opacity = 0.98;
       };
 
+      imports = ["/run/secrets/vicinae.json"];
+
       providers = {
         "@samlinville/store.raycast.tailscale" = {
           "preferences" = {

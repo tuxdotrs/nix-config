@@ -41,6 +41,11 @@
       sopsFile = ./secrets.yaml;
       owner = "${username}";
     };
+
+    "vicinae.json" = {
+      sopsFile = ./secrets.yaml;
+      owner = username;
+    };
   };
 
   networking = {
