@@ -19,6 +19,7 @@
     ../../modules/nixos/desktop/hyprland
     ../../modules/nixos/virtualisation
     ../../modules/nixos/steam.nix
+    ../../modules/nixos/obs-studio.nix
   ];
 
   hardware.nvidia-container-toolkit.enable = true;

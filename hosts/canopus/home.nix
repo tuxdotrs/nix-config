@@ -19,7 +19,6 @@
     ../../modules/home/easyeffects
     ../../modules/home/discord
     ../../modules/home/kdeconnect
-    ../../modules/home/obs-studio
     ../../modules/home/spotify
   ];
 
