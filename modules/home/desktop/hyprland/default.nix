@@ -76,6 +76,8 @@
       misc = {
         disable_hyprland_logo = true;
         force_default_wallpaper = 1;
+        vfr = true;
+        vrr = 1;
       };
 
       ecosystem = {
@@ -87,12 +89,12 @@
       # See https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
         rounding = rounding;
-        active_opacity = 0.95;
-        inactive_opacity = 0.95;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
         fullscreen_opacity = 1.0;
 
         blur = {
-          enabled = true;
+          enabled = false;
           size = 4;
           passes = 3;
           new_optimizations = true;
