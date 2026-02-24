@@ -112,6 +112,7 @@
       ".config/vesktop"
       ".config/sops"
       ".config/obs-studio"
+      ".config/easyeffects"
       ".config/rustdesk"
       ".config/kdeconnect"
       ".config/Moonlight\ Game\ Streaming\ Project"
