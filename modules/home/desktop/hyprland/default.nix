@@ -289,6 +289,7 @@
         # load hyprland plugins
         "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
 
+        "easyeffects --w"
         "awww-daemon"
         "${pkgs.tpanel}/bin/tpanel"
         "kdeconnectd"
