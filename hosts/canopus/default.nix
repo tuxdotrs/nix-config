@@ -17,6 +17,7 @@
     ../../modules/nixos/desktop
     ../../modules/nixos/desktop/awesome
     ../../modules/nixos/desktop/hyprland
+    ../../modules/nixos/desktop/mango
     ../../modules/nixos/virtualisation
     ../../modules/nixos/steam.nix
     ../../modules/nixos/obs-studio.nix
@@ -282,7 +283,7 @@
     supergfxd = {
       enable = true;
       settings = {
-        mode = "Integrated";
+        mode = "Hybrid";
         vfio_enable = false;
         vfio_save = false;
         always_reboot = false;

@@ -2,6 +2,7 @@
   imports = [
     ../../modules/home/desktop/awesome
     ../../modules/home/desktop/hyprland
+    ../../modules/home/desktop/mango
     ../../modules/home/desktop/vicinae
     ../../modules/home/desktop/utils
     ../../modules/home/picom
