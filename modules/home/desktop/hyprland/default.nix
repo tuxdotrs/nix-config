@@ -157,7 +157,7 @@
         "float on, center on, size 900 700, match:class (org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
         "workspace 3 silent, match:class (firefox|brave-browser)"
-        "workspace 6 silent, match:class (discord|org.telegram.desktop)"
+        "workspace 7 silent, match:class (discord|org.telegram.desktop)"
       ];
 
       plugin = {
@@ -233,6 +233,7 @@
         "SUPER, 4, workspace, 4"
         "SUPER, 5, workspace, 5"
         "SUPER, 6, workspace, 6"
+        "SUPER, 7, workspace, 7"
 
         # send to workspaces
         "SUPER_SHIFT, 1, movetoworkspacesilent, 1"
@@ -241,15 +242,17 @@
         "SUPER_SHIFT, 4, movetoworkspacesilent, 4"
         "SUPER_SHIFT, 5, movetoworkspacesilent, 5"
         "SUPER_SHIFT, 6, movetoworkspacesilent, 6"
+        "SUPER_SHIFT, 7, movetoworkspacesilent, 7"
       ];
 
       workspace = [
-        "1, monitor:HDMI-A-1"
+        "1, monitor:HDMI-A-1, default:true"
         "2, monitor:HDMI-A-1"
         "3, monitor:HDMI-A-1"
         "4, monitor:HDMI-A-1"
         "5, monitor:HDMI-A-1"
         "6, monitor:eDP-1"
+        "7, monitor:eDP-1"
       ];
 
       binde = [
