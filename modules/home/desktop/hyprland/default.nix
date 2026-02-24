@@ -30,9 +30,9 @@
       terminal = "wezterm";
       floating_terminal = "wezterm start --class wezterm-floating";
       editor = "wezterm -e nvim";
-      browser = "vivaldi";
+      browser = "brave --new-window";
       spotify = "wezterm start --class wezterm-floating -e spotify_player";
-      filemanager = "wezterm start --class wezterm-floating -e superfile";
+      filemanager = "wezterm -e superfile";
     in {
       # See https://wiki.hyprland.org/Configuring/Multi-GPU
       env = "AQ_DRM_DEVICES,/dev/dri/card2";
@@ -156,7 +156,6 @@
         # KDE Connect
         "float on, center on, size 900 700, match:class (org.kde.kdeconnect.sms|org.kde.kdeconnect.app)"
 
-        "workspace 3 silent, match:class (firefox|brave-browser)"
         "workspace 7 silent, match:class (discord|org.telegram.desktop)"
       ];
 
