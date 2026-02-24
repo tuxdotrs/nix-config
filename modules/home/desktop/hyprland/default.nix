@@ -206,9 +206,7 @@
         "SUPER_SHIFT, Q, forcekillactive"
         "SUPER_SHIFT, F, fullscreen, 0"
         "SUPER_SHIFT, Space, exec, hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 1200 800; hyprctl dispatch centerwindow;"
-
-        # shutdown
-        "SUPER_SHIFT, P, exec, poweroff"
+        "SUPER_SHIFT, P, exec, hyprctl dispatch pin"
 
         # lock
         "SUPER_SHIFT, L, exec, hyprlock"
