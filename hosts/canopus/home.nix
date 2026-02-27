@@ -62,6 +62,7 @@
 
   home.packages = with pkgs; [
     antigravity
+    davinci-resolve
     telegram-desktop
     anydesk
     rustdesk-flutter
