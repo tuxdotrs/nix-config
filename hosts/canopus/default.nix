@@ -276,7 +276,7 @@
           energy_performance_preference = "performance";
           turbo = "auto";
           scaling_min_freq = 400000;
-          scaling_max_freq = 3800000;
+          scaling_max_freq = 4600000;
         };
       };
     };
