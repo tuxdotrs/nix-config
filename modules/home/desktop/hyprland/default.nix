@@ -3,7 +3,10 @@
     ./hyprlock.nix
   ];
 
-  home.packages = with pkgs; [ags awww];
+  home.packages = with pkgs; [
+    ags
+    awww
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;

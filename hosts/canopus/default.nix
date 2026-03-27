@@ -68,7 +68,10 @@
       ];
 
       # Facilitate firewall punching
-      allowedUDPPorts = [41641 4242];
+      allowedUDPPorts = [
+        41641
+        4242
+      ];
 
       allowedTCPPortRanges = [
         {
