@@ -174,6 +174,8 @@
 
       gesture = [
         "3, horizontal, workspace"
+        "3, up, dispatcher, exec, brightnessctl s +20%"
+        "3, down, dispatcher, exec, brightnessctl s +20%-"
       ];
 
       bindm = [
