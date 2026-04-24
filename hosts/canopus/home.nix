@@ -1,11 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ../../modules/home/desktop/awesome
     ../../modules/home/desktop/hyprland
     ../../modules/home/desktop/mango
     ../../modules/home/desktop/vicinae
     ../../modules/home/desktop/utils
-    ../../modules/home/picom
     ../../modules/home/alacritty
     ../../modules/home/wezterm
     ../../modules/home/ghostty
@@ -95,7 +93,6 @@
       "Stuff"
       "Distrobox"
       "go"
-      ".mozilla"
       ".ssh"
       ".wakatime"
       ".rustup"
@@ -104,6 +101,7 @@
       ".cache/awww"
       ".cache/spotifyd"
       ".cache/spotify-player"
+      ".config/mozilla"
       ".config/BraveSoftware"
       ".config/vivaldi"
       ".config/Antigravity"

@@ -48,7 +48,7 @@
     polkit_gnome
     xdotool
     xclip
-    xorg.xbacklight
+    xbacklight
     gpick
     alsa-utils
     pavucontrol

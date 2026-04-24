@@ -11,14 +11,13 @@ stdenv.mkDerivation {
     owner = "datguypiko";
     repo = "Firefox-Mod-Blur";
     rev = "refs/heads/master";
-    sha256 = "sha256-J/SBMxDWxDC7o8P0t/3surUod52uUwy+xaD5dzZPGq0=";
+    sha256 = "sha256-CkS0Jl30OBZTGAcL1ytoqJ9yzXg8a2JfuJbMw3+Tkj0=";
   };
 
   installPhase = ''
     mkdir $out
     cp -r * "$out/"
     cp -r "$out/EXTRA MODS/Bookmarks Bar Mods/Bookmarks bar same color as toolbar/bookmarks_bar_same_color_as_toolbar.css" "$out/"
-    cp -r "$out/EXTRA MODS/Search Bar Mods/Search box - No search engine buttons/no_search_engines_in_url_bar.css" "$out/"
   '';
 
   meta = with lib; {

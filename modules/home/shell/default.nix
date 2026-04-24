@@ -83,8 +83,8 @@
     python312
     python312Packages.pipx
     nodejs
-    nodePackages.pnpm
-    nodePackages.yarn
+    pnpm
+    yarn
     rustup
     bun
     nixpkgs-fmt

@@ -16,7 +16,7 @@
     systemd.variables = ["--all"];
 
     plugins = with pkgs.hyprland-plugins; [
-      hyprexpo
+      # hyprexpo
     ];
 
     settings = let
@@ -79,8 +79,11 @@
       misc = {
         disable_hyprland_logo = true;
         force_default_wallpaper = 1;
-        vfr = true;
-        vrr = 1;
+        vrr = 0;
+      };
+
+      cursor = {
+        no_hardware_cursors = 1;
       };
 
       ecosystem = {
@@ -162,15 +165,15 @@
         "workspace 7 silent, match:class (discord|org.telegram.desktop)"
       ];
 
-      plugin = {
-        hyprexpo = {
-          columns = 3;
-          gap_size = 5;
-          bg_col = "rgb(111111)";
-          workspace_method = "first 1";
-          gesture_distance = 300;
-        };
-      };
+      # plugin = {
+      #   hyprexpo = {
+      #     columns = 3;
+      #     gap_size = 5;
+      #     bg_col = "rgb(111111)";
+      #     workspace_method = "first 1";
+      #     gesture_distance = 300;
+      #   };
+      # };
 
       gesture = [
         "3, horizontal, workspace"
@@ -207,7 +210,7 @@
 
         # hyprland
         "SUPER, Q, killactive"
-        "SUPER, grave, hyprexpo:expo, toggle"
+        # "SUPER, grave, hyprexpo:expo, toggle"
         "SUPER_SHIFT, Q, forcekillactive"
         "SUPER_SHIFT, F, fullscreen, 0"
         "SUPER_SHIFT, Space, exec, hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 1200 800; hyprctl dispatch centerwindow;"
@@ -290,7 +293,7 @@
 
       "exec-once" = [
         # load hyprland plugins
-        "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
+        # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
 
         "easyeffects --w"
         "awww-daemon"

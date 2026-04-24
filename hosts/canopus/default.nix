@@ -15,7 +15,6 @@
 
     ../common
     ../../modules/nixos/desktop
-    ../../modules/nixos/desktop/awesome
     ../../modules/nixos/desktop/hyprland
     ../../modules/nixos/desktop/mango
     ../../modules/nixos/virtualisation
@@ -286,7 +285,7 @@
     supergfxd = {
       enable = true;
       settings = {
-        mode = "Integrated";
+        mode = "Hybrid";
         vfio_enable = false;
         vfio_save = false;
         always_reboot = false;
@@ -298,7 +297,6 @@
 
     asusd = {
       enable = true;
-      enableUserService = true;
       asusdConfig.text = ''
         (
           charge_control_end_threshold: 80,
