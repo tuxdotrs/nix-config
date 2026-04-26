@@ -105,6 +105,7 @@
       ".config/BraveSoftware"
       ".config/vivaldi"
       ".config/Antigravity"
+      ".config/zed"
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
