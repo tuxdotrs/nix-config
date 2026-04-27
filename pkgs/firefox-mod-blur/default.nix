@@ -11,7 +11,7 @@ stdenv.mkDerivation {
     owner = "datguypiko";
     repo = "Firefox-Mod-Blur";
     rev = "refs/heads/master";
-    sha256 = "sha256-CkS0Jl30OBZTGAcL1ytoqJ9yzXg8a2JfuJbMw3+Tkj0=";
+    sha256 = "sha256-PX26cPYKU5ERgmcMrpCyFGwLE2a2w80z2zPn28xJq/U=";
   };
 
   installPhase = ''
