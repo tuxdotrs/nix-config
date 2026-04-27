@@ -3,7 +3,7 @@
   username,
   ...
 }: {
-  home.file.".config/mozilla/firefox/${username}/chrome".source = pkgs.firefox-mod-blur;
+  home.file.".mozilla/firefox/${username}/chrome".source = pkgs.firefox-mod-blur;
 
   programs.firefox = {
     enable = true;
