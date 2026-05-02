@@ -1,5 +1,0 @@
-{...}: {
-  virtualisation = {
-    waydroid.enable = true;
-  };
-}
