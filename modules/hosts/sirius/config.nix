@@ -2,11 +2,8 @@
 {
   flake.modules.nixos.sirius =
     {
-      lib,
       pkgs,
       hostName,
-      userName,
-      userEmail,
       ...
     }:
     {
