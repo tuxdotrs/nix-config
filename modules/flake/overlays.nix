@@ -1,6 +1,5 @@
 {
   inputs,
-  withSystem,
   ...
 }:
 {
@@ -9,6 +8,7 @@
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
       tpanel = inputs.tpanel.packages.${prev.stdenv.hostPlatform.system}.default;
       ags = inputs.tpanel.packages.${prev.stdenv.hostPlatform.system}.ags.default;
+      wezterm-git = inputs.wezterm-flake.packages.${prev.stdenv.hostPlatform.system}.default;
     };
 
     stable-packages = final: _prev: {

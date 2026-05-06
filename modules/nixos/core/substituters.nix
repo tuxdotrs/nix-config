@@ -12,6 +12,7 @@
         "https://yazi.cachix.org"
         "https://nix-on-droid.cachix.org"
         "https://lan-mouse.cachix.org"
+        "https://wezterm.cachix.org"
       ];
       trusted-substituters = [ "https://nix-on-droid.cachix.org" ];
       trusted-public-keys = [
@@ -25,6 +26,7 @@
         "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
         "nix-on-droid.cachix.org-1:56snoMJTXmDRC1Ei24CmKoUqvHJ9XCp+nidK7qkMQrU="
         "lan-mouse.cachix.org-1:KlE2AEZUgkzNKM7BIzMQo8w9yJYqUpor1CAUNRY6OyM="
+        "wezterm.cachix.org-1:kAbhjYUC9qvblTE+s7S+kl5XM1zVa4skO+E/1IDWdH0="
       ];
     };
   };
