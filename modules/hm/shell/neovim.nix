@@ -19,23 +19,20 @@
 
       home = {
         packages = with pkgs; [
-          gcc
-          neovide
-
-          # nix
-          nil # Language Server
-          statix # Lints and suggestions
-          deadnix # Find and remove unused
-          alejandra # Code Formatter
-
-          # lua
-          luarocks
-
-          # ts
+          python3
+          nodejs
+          go
+          rustup
           typescript
-
+          neovide
+          nil
+          statix
+          deadnix
+          alejandra
+          luarocks
           gdu
-          ripgrep
+          gcc
+          wakatime-cli
         ];
       };
     };
