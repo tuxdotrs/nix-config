@@ -3,7 +3,7 @@
     services.displayManager.ly = {
       enable = true;
       settings = {
-        session_log = "null";
+        # session_log = "null";
       };
     };
   };
