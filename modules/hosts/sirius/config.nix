@@ -70,7 +70,6 @@
       # --- Packages ---
       environment.systemPackages = with pkgs; [
         discord
-        brave
         zed-editor
       ];
 
