@@ -2,12 +2,29 @@
   flake.modules.nixos.core =
     {
       pkgs,
+      lib,
       userName,
       userEmail,
       ...
     }:
     {
       programs.zsh.enable = true;
+
+      time.timeZone = "Asia/Kolkata";
+      i18n = {
+        defaultLocale = "en_US.UTF-8";
+        extraLocaleSettings = lib.genAttrs [
+          "LC_ADDRESS"
+          "LC_IDENTIFICATION"
+          "LC_MEASUREMENT"
+          "LC_MONETARY"
+          "LC_NAME"
+          "LC_NUMERIC"
+          "LC_PAPER"
+          "LC_TELEPHONE"
+          "LC_TIME"
+        ] (_: "en_IN");
+      };
 
       users = {
         mutableUsers = false;

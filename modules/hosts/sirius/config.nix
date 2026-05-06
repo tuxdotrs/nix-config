@@ -1,7 +1,7 @@
+{ config, ... }:
 {
   flake.modules.nixos.sirius =
     {
-      config,
       lib,
       pkgs,
       hostName,
@@ -10,6 +10,9 @@
       ...
     }:
     {
+
+      imports = with config.flake.modules.nixos; [ desktop ];
+
       # --- Boot ---
       boot = {
         loader = {
@@ -48,7 +51,6 @@
           enable32Bit = true;
         };
         nvidia = {
-          package = config.boot.kernelPackages.nvidiaPackages.stable;
           modesetting.enable = true;
           open = false;
           nvidiaSettings = true;
@@ -59,48 +61,6 @@
       };
 
       services.xserver.videoDrivers = [ "nvidia" ];
-
-      # --- Locale ---
-      time.timeZone = "Asia/Kolkata";
-      i18n = {
-        defaultLocale = "en_US.UTF-8";
-        extraLocaleSettings = lib.genAttrs [
-          "LC_ADDRESS"
-          "LC_IDENTIFICATION"
-          "LC_MEASUREMENT"
-          "LC_MONETARY"
-          "LC_NAME"
-          "LC_NUMERIC"
-          "LC_PAPER"
-          "LC_TELEPHONE"
-          "LC_TIME"
-        ] (_: "en_IN");
-      };
-
-      # --- Desktop ---
-      services = {
-        displayManager.ly.enable = true;
-        desktopManager.plasma6.enable = true;
-      };
-
-      # --- Fonts ---
-      fonts.packages = with pkgs.nerd-fonts; [
-        fira-code
-        jetbrains-mono
-        bigblue-terminal
-      ];
-
-      # --- Audio ---
-      services.pulseaudio.enable = false;
-      security.rtkit.enable = true;
-      services.pipewire = {
-        enable = true;
-        alsa = {
-          enable = true;
-          support32Bit = true;
-        };
-        pulse.enable = true;
-      };
 
       # --- SSH ---
       services.openssh = {
@@ -142,7 +102,6 @@
 
       # --- Packages ---
       environment.systemPackages = with pkgs; [
-        neovim
         discord
         pciutils
         brave
