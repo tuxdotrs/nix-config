@@ -10,7 +10,7 @@
       settings = {
         clients = [
           {
-            position = "right";
+            position = "bottom";
             hostname = "canopus";
             activate_on_startup = true;
             ips = [ "192.168.8.2" ];
