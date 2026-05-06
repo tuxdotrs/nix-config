@@ -21,6 +21,8 @@
         packages = with pkgs; [
           python3
           nodejs
+          bun
+          pnpm
           go
           rustup
           typescript

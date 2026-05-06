@@ -103,10 +103,8 @@
       # --- Packages ---
       environment.systemPackages = with pkgs; [
         discord
-        pciutils
         brave
         zed-editor
-        usbutils
       ];
 
       # !!! DO NOT CHANGE THIS !!!
