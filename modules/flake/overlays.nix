@@ -7,6 +7,8 @@
   flake.overlays = {
     modifications = final: prev: {
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
+      tpanel = inputs.tpanel.packages.${prev.stdenv.hostPlatform.system}.default;
+      ags = inputs.tpanel.packages.${prev.stdenv.hostPlatform.system}.ags.default;
     };
 
     stable-packages = final: _prev: {
