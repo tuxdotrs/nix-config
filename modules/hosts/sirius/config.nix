@@ -11,9 +11,19 @@
       imports = with config.flake.modules.nixos; [
         networking
         desktop
+        virtualisation
       ];
 
-      tnix.services.openssh.enable = true;
+      tnix = {
+        services.openssh.enable = true;
+
+        virtualisation = {
+          docker.enable = true;
+          docker.nvidia.enable = true;
+          qemu.enable = true;
+          waydroid.enable = true;
+        };
+      };
 
       sops.secrets.tux-password = {
         sopsFile = ./secrets.yaml;
