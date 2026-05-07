@@ -4,6 +4,7 @@
     {
       pkgs,
       hostName,
+      userName,
       ...
     }:
     {
@@ -25,9 +26,26 @@
         };
       };
 
-      sops.secrets.tux-password = {
-        sopsFile = ./secrets.yaml;
-        neededForUsers = true;
+      sops.secrets = {
+        tux-password = {
+          sopsFile = ./secrets.yaml;
+          neededForUsers = true;
+        };
+
+        openrouter_api_key = {
+          sopsFile = ./secrets.yaml;
+          owner = userName;
+        };
+
+        opencode_go_api_key = {
+          sopsFile = ./secrets.yaml;
+          owner = userName;
+        };
+
+        "vicinae.json" = {
+          sopsFile = ./secrets.yaml;
+          owner = userName;
+        };
       };
 
       # --- Boot ---
