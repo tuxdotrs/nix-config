@@ -52,13 +52,7 @@
       };
 
       # --- Boot ---
-      boot = {
-        loader = {
-          efi.canTouchEfiVariables = true;
-        };
-        kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-        kernelParams = [ "nvidia-drm.modeset=1" ];
-      };
+      boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
       # --- Networking ---
       networking = {
@@ -89,6 +83,7 @@
           nvidiaSettings = true;
         };
       };
+      boot.kernelParams = [ "nvidia-drm.modeset=1" ];
       nixpkgs.config.cudaSupport = true;
       services.xserver.videoDrivers = [ "nvidia" ];
       environment.systemPackages = with pkgs; [ nvtopPackages.full ];
