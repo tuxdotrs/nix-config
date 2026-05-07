@@ -65,12 +65,23 @@
 
           # layouts
           tagrule = [
-            "id:1, layout_name:tile"
-            "id:2, layout_name:tile"
-            "id:3, layout_name:tile"
-            "id:4, layout_name:tile"
-            "id:5, layout_name:tile"
-            "id:6, layout_name:scroller"
+            "id:1, layout_name:vertical_tile, monitor_name:DP-2, no_hide:1"
+            "id:2, layout_name:vertical_tile, monitor_name:DP-2, no_hide:1"
+            "id:3, layout_name:vertical_tile, monitor_name:DP-2, no_hide:1"
+            "id:4, layout_name:vertical_tile, monitor_name:DP-2, no_hide:1"
+            "id:5, layout_name:vertical_tile, monitor_name:DP-2, no_hide:1"
+
+            "id:1, layout_name:tile, monitor_name:DP-3, no_hide:1"
+            "id:2, layout_name:tile, monitor_name:DP-3, no_hide:1"
+            "id:3, layout_name:tile, monitor_name:DP-3, no_hide:1"
+            "id:4, layout_name:tile, monitor_name:DP-3, no_hide:1"
+            "id:5, layout_name:tile, monitor_name:DP-3, no_hide:1"
+
+            "id:1, layout_name:vertical_tile, monitor_name:DP-1, no_hide:1"
+            "id:2, layout_name:vertical_tile, monitor_name:DP-1, no_hide:1"
+            "id:3, layout_name:vertical_tile, monitor_name:DP-1, no_hide:1"
+            "id:4, layout_name:vertical_tile, monitor_name:DP-1, no_hide:1"
+            "id:5, layout_name:vertical_tile, monitor_name:DP-1, no_hide:1"
           ];
 
           # Keybindings
@@ -134,7 +145,6 @@
             "SUPER, 3, view, 3, 0"
             "SUPER, 4, view, 4, 0"
             "SUPER, 5, view, 5, 0"
-            "SUPER, 6, view, 6, 0"
 
             # move client to the tag with focus
             "SUPER+SHIFT, 1, tagsilent, 1, 0"
@@ -142,7 +152,6 @@
             "SUPER+SHIFT, 3, tagsilent, 3, 0"
             "SUPER+SHIFT, 4, tagsilent, 4, 0"
             "SUPER+SHIFT, 5, tagsilent, 5, 0"
-            "SUPER+SHIFT, 6, tagsilent, 6, 0"
 
             # move client to the tag without focus
             "SUPER+ALT, 1, tag, 1, 0"
@@ -150,7 +159,6 @@
             "SUPER+ALT, 3, tag, 3, 0"
             "SUPER+ALT, 4, tag, 4, 0"
             "SUPER+ALT, 5, tag, 5, 0"
-            "SUPER+ALT, 6, tag, 6, 0"
           ];
 
           # Window effect
