@@ -72,11 +72,6 @@
       # --- Programs ---
       programs.firefox.enable = true;
 
-      # --- Packages ---
-      environment.systemPackages = with pkgs; [
-        zed-editor
-      ];
-
       # !!! DO NOT CHANGE THIS !!!
       # This should match the version used at initial install.
       system.stateVersion = "26.05";
