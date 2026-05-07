@@ -15,6 +15,11 @@
 
       tnix.services.openssh.enable = true;
 
+      sops.secrets.tux-password = {
+        sopsFile = ./secrets.yaml;
+        neededForUsers = true;
+      };
+
       # --- Boot ---
       boot = {
         loader = {

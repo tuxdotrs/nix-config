@@ -3,6 +3,7 @@
     {
       pkgs,
       lib,
+      config,
       userName,
       userEmail,
       ...
@@ -30,7 +31,7 @@
         mutableUsers = false;
         defaultUserShell = pkgs.zsh;
         users.${userName} = {
-          initialPassword = userName;
+          hashedPasswordFile = config.sops.secrets.tux-password.path;
           isNormalUser = true;
           extraGroups = [
             "networkmanager"

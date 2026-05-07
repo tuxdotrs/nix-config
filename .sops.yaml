@@ -1,0 +1,13 @@
+keys:
+  - &users
+    - &tux age14vktfes95f33vuefwnmuvryas7az04u76dsgyhfvsx73czkvmp2q7njkl4
+
+  - &hosts
+    - &sirius age18hepvvp3nw9ram6usxc8rvpxed2pye0knqx0zutqgxeu35k745vqyxfphz
+
+creation_rules:
+  - path_regex: hosts/sirius/secrets.yaml$
+    key_groups:
+      - age:
+          - *tux
+          - *sirius
