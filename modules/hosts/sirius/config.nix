@@ -90,9 +90,6 @@
       services.xserver.videoDrivers = [ "nvidia" ];
       environment.systemPackages = with pkgs; [ nvtopPackages.full ];
 
-      # --- Programs ---
-      programs.firefox.enable = true;
-
       # !!! DO NOT CHANGE THIS !!!
       # This should match the version used at initial install.
       system.stateVersion = "26.05";

@@ -20,6 +20,8 @@
         config.allowUnfree = true;
       };
     };
+
+    nur = inputs.nur.overlays.default;
   };
 
   perSystem =

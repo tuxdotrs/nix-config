@@ -56,5 +56,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
     awww.url = "git+https://codeberg.org/LGFae/awww";
     nixcord.url = "github:kaylorben/nixcord";
+    nur.url = "github:nix-community/nur";
   };
 }
