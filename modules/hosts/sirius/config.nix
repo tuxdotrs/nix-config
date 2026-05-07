@@ -63,21 +63,14 @@
 
       # --- Hardware / GPU ---
       hardware = {
-        graphics = {
-          enable = true;
-          enable32Bit = true;
-        };
         nvidia = {
           modesetting.enable = true;
           open = false;
           nvidiaSettings = true;
         };
-
-        enableAllFirmware = true;
-        usb-modeswitch.enable = true;
       };
-
       services.xserver.videoDrivers = [ "nvidia" ];
+      environment.systemPackages = with pkgs; [ nvtopPackages.full ];
 
       # --- Programs ---
       programs.firefox.enable = true;
