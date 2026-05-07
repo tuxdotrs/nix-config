@@ -17,6 +17,10 @@
             "name:DP-1, width:1080, height:1920, refresh:144, x:4000, y:0, vrr:0, rr:3"
           ];
 
+          focus_cross_monitor = 1;
+          exchange_cross_monitor = 1;
+          drag_tile_to_tile = 1;
+
           # Keyboard
           repeat_rate = 25;
           repeat_delay = 600;
@@ -100,6 +104,7 @@
             # apps
             "SUPER, Return, spawn, wezterm"
             "SUPER, Space, spawn, vicinae toggle"
+            "SUPER, D, spawn, vesktop"
             "SUPER, B, spawn, brave"
             "SUPER, V, spawn, vicinae vicinae://extensions/vicinae/clipboard/history"
             "SUPER+SHIFT, W, spawn, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"
@@ -140,25 +145,25 @@
             "SUPER, Down, focusdir, down"
 
             # switch view
-            "SUPER, 1, view, 1, 0"
-            "SUPER, 2, view, 2, 0"
-            "SUPER, 3, view, 3, 0"
-            "SUPER, 4, view, 4, 0"
-            "SUPER, 5, view, 5, 0"
+            "SUPER, 1, view, 1, 1"
+            "SUPER, 2, view, 2, 1"
+            "SUPER, 3, view, 3, 1"
+            "SUPER, 4, view, 4, 1"
+            "SUPER, 5, view, 5, 1"
 
             # move client to the tag with focus
-            "SUPER+SHIFT, 1, tagsilent, 1, 0"
-            "SUPER+SHIFT, 2, tagsilent, 2, 0"
-            "SUPER+SHIFT, 3, tagsilent, 3, 0"
-            "SUPER+SHIFT, 4, tagsilent, 4, 0"
-            "SUPER+SHIFT, 5, tagsilent, 5, 0"
+            "SUPER+SHIFT, 1, tagsilent, 1, 1"
+            "SUPER+SHIFT, 2, tagsilent, 2, 1"
+            "SUPER+SHIFT, 3, tagsilent, 3, 1"
+            "SUPER+SHIFT, 4, tagsilent, 4, 1"
+            "SUPER+SHIFT, 5, tagsilent, 5, 1"
 
             # move client to the tag without focus
-            "SUPER+ALT, 1, tag, 1, 0"
-            "SUPER+ALT, 2, tag, 2, 0"
-            "SUPER+ALT, 3, tag, 3, 0"
-            "SUPER+ALT, 4, tag, 4, 0"
-            "SUPER+ALT, 5, tag, 5, 0"
+            "SUPER+ALT, 1, tag, 1, 1"
+            "SUPER+ALT, 2, tag, 2, 1"
+            "SUPER+ALT, 3, tag, 3, 1"
+            "SUPER+ALT, 4, tag, 4, 1"
+            "SUPER+ALT, 5, tag, 5, 1"
           ];
 
           # Window effect
