@@ -13,6 +13,7 @@
         "https://nix-on-droid.cachix.org"
         "https://lan-mouse.cachix.org"
         "https://wezterm.cachix.org"
+        "https://cache.nixos-cuda.org"
       ];
       trusted-substituters = [
         "https://nix-on-droid.cachix.org"
@@ -30,6 +31,7 @@
         "nix-on-droid.cachix.org-1:56snoMJTXmDRC1Ei24CmKoUqvHJ9XCp+nidK7qkMQrU="
         "lan-mouse.cachix.org-1:KlE2AEZUgkzNKM7BIzMQo8w9yJYqUpor1CAUNRY6OyM="
         "wezterm.cachix.org-1:kAbhjYUC9qvblTE+s7S+kl5XM1zVa4skO+E/1IDWdH0="
+        "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       ];
     };
   };
