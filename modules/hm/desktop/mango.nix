@@ -12,9 +12,9 @@
         settings = {
           # Monitors
           monitorrule = [
-            "name:DP-2, width:1440, height:2560, refresh:144, x:0, y:0, vrr:1, rr:1"
-            "name:DP-3, width:2560, height:1440, refresh:144, x:1440, y:0, vrr:1"
-            "name:DP-1, width:1080, height:1920, refresh:144, x:4000, y:0, vrr:1, rr:3"
+            "name:DP-2, width:1440, height:2560, refresh:144, x:0, y:0, vrr:0, rr:1"
+            "name:DP-3, width:2560, height:1440, refresh:144, x:1440, y:0, vrr:0"
+            "name:DP-1, width:1080, height:1920, refresh:144, x:4000, y:0, vrr:0, rr:3"
           ];
 
           # Keyboard
