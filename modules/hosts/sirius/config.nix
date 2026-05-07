@@ -74,7 +74,6 @@
 
       # --- Packages ---
       environment.systemPackages = with pkgs; [
-        discord
         zed-editor
       ];
 

@@ -55,5 +55,6 @@
     lan-mouse.url = "github:feschber/lan-mouse";
     hyprland.url = "github:hyprwm/Hyprland";
     awww.url = "git+https://codeberg.org/LGFae/awww";
+    nixcord.url = "github:kaylorben/nixcord";
   };
 }
