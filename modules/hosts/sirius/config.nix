@@ -10,12 +10,14 @@
     {
 
       imports = with config.flake.modules.nixos; [
+        boot
         networking
         desktop
         virtualisation
       ];
 
       tnix = {
+        boot.secure-boot.enable = true;
         services.openssh.enable = true;
 
         virtualisation = {
@@ -52,7 +54,6 @@
       # --- Boot ---
       boot = {
         loader = {
-          systemd-boot.enable = true;
           efi.canTouchEfiVariables = true;
         };
         kernelPackages = pkgs.linuxKernel.packages.linux_zen;
