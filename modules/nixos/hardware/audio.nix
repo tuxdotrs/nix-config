@@ -1,6 +1,5 @@
 {
-  flake.modules.nixos.desktop = {
-
+  flake.modules.nixos.hardware = {
     security.rtkit.enable = true;
 
     services.pipewire = {

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.desktop = {
+  flake.modules.nixos.hardware = {
     hardware = {
       graphics = {
         enable = true;

@@ -8,9 +8,9 @@
       ...
     }:
     {
-
       imports = with config.flake.modules.nixos; [
         boot
+        hardware
         networking
         desktop
         virtualisation
