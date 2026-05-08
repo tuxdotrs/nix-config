@@ -59,9 +59,6 @@
         };
       };
 
-      # --- Boot ---
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-
       # --- Networking ---
       networking = {
         hostName = hostName;
