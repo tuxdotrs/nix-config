@@ -7,10 +7,10 @@
     }:
     with lib;
     let
-      cfg = config.tnix.services.openssh;
+      cfg = config.tnix.networking.openssh;
     in
     {
-      options.tnix.services.openssh = {
+      options.tnix.networking.openssh = {
         enable = mkEnableOption "Enable OpenSSH server";
 
         ports = mkOption {

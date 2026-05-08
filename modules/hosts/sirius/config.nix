@@ -18,7 +18,7 @@
 
       tnix = {
         boot.secure-boot.enable = true;
-        services.openssh.enable = true;
+        networking.openssh.enable = true;
 
         virtualisation = {
           docker.enable = true;
