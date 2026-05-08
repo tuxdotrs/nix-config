@@ -27,6 +27,7 @@
 
         boot.lanzaboote = {
           enable = true;
+          configurationLimit = 10;
           pkiBundle = "/var/lib/sbctl";
         };
       };
