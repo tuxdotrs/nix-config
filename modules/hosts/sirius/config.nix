@@ -91,7 +91,11 @@
       boot.kernelParams = [ "nvidia-drm.modeset=1" ];
       nixpkgs.config.cudaSupport = true;
       services.xserver.videoDrivers = [ "nvidia" ];
-      environment.systemPackages = with pkgs; [ nvtopPackages.full ];
+
+      environment.systemPackages = with pkgs; [
+        nvtopPackages.full
+        davinci-resolve
+      ];
 
       # !!! DO NOT CHANGE THIS !!!
       # This should match the version used at initial install.
