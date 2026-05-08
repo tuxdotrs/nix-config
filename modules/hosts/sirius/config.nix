@@ -35,17 +35,22 @@
           neededForUsers = true;
         };
 
-        openrouter_api_key = {
+        gemini-api-key = {
           sopsFile = ./secrets.yaml;
           owner = userName;
         };
 
-        opencode_go_api_key = {
+        openrouter-api-key = {
           sopsFile = ./secrets.yaml;
           owner = userName;
         };
 
-        "vicinae.json" = {
+        opencode-go-api-key = {
+          sopsFile = ./secrets.yaml;
+          owner = userName;
+        };
+
+        vicinae-json = {
           sopsFile = ./secrets.yaml;
           owner = userName;
         };
