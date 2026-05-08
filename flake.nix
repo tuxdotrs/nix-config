@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    cyber-tux = {
+      url = "git+ssh://git@github.com/tuxdotrs/cyber-tux.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wezterm-flake = {
       url = "github:wez/wezterm/main?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";

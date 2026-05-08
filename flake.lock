@@ -112,6 +112,26 @@
         "type": "github"
       }
     },
+    "cyber-tux": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739652548,
+        "narHash": "sha256-J4mL4DyRFTsEKlratZsbC9tm2i6Mzr6dEhetKk4jABM=",
+        "ref": "refs/heads/main",
+        "rev": "4ada9e2f0d3b6639627601d3f06128c953c2b446",
+        "revCount": 11,
+        "type": "git",
+        "url": "ssh://git@github.com/tuxdotrs/cyber-tux.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/tuxdotrs/cyber-tux.git"
+      }
+    },
     "deploy-rs": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -1236,6 +1256,7 @@
     "root": {
       "inputs": {
         "awww": "awww",
+        "cyber-tux": "cyber-tux",
         "deploy-rs": "deploy-rs",
         "disko": "disko",
         "flake-parts": "flake-parts",

@@ -6,19 +6,27 @@
       hostName,
       userName,
       ...
-    }:
+    }@innerArgs:
     {
       imports = with config.flake.modules.nixos; [
         boot
         hardware
         networking
         virtualisation
+        services
       ];
 
       tnix = {
         boot.secure-boot.enable = true;
         boot.impermanence.enable = true;
         networking.openssh.enable = true;
+
+        services = {
+          cyber-tux = {
+            enable = true;
+            environmentFile = innerArgs.config.sops.secrets.discord-token.path;
+          };
+        };
 
         virtualisation = {
           docker.enable = true;
