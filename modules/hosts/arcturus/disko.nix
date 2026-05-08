@@ -2,6 +2,9 @@
 {
   flake.modules.nixos.arcturus =
     { config, lib, ... }:
+    let
+      hasOptinPersistence = config.tnix.boot.impermanence.enable;
+    in
     {
       imports = [
         inputs.disko.nixosModules.disko
@@ -52,7 +55,7 @@
                   };
                 }
                 # Conditionally merge /persist only when impermanence is enabled
-                // lib.optionalAttrs config.tnix.boot.impermanence.enable {
+                // lib.optionalAttrs hasOptinPersistence {
                   "/persist" = {
                     mountOptions = [
                       "compress=zstd"
