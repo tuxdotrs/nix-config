@@ -45,8 +45,8 @@
           # Theme
           border_radius = 8;
           no_radius_when_single = 0;
-          focused_opacity = 1.0;
-          unfocused_opacity = 1.0;
+          focused_opacity = 0.9;
+          unfocused_opacity = 0.9;
 
           # Scroller Layout Setting
           scroller_structs = 0;
@@ -168,7 +168,7 @@
           ];
 
           # Window effect
-          blur = 0;
+          blur = 1;
           blur_layer = 0;
           blur_optimized = 1;
           blur_params_num_passes = 2;
@@ -178,7 +178,7 @@
           blur_params_contrast = 0.9;
           blur_params_saturation = 1.2;
 
-          shadows = 0;
+          shadows = 1;
           layer_shadows = 0;
           shadow_only_floating = 1;
           shadows_size = 10;
