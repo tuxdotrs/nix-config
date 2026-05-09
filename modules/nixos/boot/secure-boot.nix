@@ -27,6 +27,9 @@
 
         boot.lanzaboote = {
           enable = true;
+          autoGenerateKeys.enable = true;
+          autoEnrollKeys.enable = true;
+
           configurationLimit = 10;
           pkiBundle = "/var/lib/sbctl";
         };
