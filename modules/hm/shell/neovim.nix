@@ -13,8 +13,9 @@
         neovim = {
           enable = true;
           defaultEditor = true;
-          vimAlias = true;
         };
+
+        vim.enable = true;
       };
 
       home = {
