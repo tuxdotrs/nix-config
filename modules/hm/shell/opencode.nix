@@ -1,34 +1,29 @@
 {
-  flake.modules.homeManager.shell =
-    {
-      osConfig ? { },
-      ...
-    }:
-    {
-      programs.opencode = {
-        enable = true;
-        tui = {
-          theme = "system";
-        };
-        settings = {
-          provider = {
-            google = {
-              options = {
-                apiKey = "{file:${osConfig.sops.secrets.gemini-api-key.path}}";
-              };
+  flake.modules.homeManager.shell = {
+    programs.opencode = {
+      enable = true;
+      tui = {
+        theme = "system";
+      };
+      settings = {
+        provider = {
+          google = {
+            options = {
+              apiKey = "{file:/run/secrets/gemini-api-key}";
             };
-            openrouter = {
-              options = {
-                apiKey = "{file:${osConfig.sops.secrets.openrouter-api-key.path}}";
-              };
+          };
+          openrouter = {
+            options = {
+              apiKey = "{file:/run/secrets/openrouter-api-key}";
             };
-            opencode-go = {
-              options = {
-                apiKey = "{file:${osConfig.sops.secrets.opencode-go-api-key.path}}";
-              };
+          };
+          opencode-go = {
+            options = {
+              apiKey = "{file:/run/secrets/opencode-go-api-key}";
             };
           };
         };
       };
     };
+  };
 }
