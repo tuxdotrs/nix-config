@@ -4,6 +4,7 @@
     {
       config,
       lib,
+      userName,
       ...
     }:
     let
@@ -16,6 +17,28 @@
 
       options.tnix.boot.impermanence = {
         enable = lib.mkEnableOption "Enable impermanence";
+
+        directories = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [ ];
+        };
+
+        files = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [ ];
+        };
+      };
+
+      options.tnix.boot.impermanence.home = {
+        directories = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [ ];
+        };
+
+        files = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [ ];
+        };
       };
 
       config = lib.mkIf cfg.impermanence.enable {
@@ -27,13 +50,34 @@
             "/var/log"
             "/var/lib"
             "/etc/NetworkManager/system-connections"
-          ];
+          ]
+          ++ cfg.impermanence.directories;
+
           files = [
             "/etc/ssh/ssh_host_ed25519_key"
             "/etc/ssh/ssh_host_ed25519_key.pub"
             "/etc/ssh/ssh_host_rsa_key"
             "/etc/ssh/ssh_host_rsa_key.pub"
-          ];
+          ]
+          ++ cfg.impermanence.files;
+        };
+
+        home-manager.users.${userName} = {
+          home.persistence."/persist" = {
+            directories = [
+              "Downloads"
+              "Music"
+              "Wallpapers"
+              "Documents"
+              "Videos"
+              "Projects"
+              "Stuff"
+              ".ssh"
+            ]
+            ++ cfg.impermanence.home.directories;
+
+            files = cfg.impermanence.home.files;
+          };
         };
 
         boot.initrd.systemd = {

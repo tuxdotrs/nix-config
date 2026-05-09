@@ -17,8 +17,29 @@
       ];
 
       tnix = {
-        boot.secure-boot.enable = true;
-        boot.impermanence.enable = true;
+        boot = {
+          secure-boot.enable = true;
+
+          impermanence = {
+            enable = true;
+
+            home = {
+              directories = [
+                ".config/sops"
+                ".local/share/nvim"
+                ".local/share/opencode"
+                ".local/share/zsh"
+                ".local/share/zoxide"
+                ".local/state/lazygit"
+              ];
+
+              files = [
+                ".wakatime.cfg"
+              ];
+            };
+          };
+        };
+
         networking.openssh.enable = true;
 
         services = {
