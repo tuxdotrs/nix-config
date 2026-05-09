@@ -13,6 +13,7 @@
         hardware
         networking
         desktop
+        gaming
         virtualisation
       ];
 
@@ -25,6 +26,7 @@
 
             home = {
               directories = [
+                ".steam"
                 ".cache/awww"
                 ".config/BraveSoftware"
                 ".config/zed"
@@ -34,6 +36,7 @@
                 ".config/obs-studio"
                 ".config/easyeffects"
                 ".config/DankMaterialShell"
+                ".local/share/Steam"
                 ".local/share/nvim"
                 ".local/share/opencode"
                 ".local/share/zsh"
