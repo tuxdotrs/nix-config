@@ -17,8 +17,38 @@
       ];
 
       tnix = {
-        boot.secure-boot.enable = true;
-        boot.impermanence.enable = true;
+        boot = {
+          secure-boot.enable = true;
+
+          impermanence = {
+            enable = true;
+
+            home = {
+              directories = [
+                ".cache/awww"
+                ".config/BraveSoftware"
+                ".config/zed"
+                ".config/Vencord"
+                ".config/vesktop"
+                ".config/sops"
+                ".config/obs-studio"
+                ".config/easyeffects"
+                ".config/DankMaterialShell"
+                ".local/share/nvim"
+                ".local/share/opencode"
+                ".local/share/zsh"
+                ".local/share/zoxide"
+                ".local/state/lazygit"
+                ".local/share/vicinae"
+              ];
+
+              files = [
+                ".wakatime.cfg"
+              ];
+            };
+          };
+        };
+
         networking.openssh.enable = true;
 
         virtualisation = {

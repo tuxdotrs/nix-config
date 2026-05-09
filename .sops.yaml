@@ -3,7 +3,7 @@ keys:
     - &tux age14vktfes95f33vuefwnmuvryas7az04u76dsgyhfvsx73czkvmp2q7njkl4
 
   - &hosts
-    - &sirius age18hepvvp3nw9ram6usxc8rvpxed2pye0knqx0zutqgxeu35k745vqyxfphz
+    - &sirius age1maxsx5tq2h3d92rfyl8ekcdan5gu5cpch4qs3c56cu7qag02xgvs3h0gqc
     - &arcturus age1huqa3hc7wcxk4dpelrzny437nzrx4fnll3d8g9ahznzk268yju5qufapxy
 
 creation_rules:
