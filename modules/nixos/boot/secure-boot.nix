@@ -18,11 +18,16 @@
       };
 
       config = lib.mkIf cfg.secure-boot.enable {
-        environment.systemPackages = [
-          pkgs.sbctl
+        assertions = [
+          {
+            assertion = !cfg.legacy.enable;
+            message = "secure-boot and legacy boot (GRUB) cannot be enabled at the same time";
+          }
         ];
 
-        # Lanzaboote currently replaces the systemd-boot module.
+        environment.systemPackages = [ pkgs.sbctl ];
+
+        # Lanzaboote replaces systemd-boot, so force it off
         boot.loader.systemd-boot.enable = lib.mkForce false;
 
         boot.lanzaboote = {
