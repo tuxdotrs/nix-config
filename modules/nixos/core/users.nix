@@ -8,6 +8,9 @@
       userEmail,
       ...
     }:
+    let
+      hasPasswordSecret = lib.hasAttrByPath [ "sops" "secrets" "tux-password" ] config;
+    in
     {
       programs.zsh.enable = true;
 
@@ -31,7 +34,8 @@
         mutableUsers = false;
         defaultUserShell = pkgs.zsh;
         users.${userName} = {
-          hashedPasswordFile = config.sops.secrets.tux-password.path;
+          hashedPasswordFile = lib.mkIf hasPasswordSecret config.sops.secrets.tux-password.path;
+          initialPassword = lib.mkIf (!hasPasswordSecret) userName;
           isNormalUser = true;
           extraGroups = [
             "networkmanager"
