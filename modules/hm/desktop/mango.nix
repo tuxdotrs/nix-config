@@ -105,6 +105,7 @@
             "SUPER, Return, spawn, wezterm"
             "SUPER, Space, spawn, vicinae toggle"
             "SUPER, D, spawn, vesktop"
+            "SUPER, T, spawn, Telegram"
             "SUPER, B, spawn, brave"
             "SUPER, V, spawn, vicinae vicinae://extensions/vicinae/clipboard/history"
             "SUPER+SHIFT, W, spawn, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"

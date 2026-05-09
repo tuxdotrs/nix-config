@@ -40,10 +40,12 @@
                 ".local/share/zoxide"
                 ".local/state/lazygit"
                 ".local/share/vicinae"
+                ".local/share/TelegramDesktop"
               ];
 
               files = [
                 ".wakatime.cfg"
+                ".config/lan-mouse/lan-mouse.pem"
               ];
             };
           };
@@ -123,6 +125,7 @@
       environment.systemPackages = with pkgs; [
         nvtopPackages.full
         davinci-resolve
+        telegram-desktop
       ];
 
       # !!! DO NOT CHANGE THIS !!!
