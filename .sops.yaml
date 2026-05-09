@@ -5,6 +5,7 @@ keys:
   - &hosts
     - &sirius age1maxsx5tq2h3d92rfyl8ekcdan5gu5cpch4qs3c56cu7qag02xgvs3h0gqc
     - &arcturus age1huqa3hc7wcxk4dpelrzny437nzrx4fnll3d8g9ahznzk268yju5qufapxy
+    - &alpha age1mzxxxzhy3us3rd960ufqv7vlxj5cnug86md6x69llg9ujzw2pqws057llf
 
 creation_rules:
   - path_regex: hosts/sirius/secrets.yaml$
@@ -17,3 +18,8 @@ creation_rules:
       - age:
           - *tux
           - *arcturus
+  - path_regex: hosts/alpha/secrets.yaml$
+    key_groups:
+      - age:
+          - *tux
+          - *alpha
