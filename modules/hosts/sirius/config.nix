@@ -18,6 +18,7 @@
 
       tnix = {
         boot.secure-boot.enable = true;
+        boot.impermanence.enable = true;
         networking.openssh.enable = true;
 
         virtualisation = {
