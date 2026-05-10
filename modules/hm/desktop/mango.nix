@@ -132,6 +132,7 @@
             "SUPER+CTRL, Down, resizewin, +0, +50"
             "SUPER+CTRL, Left, resizewin, -50, +0"
             "SUPER+CTRL, Right, resizewin, +50, +0"
+            "SUPER+CTRL, Equal, setoption, default_mfact, 0.5"
 
             # swap client
             "SUPER+SHIFT, Up, exchange_client, up"
