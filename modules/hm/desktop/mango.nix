@@ -194,7 +194,7 @@
           animation_type_close = "fade";
           animation_fade_in = 1;
           animation_fade_out = 1;
-          tag_animation_direction = 1;
+          tag_animation_direction = 0;
           zoom_initial_ratio = 0.3;
           zoom_end_ratio = 0.8;
           fadein_begin_opacity = 0.5;
