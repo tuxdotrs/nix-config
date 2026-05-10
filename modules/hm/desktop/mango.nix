@@ -121,6 +121,7 @@
             "ALT+SHIFT, minus, incgaps, -1"
             "ALT+SHIFT, equal, incgaps, 1"
             "ALT+SHIFT, R, togglegaps"
+            "SUPER+SHIFT, P, toggleglobal"
 
             # switch layout
             "SUPER+SHIFT, H, setlayout, tile"
