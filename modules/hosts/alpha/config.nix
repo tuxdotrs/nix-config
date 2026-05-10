@@ -40,7 +40,10 @@
           };
         };
 
-        networking.openssh.enable = true;
+        networking = {
+          openssh.enable = true;
+          netbird-client.enable = true;
+        };
 
         virtualisation = {
           docker.enable = true;
@@ -64,6 +67,11 @@
         };
 
         opencode-go-api-key = {
+          sopsFile = ./secrets.yaml;
+          owner = userName;
+        };
+
+        netbird-key = {
           sopsFile = ./secrets.yaml;
           owner = userName;
         };
