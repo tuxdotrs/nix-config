@@ -115,6 +115,7 @@
             "SUPER+SHIFT, R, reload_config"
             "SUPER+SHIFT, F, togglefullscreen"
             "SUPER+SHIFT, Space, togglefloating"
+            "SUPER+SHIFT, Space, centerwin"
 
             "ALT, Tab, toggleoverview"
             "ALT+SHIFT, minus, incgaps, -1"
