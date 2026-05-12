@@ -2,7 +2,6 @@
 {
   flake.modules.nixos.arcturus =
     {
-      pkgs,
       hostName,
       userName,
       ...
@@ -10,7 +9,6 @@
     {
       imports = with config.flake.modules.nixos; [
         boot
-        hardware
         networking
         virtualisation
         services
@@ -108,10 +106,6 @@
         };
         firewall.enable = false;
       };
-
-      environment.systemPackages = with pkgs; [
-        nvtopPackages.full
-      ];
 
       system.stateVersion = "26.05";
     };

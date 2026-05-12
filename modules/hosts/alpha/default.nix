@@ -14,7 +14,14 @@ in
 {
   flake.nixosConfigurations."${hostName}" = nixpkgs.lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit hostName userName userEmail; };
+    specialArgs = {
+      inherit
+        hostName
+        userName
+        userEmail
+        system
+        ;
+    };
     modules = [
       config.flake.modules.nixos.core
       config.flake.modules.nixos.${hostName}

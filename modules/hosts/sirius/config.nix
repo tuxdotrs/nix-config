@@ -10,7 +10,6 @@
     {
       imports = with config.flake.modules.nixos; [
         boot
-        hardware
         networking
         desktop
         gaming
@@ -121,20 +120,7 @@
         firewall.enable = false;
       };
 
-      # --- Hardware / GPU ---
-      hardware = {
-        nvidia = {
-          modesetting.enable = true;
-          open = false;
-          nvidiaSettings = true;
-        };
-      };
-      boot.kernelParams = [ "nvidia-drm.modeset=1" ];
-      nixpkgs.config.cudaSupport = true;
-      services.xserver.videoDrivers = [ "nvidia" ];
-
       environment.systemPackages = with pkgs; [
-        nvtopPackages.full
         davinci-resolve
         telegram-desktop
       ];

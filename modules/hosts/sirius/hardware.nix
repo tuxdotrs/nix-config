@@ -1,11 +1,18 @@
+{ config, ... }:
 {
   flake.modules.nixos.sirius =
     {
-      config,
       lib,
+      pkgs,
+      system,
       ...
-    }:
+    }@innerArgs:
     {
+      imports = with config.flake.modules.nixos; [
+        hardware
+      ];
+
+      boot.kernelParams = [ "nvidia-drm.modeset=1" ];
       boot.initrd.availableKernelModules = [
         "nvme"
         "xhci_pci"
@@ -18,15 +25,23 @@
       boot.kernelModules = [ "kvm-amd" ];
       boot.extraModulePackages = [ ];
 
-      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-      # (the default) this is the recommended approach. When using systemd-networkd it's
-      # still possible to use this option, but it's recommended to use it in conjunction
-      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-      networking.useDHCP = lib.mkDefault true;
-      # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
-      # networking.interfaces.wlp10s0f3u2i2.useDHCP = lib.mkDefault true;
+      hardware = {
+        nvidia = {
+          modesetting.enable = true;
+          open = false;
+          nvidiaSettings = true;
+        };
 
-      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-      hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+        cpu.amd.updateMicrocode = lib.mkDefault innerArgs.config.hardware.enableRedistributableFirmware;
+      };
+      services.xserver.videoDrivers = [ "nvidia" ];
+
+      networking.useDHCP = lib.mkDefault true;
+      nixpkgs.config.cudaSupport = true;
+      nixpkgs.hostPlatform = lib.mkDefault system;
+
+      environment.systemPackages = with pkgs; [
+        nvtopPackages.full
+      ];
     };
 }

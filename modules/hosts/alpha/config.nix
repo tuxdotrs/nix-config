@@ -4,22 +4,15 @@
     {
       hostName,
       userName,
-      modulesPath,
       ...
     }:
     {
-      imports =
-        with config.flake.modules.nixos;
-        [
-          boot
-          hardware
-          networking
-          virtualisation
-          services
-        ]
-        ++ [
-          (modulesPath + "/profiles/qemu-guest.nix")
-        ];
+      imports = with config.flake.modules.nixos; [
+        boot
+        networking
+        virtualisation
+        services
+      ];
 
       tnix = {
         boot = {
