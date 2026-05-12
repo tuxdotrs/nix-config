@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
       wayland.windowManager.hyprland = {
         enable = true;
@@ -8,6 +8,15 @@
         portalPackage = null;
         xwayland.enable = true;
         systemd.variables = [ "--all" ];
+      };
+
+      # TODO: Hyprland 0.55 switched to Lua-based configuration.
+      # Until the Home Manager module is updated, we symlink our config instead.
+      home.file = {
+        ".config/hypr/config".source =
+          config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Projects/hypr/config";
+        ".config/hypr/hyprland.lua".source =
+          config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Projects/hypr/hyprland.lua";
       };
 
       home.packages = with pkgs; [
