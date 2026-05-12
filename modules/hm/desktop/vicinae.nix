@@ -54,11 +54,6 @@
           imports = [ "/run/secrets/vicinae.json" ];
 
           providers = {
-            "@samlinville/store.raycast.tailscale" = {
-              "preferences" = {
-                "tailscalePath" = "${pkgs.tailscale}/bin/tailscale";
-              };
-            };
             "@sovereign/vicinae-extension-awww-switcher-0" = {
               "preferences" = {
                 "transitionDuration" = "1";
