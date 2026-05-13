@@ -34,7 +34,11 @@
 
         cpu.amd.updateMicrocode = lib.mkDefault innerArgs.config.hardware.enableRedistributableFirmware;
       };
-      services.xserver.videoDrivers = [ "nvidia" ];
+
+      services = {
+        xserver.videoDrivers = [ "nvidia" ];
+        power-profiles-daemon.enable = true;
+      };
 
       networking.useDHCP = lib.mkDefault true;
       nixpkgs.config.cudaSupport = true;
