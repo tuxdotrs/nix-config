@@ -25,6 +25,7 @@
 
             home = {
               directories = [
+                "Distrobox"
                 ".steam"
                 ".cache/awww"
                 ".config/BraveSoftware"
