@@ -1,8 +1,11 @@
 {
-  flake.modules.nixos.gaming = {
-    programs.steam = {
-      enable = true;
-      protontricks.enable = true;
+  flake.modules.nixos.gaming =
+    { pkgs, ... }:
+    {
+      programs.steam = {
+        enable = true;
+        protontricks.enable = true;
+        extraCompatPackages = with pkgs; [ proton-ge-bin ];
+      };
     };
-  };
 }
