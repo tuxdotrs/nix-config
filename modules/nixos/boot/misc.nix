@@ -6,6 +6,7 @@
         consoleLogLevel = 0;
         initrd.verbose = false;
         kernelPackages = pkgs.linuxPackages_zen;
+        supportedFilesystems = [ "ntfs" ];
       };
     };
 }
