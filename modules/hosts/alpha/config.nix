@@ -5,7 +5,7 @@
       hostName,
       userName,
       ...
-    }:
+    }@innerArgs:
     {
       imports = with config.flake.modules.nixos; [
         boot
@@ -38,6 +38,24 @@
           netbird-client.enable = true;
         };
 
+        services = {
+          nginx = {
+            enable = true;
+            domain = "lab.tux.rs";
+          };
+          aiostreams = {
+            enable = true;
+            port = 4567;
+
+            environment = {
+              ADDON_ID = "aiostreams.lab.tux.rs";
+              BASE_URL = "https://aiostreams.lab.tux.rs";
+            };
+
+            environmentFile = innerArgs.config.sops.secrets."aiostreams".path;
+          };
+        };
+
         virtualisation = {
           docker.enable = true;
         };
@@ -67,6 +85,18 @@
         netbird-key = {
           sopsFile = ./secrets.yaml;
           owner = userName;
+        };
+
+        "cloudflare-credentials/email" = {
+          sopsFile = ./secrets.yaml;
+        };
+
+        "cloudflare-credentials/dns-api-token" = {
+          sopsFile = ./secrets.yaml;
+        };
+
+        aiostreams = {
+          sopsFile = ./secrets.yaml;
         };
       };
 
