@@ -28,6 +28,8 @@
                 ".local/share/zoxide"
                 ".local/state/lazygit"
                 ".local/share/opencode"
+
+                "/var/lib/docker"
               ];
             };
           };

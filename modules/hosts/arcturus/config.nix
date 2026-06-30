@@ -29,6 +29,8 @@
                 ".local/share/zsh"
                 ".local/share/zoxide"
                 ".local/state/lazygit"
+
+                "/var/lib/docker"
               ];
 
               files = [
