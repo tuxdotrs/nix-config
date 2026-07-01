@@ -44,8 +44,6 @@
                 ".local/state/lazygit"
                 ".local/share/vicinae"
                 ".local/share/TelegramDesktop"
-
-                "/var/lib/docker"
               ];
 
               files = [
