@@ -20,7 +20,7 @@
 
         dataDir = mkOption {
           type = types.path;
-          default = "/var/lib/aiostreams";
+          default = "/var/lib/docker/volumes/aiostreams/_data";
           description = "Directory to store persistent AIOStreams data";
         };
 
