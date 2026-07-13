@@ -26,7 +26,7 @@
         ];
 
         settings = {
-          close_on_focus_loss = false;
+          close_on_focus_loss = true;
           consider_preedit = true;
           pop_to_root_on_close = true;
           favicon_service = "twenty";
