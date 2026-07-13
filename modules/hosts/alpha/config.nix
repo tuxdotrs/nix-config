@@ -44,18 +44,6 @@
             domain = "lab.tux.rs";
           };
 
-          aiostreams = {
-            enable = true;
-            port = 4567;
-
-            environment = {
-              ADDON_ID = "aiostreams.lab.tux.rs";
-              BASE_URL = "https://aiostreams.lab.tux.rs";
-            };
-
-            environmentFile = innerArgs.config.sops.secrets."aiostreams".path;
-          };
-
           mediaflow-proxy = {
             enable = true;
             port = 8888;
