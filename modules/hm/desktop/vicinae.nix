@@ -14,7 +14,8 @@
         useLayerShell = true;
 
         extensions = with pkgs.vicinae-extensions; [
-          bluetooth
+          # @TODO broken in upstream repo
+          # bluetooth
           nix
           ssh
           awww-switcher
