@@ -12,6 +12,7 @@
           key = "~/.ssh/id_ed25519.pub";
           signByDefault = true;
         };
+        lfs.enable = true;
         settings = {
           user = {
             name = "${userName}";
