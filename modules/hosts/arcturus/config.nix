@@ -23,6 +23,7 @@
 
             home = {
               directories = [
+                "Distrobox"
                 ".config/sops"
                 ".local/share/nvim"
                 ".local/share/opencode"
@@ -52,6 +53,7 @@
 
         virtualisation = {
           docker.enable = true;
+          distrobox.enable = true;
         };
       };
 
