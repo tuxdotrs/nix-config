@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.homeManager.canopus = {
+  flake.modules.homeManager.canopus = { pkgs, ... }: {
     imports = with config.flake.modules.homeManager; [
       desktop
     ];
@@ -33,6 +33,54 @@
         };
       };
     };
+
+    home.packages = with pkgs; [
+      (writeShellScriptBin "mirror-display" ''
+        hyprctl eval 'hl.monitor({
+          output   = "eDP-1",
+          mode     = "2560x1440@165",
+          position = "0x0",
+          scale    = "1",
+          disabled = false
+        })' && 
+        hyprctl eval 'hl.monitor({
+          output   = "HDMI-A-1",
+          mode     = "preferred",
+          position = "auto",
+          scale    = "1",
+          mirror   = "eDP-1"
+        })'
+      '')
+      (writeShellScriptBin "extend-display" ''
+        hyprctl eval 'hl.monitor({
+          output   = "eDP-1",
+          mode     = "2560x1440@165",
+          position = "0x0",
+          scale    = "1",
+          disabled = false
+        })' && 
+        hyprctl eval 'hl.monitor({
+          output   = "HDMI-A-1",
+          mode     = "preferred",
+          position = "0x-1440",
+          scale    = "1",
+          mirror   = ""
+        })'
+      '')
+      (writeShellScriptBin "dock-display" ''
+        hyprctl eval 'hl.monitor({
+          output   = "eDP-1",
+          disabled = true
+        })' && 
+        hyprctl eval 'hl.monitor({
+          output   = "HDMI-A-1",
+          mode     = "preferred",
+          position = "0x0",
+          scale    = "1",
+          mirror   = ""
+        })'
+      '')
+    ];
 
     home.stateVersion = "26.05";
   };
