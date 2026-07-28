@@ -14,7 +14,7 @@
           save = 1000000;
           path = "$HOME/.local/share/zsh/.zsh_history";
         };
-        syntaxHighlighting.enable = true;
+        fastSyntaxHighlighting.enable = true;
         autosuggestion.enable = true;
         initContent = ''
           ${lib.getExe pkgs.fastfetch}
