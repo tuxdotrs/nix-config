@@ -3,6 +3,7 @@
   flake.modules.nixos.canopus =
     {
       lib,
+      pkgs,
       system,
       ...
     }@innerArgs:
@@ -14,6 +15,7 @@
         ]
         ++ [ inputs.nixos-hardware.nixosModules.asus-zephyrus-ga503 ];
 
+      boot.kernelParams = [ "nvidia-drm.modeset=1" ];
       boot.initrd.availableKernelModules = [
         "nvme"
         "xhci_pci"
@@ -26,9 +28,18 @@
       boot.kernelModules = [ "kvm-amd" ];
       boot.extraModulePackages = [ ];
 
-      hardware.cpu.amd.updateMicrocode = lib.mkDefault innerArgs.config.hardware.enableRedistributableFirmware;
+      hardware = {
+        nvidia = {
+          modesetting.enable = true;
+          open = false;
+          nvidiaSettings = true;
+        };
+
+        cpu.amd.updateMicrocode = lib.mkDefault innerArgs.config.hardware.enableRedistributableFirmware;
+      };
 
       services = {
+        xserver.videoDrivers = [ "nvidia" ];
         power-profiles-daemon.enable = true;
         upower.enable = true;
 
@@ -129,6 +140,11 @@
       };
 
       networking.useDHCP = lib.mkDefault true;
+      nixpkgs.config.cudaSupport = true;
       nixpkgs.hostPlatform = lib.mkDefault system;
+
+      environment.systemPackages = with pkgs; [
+        nvtopPackages.full
+      ];
     };
 }
