@@ -6,6 +6,7 @@
         theme = "system";
       };
       settings = {
+        model = "opencode-go/kimi-k3";
         provider = {
           google = {
             options = {
