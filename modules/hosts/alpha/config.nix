@@ -47,7 +47,7 @@
           mediaflow-proxy = {
             enable = true;
             port = 8888;
-            
+
             environment = {
               APP__SERVER__HOST = "0.0.0.0";
               APP__SERVER__PORT = "8888";
