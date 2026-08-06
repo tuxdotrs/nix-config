@@ -11,22 +11,22 @@
 
       qt = {
         enable = true;
-        style = {
-          name = "Breeze";
-          package = pkgs.kdePackages.breeze;
-        };
+        style.name = "adwaita-dark";
       };
 
       gtk = {
         enable = true;
         theme = {
-          name = "Materia-dark";
-          package = pkgs.materia-theme;
+          name = "adw-gtk3-dark";
+          package = pkgs.adw-gtk3;
         };
         iconTheme = {
           package = pkgs.tela-icon-theme;
           name = "Tela-black";
         };
       };
+
+      # Make GTK4/libadwaita apps prefer dark too (they ignore gtk.theme).
+      dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
 }
