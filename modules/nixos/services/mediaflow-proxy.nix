@@ -18,9 +18,9 @@
           default = 8888;
         };
 
-        environment = mkOption {
-          type = with types; attrsOf str;
-          default = { };
+        domain = mkOption {
+          type = types.str;
+          default = "";
         };
 
         environmentFile = mkOption {
@@ -36,20 +36,19 @@
           ports = [
             "${toString cfg.port}:8888"
           ];
-
-          environment = cfg.environment;
+          environment = {
+            APP__SERVER__HOST = "0.0.0.0";
+            APP__SERVER__PORT = "${toString cfg.port}";
+          };
           environmentFiles = [ cfg.environmentFile ];
         };
 
-        services.nginx.virtualHosts = {
-          "mf-proxy.lab.tux.rs" = {
-            forceSSL = true;
-            useACMEHost = "lab.tux.rs";
-            locations = {
-              "/" = {
-                proxyPass = "http://localhost:${toString cfg.port}";
-              };
-            };
+        services.nginx.virtualHosts.${cfg.domain} = {
+          forceSSL = true;
+          useACMEHost = config.tnix.services.nginx.domain;
+          locations."/" = {
+            proxyPass = "http://localhost:${toString cfg.port}";
+            proxyWebsockets = true;
           };
         };
       };

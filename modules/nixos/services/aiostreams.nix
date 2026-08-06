@@ -18,15 +18,15 @@
           default = 3000;
         };
 
+        domain = mkOption {
+          type = types.str;
+          default = "";
+        };
+
         dataDir = mkOption {
           type = types.path;
           default = "/var/lib/docker/volumes/aiostreams/_data";
           description = "Directory to store persistent AIOStreams data";
-        };
-
-        environment = mkOption {
-          type = with types; attrsOf str;
-          default = { };
         };
 
         environmentFile = mkOption {
@@ -42,23 +42,21 @@
           ports = [
             "${toString cfg.port}:3000"
           ];
-
-          environment = cfg.environment;
+          environment = {
+            ADDON_ID = "${cfg.domain}";
+            BASE_URL = "https://${cfg.domain}";
+          };
           environmentFiles = [ cfg.environmentFile ];
           volumes = [
             "${cfg.dataDir}:/app/data"
           ];
         };
 
-        services.nginx.virtualHosts = {
-          "${cfg.environment.ADDON_ID}" = {
-            forceSSL = true;
-            useACMEHost = "lab.tux.rs";
-            locations = {
-              "/" = {
-                proxyPass = "http://localhost:${toString cfg.port}";
-              };
-            };
+        services.nginx.virtualHosts.${cfg.domain} = {
+          forceSSL = true;
+          useACMEHost = config.tnix.services.nginx.domain;
+          locations."/" = {
+            proxyPass = "http://localhost:${toString cfg.port}";
           };
         };
       };

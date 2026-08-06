@@ -43,12 +43,10 @@
 
           nginx.virtualHosts.${cfg.domain} = {
             forceSSL = true;
-            useACMEHost = "lab.tux.rs";
-            locations = {
-              "/" = {
-                proxyPass = "http://localhost:${toString cfg.port}";
-                proxyWebsockets = true;
-              };
+            useACMEHost = config.tnix.services.nginx.domain;
+            locations."/" = {
+              proxyPass = "http://localhost:${toString cfg.port}";
+              proxyWebsockets = true;
             };
           };
 
