@@ -8,19 +8,29 @@
     with lib;
     let
       cfg = config.tnix.services.aiostreams;
+      port = toString cfg.port;
+      acmeHost = config.tnix.services.nginx.domain;
     in
     {
       options.tnix.services.aiostreams = {
-        enable = mkEnableOption "Enable AIOStreams";
+        enable = mkEnableOption "AIOStreams";
 
         port = mkOption {
-          type = types.int;
+          type = types.port;
           default = 3000;
+          description = "Port on which AIOStreams listens";
         };
 
         domain = mkOption {
           type = types.str;
           default = "";
+          description = "Domain on which nginx serves AIOStreams (disabled when empty)";
+        };
+
+        image = mkOption {
+          type = types.str;
+          default = "ghcr.io/viren070/aiostreams:latest";
+          description = "Container image to use";
         };
 
         dataDir = mkOption {
@@ -30,33 +40,33 @@
         };
 
         environmentFile = mkOption {
-          type = with types; path;
-          default = "";
+          type = types.nullOr types.path;
+          default = null;
+          description = "Environment file with secrets passed to the container";
         };
       };
 
       config = mkIf cfg.enable {
         virtualisation.oci-containers.containers.aiostreams = {
-          autoStart = true;
-          image = "ghcr.io/viren070/aiostreams:latest";
+          image = cfg.image;
           ports = [
-            "${toString cfg.port}:3000"
+            "127.0.0.1:${port}:3000"
           ];
           environment = {
-            ADDON_ID = "${cfg.domain}";
+            ADDON_ID = cfg.domain;
             BASE_URL = "https://${cfg.domain}";
           };
-          environmentFiles = [ cfg.environmentFile ];
+          environmentFiles = optional (cfg.environmentFile != null) cfg.environmentFile;
           volumes = [
             "${cfg.dataDir}:/app/data"
           ];
         };
 
-        services.nginx.virtualHosts.${cfg.domain} = {
-          forceSSL = true;
-          useACMEHost = config.tnix.services.nginx.domain;
+        services.nginx.virtualHosts.${cfg.domain} = mkIf (cfg.domain != "") {
+          forceSSL = acmeHost != "";
+          useACMEHost = mkIf (acmeHost != "") acmeHost;
           locations."/" = {
-            proxyPass = "http://localhost:${toString cfg.port}";
+            proxyPass = "http://127.0.0.1:${port}";
           };
         };
       };

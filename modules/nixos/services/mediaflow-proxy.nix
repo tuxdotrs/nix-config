@@ -8,46 +8,56 @@
     with lib;
     let
       cfg = config.tnix.services.mediaflow-proxy;
+      port = toString cfg.port;
+      acmeHost = config.tnix.services.nginx.domain;
     in
     {
       options.tnix.services.mediaflow-proxy = {
-        enable = mkEnableOption "Enable MediaFlow Proxy";
+        enable = mkEnableOption "MediaFlow Proxy";
 
         port = mkOption {
-          type = types.int;
+          type = types.port;
           default = 8888;
+          description = "Port on which MediaFlow Proxy listens";
         };
 
         domain = mkOption {
           type = types.str;
           default = "";
+          description = "Domain on which nginx serves MediaFlow Proxy (disabled when empty)";
+        };
+
+        image = mkOption {
+          type = types.str;
+          default = "ghcr.io/mhdzumair/mediaflow-proxy-light:latest";
+          description = "Container image to use";
         };
 
         environmentFile = mkOption {
-          type = with types; path;
-          default = "";
+          type = types.nullOr types.path;
+          default = null;
+          description = "Environment file with secrets passed to the container";
         };
       };
 
       config = mkIf cfg.enable {
         virtualisation.oci-containers.containers.mediaflow-proxy = {
-          autoStart = true;
-          image = "ghcr.io/mhdzumair/mediaflow-proxy-light:latest";
+          image = cfg.image;
           ports = [
-            "${toString cfg.port}:8888"
+            "${port}:${port}"
           ];
           environment = {
             APP__SERVER__HOST = "0.0.0.0";
-            APP__SERVER__PORT = "${toString cfg.port}";
+            APP__SERVER__PORT = port;
           };
-          environmentFiles = [ cfg.environmentFile ];
+          environmentFiles = optional (cfg.environmentFile != null) cfg.environmentFile;
         };
 
-        services.nginx.virtualHosts.${cfg.domain} = {
-          forceSSL = true;
-          useACMEHost = config.tnix.services.nginx.domain;
+        services.nginx.virtualHosts.${cfg.domain} = mkIf (cfg.domain != "") {
+          forceSSL = acmeHost != "";
+          useACMEHost = mkIf (acmeHost != "") acmeHost;
           locations."/" = {
-            proxyPass = "http://localhost:${toString cfg.port}";
+            proxyPass = "http://127.0.0.1:${port}";
             proxyWebsockets = true;
           };
         };

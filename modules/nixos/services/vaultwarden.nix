@@ -8,19 +8,23 @@
     with lib;
     let
       cfg = config.tnix.services.vaultwarden;
+      port = toString cfg.port;
+      acmeHost = config.tnix.services.nginx.domain;
     in
     {
       options.tnix.services.vaultwarden = {
-        enable = mkEnableOption "Enable Vaultwarden";
+        enable = mkEnableOption "Vaultwarden";
 
         port = mkOption {
-          type = types.int;
+          type = types.port;
           default = 8000;
+          description = "Port on which Vaultwarden listens";
         };
 
         domain = mkOption {
           type = types.str;
           default = "";
+          description = "Domain on which nginx serves Vaultwarden (disabled when empty)";
         };
       };
 
@@ -41,11 +45,11 @@
             };
           };
 
-          nginx.virtualHosts.${cfg.domain} = {
-            forceSSL = true;
-            useACMEHost = config.tnix.services.nginx.domain;
+          nginx.virtualHosts.${cfg.domain} = mkIf (cfg.domain != "") {
+            forceSSL = acmeHost != "";
+            useACMEHost = mkIf (acmeHost != "") acmeHost;
             locations."/" = {
-              proxyPass = "http://localhost:${toString cfg.port}";
+              proxyPass = "http://127.0.0.1:${port}";
               proxyWebsockets = true;
             };
           };

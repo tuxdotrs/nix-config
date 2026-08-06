@@ -29,7 +29,7 @@
         dataDir = mkOption {
           type = types.path;
           default = "/var/lib/cyber-tux";
-          description = "Directory where CyberTux stores its data.";
+          description = "Directory where CyberTux stores its data (must be under /var/lib).";
         };
 
         environmentFile = mkOption {
@@ -41,7 +41,8 @@
       config = mkIf cfg.enable {
         systemd.services.cyber-tux = {
           description = "CyberTux Discord bot";
-          after = [ "network.target" ];
+          after = [ "network-online.target" ];
+          wants = [ "network-online.target" ];
           wantedBy = [ "multi-user.target" ];
 
           serviceConfig = {

@@ -12,11 +12,12 @@
     in
     {
       options.tnix.services.nginx = {
-        enable = mkEnableOption "Enable Nginx";
+        enable = mkEnableOption "Nginx";
 
         domain = mkOption {
           type = types.str;
           default = "";
+          description = "Base domain for the wildcard ACME certificate (disabled when empty)";
         };
       };
 
@@ -24,8 +25,8 @@
         security = {
           acme = {
             acceptTerms = true;
-            defaults.email = "${userEmail}";
-            certs = {
+            defaults.email = userEmail;
+            certs = mkIf (cfg.domain != "") {
               "${cfg.domain}" = {
                 group = "nginx";
                 domain = "*.${cfg.domain}";
