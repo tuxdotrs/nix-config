@@ -55,6 +55,12 @@
 
             environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
           };
+
+          vaultwarden = {
+            enable = true;
+            port = 9999;
+            domain = "bw.lab.tux.rs";
+          };
         };
 
         virtualisation = {
