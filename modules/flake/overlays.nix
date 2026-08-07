@@ -13,6 +13,8 @@
       hyprland-git = inputs.hyprland.packages.${prev.stdenv.hostPlatform.system};
       awww = inputs.awww.packages.${prev.stdenv.hostPlatform.system}.awww;
       vicinae-extensions = inputs.vicinae-extensions.packages.${prev.stdenv.hostPlatform.system};
+      nix-index-small =
+        inputs.nix-index-database.packages.${prev.stdenv.hostPlatform.system}.nix-index-with-small-db;
     };
 
     stable-packages = final: _prev: {
