@@ -44,6 +44,7 @@
                 ".local/state/lazygit"
                 ".local/share/vicinae"
                 ".local/share/TelegramDesktop"
+                ".local/share/GalaxyBudsClient"
               ];
 
               files = [
@@ -123,6 +124,7 @@
       environment.systemPackages = with pkgs; [
         davinci-resolve
         telegram-desktop
+        galaxy-buds-client
       ];
 
       # !!! DO NOT CHANGE THIS !!!
