@@ -44,6 +44,12 @@
             domain = "lab.tux.rs";
           };
 
+          uptime-kuma = {
+            enable = true;
+            port = 1111;
+            domain = "status.lab.tux.rs";
+          };
+
           mediaflow-proxy = {
             enable = true;
             port = 8888;
