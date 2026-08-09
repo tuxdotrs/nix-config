@@ -56,7 +56,6 @@
 
           vaultwarden = {
             enable = true;
-            port = 9999;
             domain = "bw.lab.tux.rs";
           };
         };

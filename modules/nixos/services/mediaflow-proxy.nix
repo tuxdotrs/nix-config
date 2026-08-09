@@ -23,7 +23,7 @@
 
         port = mkOption {
           type = types.port;
-          default = 8888;
+          default = 1113;
           description = "Port on which MediaFlow Proxy listens";
         };
 

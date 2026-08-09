@@ -48,13 +48,11 @@
 
           uptime-kuma = {
             enable = true;
-            port = 1111;
             domain = "status.lab.tux.rs";
           };
 
           mediaflow-proxy = {
             enable = true;
-            port = 8888;
             environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
           };
         };

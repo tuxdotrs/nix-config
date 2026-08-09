@@ -23,7 +23,7 @@
 
         port = mkOption {
           type = types.port;
-          default = 8000;
+          default = 1112;
           description = "Port on which Vaultwarden listens";
         };
 
