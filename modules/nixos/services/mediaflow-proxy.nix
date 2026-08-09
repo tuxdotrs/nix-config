@@ -15,6 +15,12 @@
       options.tnix.services.mediaflow-proxy = {
         enable = mkEnableOption "MediaFlow Proxy";
 
+        host = mkOption {
+          type = types.str;
+          default = "0.0.0.0";
+          description = "Host on which MediaFlow Proxy listens";
+        };
+
         port = mkOption {
           type = types.port;
           default = 8888;
@@ -24,7 +30,13 @@
         domain = mkOption {
           type = types.str;
           default = "";
-          description = "Domain on which nginx serves MediaFlow Proxy (disabled when empty)";
+          description = "Domain on which MediaFlow Proxy is available";
+        };
+
+        configureNginx = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Whether to configure Nginx as a reverse proxy for MediaFlow Proxy";
         };
 
         image = mkOption {
@@ -41,10 +53,17 @@
       };
 
       config = mkIf cfg.enable {
+        assertions = [
+          {
+            assertion = !cfg.configureNginx || cfg.domain != "";
+            message = "tnix.services.mediaflow-proxy.domain must be set when configureNginx is enabled.";
+          }
+        ];
+
         virtualisation.oci-containers.containers.mediaflow-proxy = {
           image = cfg.image;
           ports = [
-            "${port}:${port}"
+            "${cfg.host}:${port}:${port}"
           ];
           environment = {
             APP__SERVER__HOST = "0.0.0.0";
@@ -53,11 +72,11 @@
           environmentFiles = optional (cfg.environmentFile != null) cfg.environmentFile;
         };
 
-        services.nginx.virtualHosts.${cfg.domain} = mkIf (cfg.domain != "") {
+        services.nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
           forceSSL = acmeHost != "";
           useACMEHost = mkIf (acmeHost != "") acmeHost;
           locations."/" = {
-            proxyPass = "http://127.0.0.1:${port}";
+            proxyPass = "http://${cfg.host}:${port}";
             proxyWebsockets = true;
           };
         };

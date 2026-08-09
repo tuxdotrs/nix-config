@@ -15,6 +15,12 @@
       options.tnix.services.vaultwarden = {
         enable = mkEnableOption "Vaultwarden";
 
+        host = mkOption {
+          type = types.str;
+          default = "127.0.0.1";
+          description = "Host on which Vaultwarden listens";
+        };
+
         port = mkOption {
           type = types.port;
           default = 8000;
@@ -24,17 +30,30 @@
         domain = mkOption {
           type = types.str;
           default = "";
-          description = "Domain on which nginx serves Vaultwarden (disabled when empty)";
+          description = "Domain on which Vaultwarden is available";
+        };
+
+        configureNginx = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Whether to configure Nginx as a reverse proxy for Vaultwarden";
         };
       };
 
       config = mkIf cfg.enable {
+        assertions = [
+          {
+            assertion = cfg.domain != "";
+            message = "tnix.services.vaultwarden.domain must be set when tnix.services.vaultwarden.enable is true.";
+          }
+        ];
+
         services = {
           vaultwarden = {
             enable = true;
             dbBackend = "postgresql";
             config = {
-              ROCKET_ADDRESS = "127.0.0.1";
+              ROCKET_ADDRESS = cfg.host;
               ROCKET_PORT = cfg.port;
               DOMAIN = "https://${cfg.domain}";
 
@@ -45,11 +64,11 @@
             };
           };
 
-          nginx.virtualHosts.${cfg.domain} = mkIf (cfg.domain != "") {
+          nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
             forceSSL = acmeHost != "";
             useACMEHost = mkIf (acmeHost != "") acmeHost;
             locations."/" = {
-              proxyPass = "http://127.0.0.1:${port}";
+              proxyPass = "http://${cfg.host}:${port}";
               proxyWebsockets = true;
             };
           };

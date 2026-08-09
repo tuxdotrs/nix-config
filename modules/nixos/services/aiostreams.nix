@@ -15,6 +15,12 @@
       options.tnix.services.aiostreams = {
         enable = mkEnableOption "AIOStreams";
 
+        host = mkOption {
+          type = types.str;
+          default = "127.0.0.1";
+          description = "Host on which AIOStreams listens";
+        };
+
         port = mkOption {
           type = types.port;
           default = 3000;
@@ -24,7 +30,13 @@
         domain = mkOption {
           type = types.str;
           default = "";
-          description = "Domain on which nginx serves AIOStreams (disabled when empty)";
+          description = "Domain on which AIOStreams is available";
+        };
+
+        configureNginx = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Whether to configure Nginx as a reverse proxy for AIOStreams";
         };
 
         image = mkOption {
@@ -47,10 +59,17 @@
       };
 
       config = mkIf cfg.enable {
+        assertions = [
+          {
+            assertion = cfg.domain != "";
+            message = "tnix.services.aiostreams.domain must be set when tnix.services.aiostreams.enable is true.";
+          }
+        ];
+
         virtualisation.oci-containers.containers.aiostreams = {
           image = cfg.image;
           ports = [
-            "127.0.0.1:${port}:3000"
+            "${cfg.host}:${port}:3000"
           ];
           environment = {
             ADDON_ID = cfg.domain;
@@ -62,11 +81,12 @@
           ];
         };
 
-        services.nginx.virtualHosts.${cfg.domain} = mkIf (cfg.domain != "") {
+        services.nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
           forceSSL = acmeHost != "";
           useACMEHost = mkIf (acmeHost != "") acmeHost;
           locations."/" = {
-            proxyPass = "http://127.0.0.1:${port}";
+            proxyPass = "http://${cfg.host}:${port}";
+            proxyWebsockets = true;
           };
         };
       };
