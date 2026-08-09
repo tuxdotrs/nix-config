@@ -38,6 +38,12 @@
           default = false;
           description = "Whether to configure Nginx as a reverse proxy for Vaultwarden";
         };
+
+        configurePangolin = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Whether to configure Pangolin as a reverse proxy for Vaultwarden";
+        };
       };
 
       config = mkIf cfg.enable {
@@ -70,6 +76,31 @@
             locations."/" = {
               proxyPass = "http://${cfg.host}:${port}";
               proxyWebsockets = true;
+            };
+          };
+
+          newt.blueprint.proxy-resources = mkIf cfg.configurePangolin {
+            vaultwarden = {
+              auth = {
+                sso-enabled = false;
+              };
+              full-domain = cfg.domain;
+              name = "vaultwarden";
+              protocol = "http";
+              targets = [
+                {
+                  hostname = "localhost";
+                  method = "http";
+                  port = cfg.port;
+                  healthcheck = {
+                    hostname = "localhost";
+                    port = cfg.port;
+                    scheme = "http";
+                    method = "GET";
+                    path = "/";
+                  };
+                }
+              ];
             };
           };
 

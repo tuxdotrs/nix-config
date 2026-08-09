@@ -57,6 +57,7 @@
           vaultwarden = {
             enable = true;
             domain = "bw.lab.tux.rs";
+            configurePangolin = true;
           };
         };
 

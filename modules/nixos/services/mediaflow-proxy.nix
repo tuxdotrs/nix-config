@@ -39,6 +39,12 @@
           description = "Whether to configure Nginx as a reverse proxy for MediaFlow Proxy";
         };
 
+        configurePangolin = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Whether to configure Pangolin as a reverse proxy for MediaFlow Proxy";
+        };
+
         image = mkOption {
           type = types.str;
           default = "ghcr.io/mhdzumair/mediaflow-proxy-light:latest";
@@ -56,7 +62,11 @@
         assertions = [
           {
             assertion = !cfg.configureNginx || cfg.domain != "";
-            message = "tnix.services.mediaflow-proxy.domain must be set when configureNginx is enabled.";
+            message = "tnix.services.mediaflow-proxy.domain must be set when tnix.services.mediaflow-proxy.configureNginx is enabled.";
+          }
+          {
+            assertion = !cfg.configurePangolin || cfg.domain != "";
+            message = "tnix.services.mediaflow-proxy.domain must be set when tnix.services.mediaflow-proxy.configurePangolin is enabled.";
           }
         ];
 
@@ -72,12 +82,39 @@
           environmentFiles = optional (cfg.environmentFile != null) cfg.environmentFile;
         };
 
-        services.nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
-          forceSSL = acmeHost != "";
-          useACMEHost = mkIf (acmeHost != "") acmeHost;
-          locations."/" = {
-            proxyPass = "http://${cfg.host}:${port}";
-            proxyWebsockets = true;
+        services = {
+          nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
+            forceSSL = acmeHost != "";
+            useACMEHost = mkIf (acmeHost != "") acmeHost;
+            locations."/" = {
+              proxyPass = "http://${cfg.host}:${port}";
+              proxyWebsockets = true;
+            };
+          };
+
+          newt.blueprint.proxy-resources = mkIf cfg.configurePangolin {
+            mediaflow-proxy = {
+              auth = {
+                sso-enabled = false;
+              };
+              full-domain = cfg.domain;
+              name = "mediaflow-proxy";
+              protocol = "http";
+              targets = [
+                {
+                  hostname = "localhost";
+                  method = "http";
+                  port = cfg.port;
+                  healthcheck = {
+                    hostname = "localhost";
+                    port = cfg.port;
+                    scheme = "http";
+                    method = "GET";
+                    path = "/";
+                  };
+                }
+              ];
+            };
           };
         };
       };

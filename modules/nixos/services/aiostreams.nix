@@ -39,6 +39,12 @@
           description = "Whether to configure Nginx as a reverse proxy for AIOStreams";
         };
 
+        configurePangolin = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Whether to configure Pangolin as a reverse proxy for AIOStreams";
+        };
+
         image = mkOption {
           type = types.str;
           default = "ghcr.io/viren070/aiostreams:latest";
@@ -81,12 +87,39 @@
           ];
         };
 
-        services.nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
-          forceSSL = acmeHost != "";
-          useACMEHost = mkIf (acmeHost != "") acmeHost;
-          locations."/" = {
-            proxyPass = "http://${cfg.host}:${port}";
-            proxyWebsockets = true;
+        services = {
+          nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
+            forceSSL = acmeHost != "";
+            useACMEHost = mkIf (acmeHost != "") acmeHost;
+            locations."/" = {
+              proxyPass = "http://${cfg.host}:${port}";
+              proxyWebsockets = true;
+            };
+          };
+
+          newt.blueprint.proxy-resources = mkIf cfg.configurePangolin {
+            aiostreams = {
+              auth = {
+                sso-enabled = false;
+              };
+              full-domain = cfg.domain;
+              name = "aiostreams";
+              protocol = "http";
+              targets = [
+                {
+                  hostname = "localhost";
+                  method = "http";
+                  port = cfg.port;
+                  healthcheck = {
+                    hostname = "localhost";
+                    port = cfg.port;
+                    scheme = "http";
+                    method = "GET";
+                    path = "/";
+                  };
+                }
+              ];
+            };
           };
         };
       };
