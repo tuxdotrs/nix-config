@@ -52,12 +52,6 @@
             domain = "status.lab.tux.rs";
           };
 
-          vaultwarden = {
-            enable = true;
-            port = 9999;
-            domain = "bw.lab.tux.rs";
-          };
-
           mediaflow-proxy = {
             enable = true;
             port = 8888;

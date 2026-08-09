@@ -53,6 +53,12 @@
             enable = true;
             environmentFile = innerArgs.config.sops.secrets.discord-token.path;
           };
+
+          vaultwarden = {
+            enable = true;
+            port = 9999;
+            domain = "bw.lab.tux.rs";
+          };
         };
 
         virtualisation = {
