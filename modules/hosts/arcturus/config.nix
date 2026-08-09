@@ -42,6 +42,10 @@
         networking = {
           openssh.enable = true;
           netbird-client.enable = true;
+          newt = {
+            enable = true;
+            environmentFile = innerArgs.config.sops.secrets.newt.path;
+          };
         };
 
         services = {
@@ -83,6 +87,11 @@
         };
 
         netbird-key = {
+          sopsFile = ./secrets.yaml;
+          owner = userName;
+        };
+
+        newt = {
           sopsFile = ./secrets.yaml;
           owner = userName;
         };

@@ -39,9 +39,11 @@
         };
 
         services = {
-          nginx = {
+          pangolin = {
             enable = true;
-            domain = "lab.tux.rs";
+            domain = "pangolin.lab.tux.rs";
+            baseDomain = "lab.tux.rs";
+            environmentFile = innerArgs.config.sops.secrets."pangolin".path;
           };
 
           uptime-kuma = {
@@ -50,17 +52,16 @@
             domain = "status.lab.tux.rs";
           };
 
-          mediaflow-proxy = {
-            enable = true;
-            port = 8888;
-            domain = "mf-proxy.lab.tux.rs";
-            environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
-          };
-
           vaultwarden = {
             enable = true;
             port = 9999;
             domain = "bw.lab.tux.rs";
+          };
+
+          mediaflow-proxy = {
+            enable = true;
+            port = 8888;
+            environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
           };
         };
 
@@ -108,6 +109,10 @@
         };
 
         mediaflow-proxy = {
+          sopsFile = ./secrets.yaml;
+        };
+
+        pangolin = {
           sopsFile = ./secrets.yaml;
         };
       };
