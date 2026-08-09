@@ -18,7 +18,7 @@
       config = mkIf cfg.enable {
         services.netbird.clients = {
           ${hostName} = {
-            port = 51820;
+            port = 61820;
             login = {
               enable = true;
               setupKeyFile = config.sops.secrets.netbird-key.path;
