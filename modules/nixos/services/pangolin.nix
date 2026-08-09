@@ -18,13 +18,13 @@
         domain = mkOption {
           type = types.str;
           default = "";
-          description = "Domain on which nginx serves MediaFlow Proxy (disabled when empty)";
+          description = "Domain on which Pangolin Dashboard is available";
         };
 
         baseDomain = mkOption {
           type = types.str;
           default = "";
-          description = "Domain on which nginx serves MediaFlow Proxy (disabled when empty)";
+          description = "Pangolin base fully qualified domain name";
         };
 
         environmentFile = mkOption {
