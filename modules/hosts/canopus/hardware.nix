@@ -13,7 +13,10 @@
         [
           hardware
         ]
-        ++ [ inputs.nixos-hardware.nixosModules.asus-zephyrus-ga503 ];
+        ++ [
+          inputs.nixos-hardware.nixosModules.asus-zephyrus-ga503
+          inputs.cardwire.nixosModules.default
+        ];
 
       boot.kernelParams = [ "nvidia-drm.modeset=1" ];
       boot.initrd.availableKernelModules = [
@@ -43,16 +46,13 @@
         power-profiles-daemon.enable = true;
         upower.enable = true;
 
-        supergfxd = {
+        cardwire = {
           enable = true;
           settings = {
-            mode = "Hybrid";
-            vfio_enable = false;
-            vfio_save = false;
-            always_reboot = false;
-            no_logind = false;
-            logout_timeout_s = 180;
-            hotplug_type = "None";
+            auto_apply_gpu_state = true;
+            experimental_nvidia_block = true;
+            battery_auto_switch = true;
+            battery_auto_switch_mode = "hybrid";
           };
         };
 
