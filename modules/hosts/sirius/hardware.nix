@@ -1,4 +1,4 @@
-{ config, ... }:
+{ inputs, config, ... }:
 {
   flake.modules.nixos.sirius =
     {
@@ -8,9 +8,14 @@
       ...
     }@innerArgs:
     {
-      imports = with config.flake.modules.nixos; [
-        hardware
-      ];
+      imports =
+        with config.flake.modules.nixos;
+        [
+          hardware
+        ]
+        ++ [
+          inputs.cardwire.nixosModules.default
+        ];
 
       boot.kernelParams = [ "nvidia-drm.modeset=1" ];
       boot.initrd.availableKernelModules = [
@@ -38,6 +43,11 @@
       services = {
         xserver.videoDrivers = [ "nvidia" ];
         power-profiles-daemon.enable = true;
+
+        cardwire = {
+          enable = true;
+          settings.auto_apply_gpu_state = true;
+        };
       };
 
       networking.useDHCP = lib.mkDefault true;
