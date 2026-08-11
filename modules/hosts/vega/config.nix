@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   flake.modules.droid.vega =
     {
@@ -6,6 +7,10 @@
       ...
     }:
     {
+      imports = with config.flake.modules.droid; [
+        networking
+      ];
+
       # @TODO: Broken currently
       # android-integration.am.enable = true;
       # android-integration.termux-open-url.enable = true;

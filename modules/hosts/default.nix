@@ -63,7 +63,6 @@ let
       };
       modules = [
         config.flake.modules.droid.core
-        config.flake.modules.droid.networking
         config.flake.modules.droid.${hostName}
       ];
     };
