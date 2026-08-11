@@ -1,13 +1,13 @@
 { config, ... }:
 {
-  flake.modules.droid.vega =
+  flake.modules.nixOnDroid.vega =
     {
       pkgs,
       userEmail,
       ...
     }:
     {
-      imports = with config.flake.modules.droid; [
+      imports = with config.flake.modules.nixOnDroid; [
         networking
       ];
 

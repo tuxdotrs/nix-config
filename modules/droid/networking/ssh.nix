@@ -1,5 +1,5 @@
 {
-  flake.modules.droid.networking =
+  flake.modules.nixOnDroid.networking =
     {
       config,
       lib,

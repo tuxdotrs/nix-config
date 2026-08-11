@@ -1,6 +1,6 @@
 { inputs, config, ... }:
 {
-  flake.modules.droid.core =
+  flake.modules.nixOnDroid.core =
     {
       hostName,
       userName,

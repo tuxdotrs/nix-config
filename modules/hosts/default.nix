@@ -62,8 +62,8 @@ let
           ;
       };
       modules = [
-        config.flake.modules.droid.core
-        config.flake.modules.droid.${hostName}
+        config.flake.modules.nixOnDroid.core
+        config.flake.modules.nixOnDroid.${hostName}
       ];
     };
 in
