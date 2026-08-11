@@ -44,8 +44,11 @@
       environment.etcBackupExtension = ".backup";
       environment.motd = "";
       environment.packages = with pkgs; [
-        openssh
+        ncurses
+        procps
+        util-linux
         rsync
+        gnutar
       ];
 
       system.stateVersion = "24.05";
