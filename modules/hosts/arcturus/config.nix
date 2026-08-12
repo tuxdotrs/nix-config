@@ -49,6 +49,11 @@
         };
 
         services = {
+          hermes-agent = {
+            enable = true;
+            environmentFiles = [ innerArgs.config.sops.secrets.hermes.path ];
+          };
+
           cyber-tux = {
             enable = true;
             environmentFile = innerArgs.config.sops.secrets.discord-token.path;
@@ -121,6 +126,10 @@
         copyparty = {
           sopsFile = ./secrets.yaml;
           owner = innerArgs.config.services.copyparty.user;
+        };
+
+        hermes = {
+          sopsFile = ./secrets.yaml;
         };
       };
 
