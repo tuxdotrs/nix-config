@@ -25,6 +25,7 @@
     };
 
     nur = inputs.nur.overlays.default;
+    copyparty = inputs.copyparty.overlays.default;
   };
 
   perSystem =

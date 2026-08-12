@@ -81,5 +81,6 @@
     nixcord.url = "github:kaylorben/nixcord";
     nur.url = "github:nix-community/nur";
     lanzaboote.url = "github:nix-community/lanzaboote/v1.1.0";
+    copyparty.url = "github:9001/copyparty";
   };
 }
