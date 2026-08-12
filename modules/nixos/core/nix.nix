@@ -15,6 +15,11 @@
         optimise.automatic = true;
 
         settings = {
+          extra-platforms = [
+            "aarch64-linux"
+            "arm-linux"
+          ];
+
           experimental-features = [
             "nix-command"
             "flakes"
