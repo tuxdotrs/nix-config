@@ -1,9 +1,7 @@
 {
-  flake.modules.nixos.core =
-    { pkgs, ... }:
-    {
-      security = {
-        sudo.wheelNeedsPassword = false;
-      };
+  flake.modules.nixos.core = {
+    security = {
+      sudo.wheelNeedsPassword = false;
     };
+  };
 }

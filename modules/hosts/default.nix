@@ -117,11 +117,9 @@ in
     };
   };
 
-  perSystem =
-    { ... }:
-    {
-      checks = builtins.mapAttrs (
-        _: config: config.config.system.build.toplevel
-      ) self.nixosConfigurations;
-    };
+  perSystem = {
+    checks = builtins.mapAttrs (
+      _: config: config.config.system.build.toplevel
+    ) self.nixosConfigurations;
+  };
 }
