@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.hardware = {
+  flake.modules.nixos.hardware = { pkgs, ... }: {
     security.rtkit.enable = true;
 
     services.pipewire = {
@@ -9,5 +9,10 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      alsa-utils
+      pavucontrol
+    ];
   };
 }
