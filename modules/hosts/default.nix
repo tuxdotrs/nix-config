@@ -1,12 +1,11 @@
 {
   self,
   inputs,
-  outputs,
   config,
   ...
 }:
 let
-  mkHost =
+  mkNixOSHost =
     hostName:
     {
       userName ? "tux",
@@ -55,8 +54,6 @@ let
       };
       extraSpecialArgs = {
         inherit
-          inputs
-          outputs
           hostName
           userName
           userEmail
@@ -68,35 +65,47 @@ let
       ];
     };
 
-  mkNixOSNode = hostname: {
-    inherit hostname;
-    profiles.system = {
-      user = "root";
-      path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.${hostname};
+  mkNixOSNode =
+    hostName:
+    {
+      system ? "x86_64-linux",
+    }:
+    {
+      hostname = hostName;
+      profiles.system = {
+        user = "root";
+        path = inputs.deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.${hostName};
+      };
     };
-  };
 
   activateNixOnDroid =
-    configuration:
-    inputs.deploy-rs.lib.aarch64-linux.activate.custom configuration.activationPackage "${configuration.activationPackage}/activate";
+    system: configuration:
+    inputs.deploy-rs.lib.${system}.activate.custom configuration.activationPackage
+      "${configuration.activationPackage}/activate";
 
-  mkDroidNode = hostname: {
-    inherit hostname;
-    profiles.system = {
-      sshUser = "nix-on-droid";
-      user = "nix-on-droid";
-      magicRollback = true;
-      sshOpts = [
-        "-p"
-        "8033"
-      ];
-      path = activateNixOnDroid self.nixOnDroidConfigurations.${hostname};
+  mkDroidNode =
+    hostName:
+    {
+      system ? "aarch64-linux",
+    }:
+    {
+      hostname = hostName;
+      profiles.system = {
+        sshUser = "nix-on-droid";
+        user = "nix-on-droid";
+        magicRollback = true;
+        sshOpts = [
+          "-p"
+          "8033"
+        ];
+        path = activateNixOnDroid system self.nixOnDroidConfigurations.${hostName};
+      };
     };
-  };
+
 in
 {
   flake = {
-    nixosConfigurations = builtins.mapAttrs mkHost {
+    nixosConfigurations = builtins.mapAttrs mkNixOSHost {
       sirius = { };
       canopus = { };
       arcturus = { };
@@ -108,18 +117,14 @@ in
       vega = { };
     };
 
-    deploy.nodes = {
-      sirius = mkNixOSNode "sirius";
-      canopus = mkNixOSNode "canopus";
-      arcturus = mkNixOSNode "arcturus";
-      alpha = mkNixOSNode "alpha";
-      vega = mkDroidNode "vega";
-    };
+    deploy.nodes =
+      builtins.mapAttrs (hostName: _: mkNixOSNode hostName { }) self.nixosConfigurations
+      // builtins.mapAttrs (hostName: _: mkDroidNode hostName { }) self.nixOnDroidConfigurations;
   };
 
   perSystem = {
     checks = builtins.mapAttrs (
-      _: config: config.config.system.build.toplevel
+      _: hostConfig: hostConfig.config.system.build.toplevel
     ) self.nixosConfigurations;
   };
 }
