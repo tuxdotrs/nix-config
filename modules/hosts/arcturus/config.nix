@@ -59,6 +59,22 @@
             domain = "bw.lab.tux.rs";
             configurePangolin = true;
           };
+
+          copyparty = {
+            enable = true;
+            domain = "files.lab.tux.rs";
+            accounts.${userName}.passwordFile = innerArgs.config.sops.secrets.copyparty.path;
+            volumes = {
+              "/" = {
+                path = "/var/lib/copyparty/data";
+                access = {
+                  r = "*";
+                  rwmdgGha = [ userName ];
+                };
+              };
+            };
+            configurePangolin = true;
+          };
         };
 
         virtualisation = {
@@ -100,6 +116,11 @@
         newt = {
           sopsFile = ./secrets.yaml;
           owner = userName;
+        };
+
+        copyparty = {
+          sopsFile = ./secrets.yaml;
+          owner = innerArgs.config.services.copyparty.user;
         };
       };
 
