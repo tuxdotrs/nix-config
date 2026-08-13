@@ -83,5 +83,6 @@
     lanzaboote.url = "github:nix-community/lanzaboote/v1.1.0";
     copyparty.url = "github:9001/copyparty";
     hermes-agent.url = "github:NousResearch/hermes-agent";
+    voxtype.url = "github:peteonrails/voxtype/v0.7.5";
   };
 }
