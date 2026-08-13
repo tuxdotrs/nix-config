@@ -41,6 +41,7 @@
                 ".local/share/opencode"
                 ".local/share/zsh"
                 ".local/share/zoxide"
+                ".local/share/voxtype"
                 ".local/state/lazygit"
                 ".local/share/vicinae"
                 ".local/share/TelegramDesktop"
