@@ -125,6 +125,7 @@
       environment.systemPackages = with pkgs; [
         davinci-resolve
         telegram-desktop
+        impala
       ];
 
       # !!! DO NOT CHANGE THIS !!!

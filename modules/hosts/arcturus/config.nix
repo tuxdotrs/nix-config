@@ -2,6 +2,7 @@
 {
   flake.modules.nixos.arcturus =
     {
+      pkgs,
       hostName,
       userName,
       ...
@@ -153,6 +154,10 @@
         };
         firewall.enable = false;
       };
+
+      environment.systemPackages = with pkgs; [
+        impala
+      ];
 
       system.stateVersion = "26.05";
     };

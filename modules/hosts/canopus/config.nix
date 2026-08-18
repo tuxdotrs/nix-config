@@ -126,6 +126,7 @@
         davinci-resolve
         telegram-desktop
         galaxy-buds-client
+        impala
       ];
 
       # !!! DO NOT CHANGE THIS !!!
