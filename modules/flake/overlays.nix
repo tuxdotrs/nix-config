@@ -14,6 +14,7 @@
       awww = inputs.awww.packages.${prev.stdenv.hostPlatform.system}.awww;
       vicinae-extensions = inputs.vicinae-extensions.packages.${prev.stdenv.hostPlatform.system};
       voxtype = inputs.voxtype.packages.${prev.stdenv.hostPlatform.system};
+      opencode-git = inputs.opencode.packages.${prev.stdenv.hostPlatform.system}.default;
       nix-index-small =
         inputs.nix-index-database.packages.${prev.stdenv.hostPlatform.system}.nix-index-with-small-db;
     };

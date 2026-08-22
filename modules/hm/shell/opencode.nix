@@ -1,7 +1,8 @@
 {
-  flake.modules.homeManager.shell = {
+  flake.modules.homeManager.shell = { pkgs, ... }: {
     programs.opencode = {
       enable = true;
+      package = pkgs.opencode-git;
       tui = {
         theme = "system";
       };
