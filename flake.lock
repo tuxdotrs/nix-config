@@ -2052,11 +2052,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784904497,
-        "narHash": "sha256-fd7YDkswyy5IlKUJ3aRcrtCSh7ubcW9uMGWOIxFBovI=",
+        "lastModified": 1787384344,
+        "narHash": "sha256-SH8hdgMneFElM8SGKtVpobr/wO+MrGb0JwW35meEvdg=",
         "owner": "tuxdotrs",
         "repo": "tpanel",
-        "rev": "fd5a96c4e84c62ec28c5596a5d3775f9523a2a56",
+        "rev": "bce512ef2fd64161d98b323b252f45b78f4fed7b",
         "type": "github"
       },
       "original": {
