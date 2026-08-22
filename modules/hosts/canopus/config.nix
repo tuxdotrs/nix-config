@@ -27,6 +27,7 @@
               directories = [
                 "Distrobox"
                 ".steam"
+                ".bun"
                 ".cache/awww"
                 ".config/BraveSoftware"
                 ".config/zed"

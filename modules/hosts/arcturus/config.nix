@@ -25,6 +25,7 @@
             home = {
               directories = [
                 "Distrobox"
+                ".bun"
                 ".config/sops"
                 ".local/share/nvim"
                 ".local/share/opencode"
