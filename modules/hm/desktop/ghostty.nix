@@ -13,6 +13,8 @@
         font-size = 12;
         font-family = "JetBrainsMono Nerd Font";
         theme = "poimandres";
+        custom-shader = "shaders/cursor_warp.glsl";
+        custom-shader-animation = "always";
       };
 
       themes = {
