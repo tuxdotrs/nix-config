@@ -24,8 +24,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    tpanel = {
-      url = "github:tuxdotrs/tpanel";
+    tshell = {
+      url = "github:tuxdotrs/tshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
