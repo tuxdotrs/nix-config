@@ -25,6 +25,7 @@
             };
           };
         };
+        plugin = [ "@dietrichgebert/ponytail" ];
       };
     };
   };
