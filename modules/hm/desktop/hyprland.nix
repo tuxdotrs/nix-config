@@ -3,15 +3,15 @@
     { config, pkgs, ... }:
     {
       # TODO: Hyprland 0.55 switched to Lua-based configuration.
-      # Until the Home Manager module is updated, we symlink our config instead.
-
-      # wayland.windowManager.hyprland = {
-      #   enable = true;
-      #   package = null;
-      #   portalPackage = null;
-      #   xwayland.enable = true;
-      #   systemd.variables = [ "--all" ];
-      # };
+      # HM module is updated but I'm too lazy at this point so we symlink our config instead.
+      wayland.windowManager.hyprland = {
+        enable = true;
+        package = null;
+        portalPackage = null;
+        xwayland.enable = true;
+        configType = "hyprlang";
+        systemd.variables = [ "--all" ];
+      };
 
       home.file = {
         ".config/hypr/config".source =
