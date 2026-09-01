@@ -60,9 +60,7 @@
     };
 
     nix-on-droid = {
-      # @TODO: upstream module is broken for nixpkgs-unstable
-      # url = "github:nix-community/nix-on-droid/release-24.05";
-      url = "github:newAM/nix-on-droid/update-proot";
+      url = "github:nix-community/nix-on-droid/master";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
