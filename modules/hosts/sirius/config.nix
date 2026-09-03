@@ -38,6 +38,8 @@
                 ".config/easyeffects"
                 ".config/DankMaterialShell"
                 ".local/share/Steam"
+                ".local/share/lutris"
+                ".local/share/net.lutris.Lutris"
                 ".local/share/nvim"
                 ".local/share/opencode"
                 ".local/share/zsh"
