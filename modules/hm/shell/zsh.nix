@@ -24,6 +24,7 @@
 
           PATH=$PATH:~/.cargo/bin:~/.local/bin
           alias stui='systemctl-tui'
+          alias vim='nvim --clean'
         '';
       };
     };

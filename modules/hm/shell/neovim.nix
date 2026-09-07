@@ -14,8 +14,6 @@
           enable = true;
           defaultEditor = true;
         };
-
-        vim.enable = true;
       };
 
       home = {
