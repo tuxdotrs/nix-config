@@ -7,6 +7,7 @@
     modifications = final: prev: {
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
       tshell = inputs.tshell.packages.${prev.stdenv.hostPlatform.system}.default;
+      trok = inputs.trok.packages.${prev.stdenv.hostPlatform.system}.default;
       cyber-tux = inputs.cyber-tux.packages.${prev.stdenv.hostPlatform.system}.default;
       wezterm-git = inputs.wezterm-flake.packages.${prev.stdenv.hostPlatform.system}.default;
       hyprland-git = inputs.hyprland.packages.${prev.stdenv.hostPlatform.system};

@@ -84,5 +84,6 @@
     voxtype.url = "github:peteonrails/voxtype/v0.7.5";
     opencode.url = "github:anomalyco/opencode";
     serpantinum.url = "github:ilyamiro/serpantinum";
+    trok.url = "github:tuxdotrs/trok";
   };
 }

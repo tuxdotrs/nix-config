@@ -1417,16 +1417,16 @@
     },
     "nixpkgs_19": {
       "locked": {
-        "lastModified": 1774386573,
-        "narHash": "sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc=",
+        "lastModified": 1740547748,
+        "narHash": "sha256-Ly2fBL1LscV+KyCqPRufUBuiw+zmWrlJzpWOWbahplg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+        "rev": "3a05eebede89661660945da1f151959900903b6a",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1442,6 +1442,22 @@
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_20": {
+      "locked": {
+        "lastModified": 1774386573,
+        "narHash": "sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -1799,6 +1815,7 @@
         "sops-nix": "sops-nix",
         "tnvim": "tnvim",
         "treefmt-nix": "treefmt-nix_2",
+        "trok": "trok",
         "tshell": "tshell",
         "vicinae-extensions": "vicinae-extensions",
         "voxtype": "voxtype",
@@ -2168,6 +2185,24 @@
         "type": "github"
       }
     },
+    "trok": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_19"
+      },
+      "locked": {
+        "lastModified": 1788792599,
+        "narHash": "sha256-BBW8R8SJhJGym0nX/q2MTfmKuPdFUOg/jAqmUQjb+1M=",
+        "owner": "tuxdotrs",
+        "repo": "trok",
+        "rev": "a616409ee03c1d50c8fd6d3a24ff1eea52c13f96",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tuxdotrs",
+        "repo": "trok",
+        "type": "github"
+      }
+    },
     "tshell": {
       "inputs": {
         "nixpkgs": [
@@ -2284,7 +2319,7 @@
     "voxtype": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_19"
+        "nixpkgs": "nixpkgs_20"
       },
       "locked": {
         "lastModified": 1780004034,

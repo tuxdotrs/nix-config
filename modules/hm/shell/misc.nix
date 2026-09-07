@@ -11,6 +11,7 @@
         jq
         dig
         lsof
+        trok
       ];
     };
 }

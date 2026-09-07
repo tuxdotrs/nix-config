@@ -1,4 +1,4 @@
-{ config, ... }:
+{ inputs, config, ... }:
 {
   flake.modules.nixos.alpha =
     {
@@ -7,12 +7,17 @@
       ...
     }@innerArgs:
     {
-      imports = with config.flake.modules.nixos; [
-        boot
-        networking
-        virtualisation
-        services
-      ];
+      imports =
+        with config.flake.modules.nixos;
+        [
+          boot
+          networking
+          virtualisation
+          services
+        ]
+        ++ [
+          inputs.trok.nixosModules.default
+        ];
 
       tnix = {
         boot = {
@@ -54,6 +59,10 @@
           mediaflow-proxy = {
             enable = true;
             environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
+          };
+
+          trok = {
+            enable = true;
           };
         };
 
