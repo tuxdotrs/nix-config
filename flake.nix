@@ -83,5 +83,6 @@
     hermes-agent.url = "github:NousResearch/hermes-agent";
     voxtype.url = "github:peteonrails/voxtype/v0.7.5";
     opencode.url = "github:anomalyco/opencode";
+    serpantinum.url = "github:ilyamiro/serpantinum";
   };
 }
