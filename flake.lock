@@ -2190,11 +2190,11 @@
         "nixpkgs": "nixpkgs_19"
       },
       "locked": {
-        "lastModified": 1788792599,
-        "narHash": "sha256-BBW8R8SJhJGym0nX/q2MTfmKuPdFUOg/jAqmUQjb+1M=",
+        "lastModified": 1788796165,
+        "narHash": "sha256-F07seSdocIHeW79bbfQD+4x5TlSC6FRKGmMir8V8Kzw=",
         "owner": "tuxdotrs",
         "repo": "trok",
-        "rev": "a616409ee03c1d50c8fd6d3a24ff1eea52c13f96",
+        "rev": "6c13858d46850d4a0fdfe198ccfd27d631d6ff65",
         "type": "github"
       },
       "original": {
