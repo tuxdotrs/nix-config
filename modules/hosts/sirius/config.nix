@@ -48,6 +48,7 @@
                 ".local/state/lazygit"
                 ".local/share/vicinae"
                 ".local/share/TelegramDesktop"
+                ".local/state/serpantinum"
               ];
 
               files = [

@@ -49,6 +49,7 @@
                 ".local/share/vicinae"
                 ".local/share/TelegramDesktop"
                 ".local/share/GalaxyBudsClient"
+                ".local/state/serpantinum"
               ];
 
               files = [
