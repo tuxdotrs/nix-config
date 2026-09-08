@@ -42,13 +42,11 @@
             ];
             center = [ "vis" ];
             right = [
-              [
-                "media"
-                "vol"
-                "bat"
-                "tray"
-                "timedate"
-              ]
+              "media"
+              "vol"
+              "bat"
+              "tray"
+              "timedate"
             ];
           };
         };
