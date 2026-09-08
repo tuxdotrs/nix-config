@@ -85,5 +85,6 @@
     opencode.url = "github:anomalyco/opencode";
     serpantinum.url = "github:ilyamiro/serpantinum";
     trok.url = "github:tuxdotrs/trok";
+    tfolio.url = "git+ssh://git@github.com/tuxdotrs/tfolio.git";
   };
 }

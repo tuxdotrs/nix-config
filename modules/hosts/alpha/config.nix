@@ -17,6 +17,7 @@
         ]
         ++ [
           inputs.trok.nixosModules.default
+          inputs.tfolio.nixosModules.default
         ];
 
       tnix = {
@@ -39,7 +40,12 @@
         };
 
         networking = {
-          openssh.enable = true;
+          openssh = {
+            enable = true;
+            ports = [
+              23
+            ];
+          };
           netbird-client.enable = true;
         };
 
@@ -124,6 +130,8 @@
         networkmanager.enable = true;
         firewall.enable = false;
       };
+
+      services.tfolio.enable = true;
 
       system.stateVersion = "26.05";
     };
