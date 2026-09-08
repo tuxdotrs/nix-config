@@ -1434,11 +1434,11 @@
     },
     "nixpkgs_18": {
       "locked": {
-        "lastModified": 1740019556,
-        "narHash": "sha256-vn285HxnnlHLWnv59Og7muqECNMS33mWLM14soFIv2g=",
+        "lastModified": 1788775869,
+        "narHash": "sha256-JRf1lSypbvKj6AzUZHpUA6YC1DirVuitZWOnRwcm+Ww=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "dad564433178067be1fbdfcce23b546254b6d641",
+        "rev": "58973d74f1893afe13f5902919803a0e99da0ca4",
         "type": "github"
       },
       "original": {
@@ -2162,11 +2162,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1788826290,
-        "narHash": "sha256-UyB41ImRVE6JMc3Sxn8TAVs5VkBn/9JarsC5je7Kt4E=",
+        "lastModified": 1788861166,
+        "narHash": "sha256-uY+BKFyGGEyMvSCZBbViVh6Qa6gbFijkuXWbcIvTrHM=",
         "ref": "refs/heads/main",
-        "rev": "e4c0ff9c8fe04aee63fe1c48dc23774bd1828a7b",
-        "revCount": 18,
+        "rev": "f4161eb5331c5ac7348f6a81a86461dd964a21a1",
+        "revCount": 21,
         "type": "git",
         "url": "ssh://git@github.com/tuxdotrs/tfolio.git"
       },
