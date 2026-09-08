@@ -18,10 +18,21 @@
           frameless = true;
           plugins = {
             hideMedia.enable = true;
+            anonymiseFileNames.enable = true;
+            copyFileContents.enable = true;
+            noTypingAnimation.enable = true;
+            readAllNotificationsButton.enable = true;
+            silentTyping.enable = true;
+            validUser.enable = true;
+            biggerStreamPreview.enable = true;
             ignoreActivities = {
               enable = true;
               ignorePlaying = true;
               ignoreWatching = true;
+            };
+            sortFriendRequests = {
+              enable = true;
+              showDates = true;
             };
           };
         };
