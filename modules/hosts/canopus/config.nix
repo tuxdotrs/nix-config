@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   flake.modules.nixos.canopus =
     {
       pkgs,
@@ -28,6 +27,7 @@
                 "Distrobox"
                 ".steam"
                 ".bun"
+                ".rustup"
                 ".cache/awww"
                 ".config/BraveSoftware"
                 ".config/zed"

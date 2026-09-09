@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   flake.modules.nixos.sirius =
     {
       pkgs,
@@ -27,6 +26,7 @@
               directories = [
                 "Distrobox"
                 ".bun"
+                ".rustup"
                 ".steam"
                 ".cache/awww"
                 ".config/BraveSoftware"

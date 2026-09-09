@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   flake.modules.nixos.arcturus =
     {
       pkgs,
@@ -26,6 +25,7 @@
               directories = [
                 "Distrobox"
                 ".bun"
+                ".rustup"
                 ".config/sops"
                 ".local/share/nvim"
                 ".local/share/opencode"
