@@ -49,6 +49,7 @@
                 ".local/share/vicinae"
                 ".local/share/TelegramDesktop"
                 ".local/state/serpantinum"
+                ".local/share/zed"
               ];
 
               files = [

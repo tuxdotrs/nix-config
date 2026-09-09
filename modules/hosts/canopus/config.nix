@@ -50,6 +50,7 @@
                 ".local/share/TelegramDesktop"
                 ".local/share/GalaxyBudsClient"
                 ".local/state/serpantinum"
+                ".local/share/zed"
               ];
 
               files = [
