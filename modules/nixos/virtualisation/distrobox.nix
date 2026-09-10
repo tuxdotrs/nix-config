@@ -12,8 +12,6 @@
     };
 
     config = lib.mkIf cfg.distrobox.enable {
-      virtualisation.waydroid.enable = true;
-
       environment.systemPackages = with pkgs; [
         distrobox
 
