@@ -1,5 +1,4 @@
-{ inputs, ... }: {
-
+{inputs, ...}: {
   flake.modules.nixos.desktop = {
     imports = [
       inputs.serpantinum.nixosModules.default
@@ -8,12 +7,12 @@
     programs.serpantinum.enable = true;
   };
 
-  flake.modules.homeManager.desktop = { pkgs, ... }: {
+  flake.modules.homeManager.desktop = {pkgs, ...}: {
     imports = [
       inputs.serpantinum.homeManagerModules.default
     ];
 
-    home.packages = with pkgs; [ pulseaudioFull ];
+    home.packages = with pkgs; [pulseaudioFull];
 
     programs.serpantinum = {
       enable = true;
@@ -40,7 +39,7 @@
               "sysmon"
               "wifi"
             ];
-            center = [ "vis" ];
+            center = ["vis"];
             right = [
               "media"
               "vol"
@@ -61,6 +60,11 @@
           dnd = false;
           position = "top right";
           sound = true;
+        };
+
+        idle = {
+          enabled = true;
+          manualInhibit = true;
         };
       };
     };
