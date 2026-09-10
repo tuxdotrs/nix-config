@@ -70,6 +70,8 @@
         waydroid.enable = true;
         distrobox.enable = true;
       };
+
+      programs.nix-ld.enable = true;
     };
 
     sops.secrets = {
