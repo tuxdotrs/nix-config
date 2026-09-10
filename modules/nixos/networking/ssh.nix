@@ -1,25 +1,22 @@
 {
-  flake.modules.nixos.networking =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.networking = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.networking.openssh;
 
       # Sops needs acess to the keys before the persist dirs are even mounted; so
       # just persisting the keys won't work, we must point at /persist
       hasOptinPersistence = config.tnix.boot.impermanence.enable;
-    in
-    {
+    in {
       options.tnix.networking.openssh = {
         enable = mkEnableOption "Enable OpenSSH server";
 
         ports = mkOption {
           type = types.listOf types.port;
-          default = [ 22 ];
+          default = [22];
           description = ''
             Specifies on which ports the SSH daemon listens.
           '';

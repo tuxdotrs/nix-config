@@ -1,138 +1,138 @@
-{ inputs, config, ... }:
 {
-  flake.modules.nixos.alpha =
-    {
-      hostName,
-      userName,
-      ...
-    }@innerArgs:
-    {
-      imports =
-        with config.flake.modules.nixos;
-        [
-          boot
-          networking
-          virtualisation
-          services
-        ]
-        ++ [
-          inputs.trok.nixosModules.default
-          inputs.tfolio.nixosModules.default
-        ];
+  inputs,
+  config,
+  ...
+}: {
+  flake.modules.nixos.alpha = {
+    hostName,
+    userName,
+    ...
+  } @ innerArgs: {
+    imports = with config.flake.modules.nixos;
+      [
+        boot
+        networking
+        virtualisation
+        services
+      ]
+      ++ [
+        inputs.trok.nixosModules.default
+        inputs.tfolio.nixosModules.default
+      ];
 
-      tnix = {
-        boot = {
-          legacy.enable = true;
+    tnix = {
+      boot = {
+        legacy.enable = true;
 
-          impermanence = {
-            enable = true;
+        impermanence = {
+          enable = true;
 
-            home = {
-              directories = [
-                ".local/share/nvim"
-                ".local/share/zsh"
-                ".local/share/zoxide"
-                ".local/state/lazygit"
-                ".local/share/opencode"
-              ];
-            };
-          };
-        };
-
-        networking = {
-          openssh = {
-            enable = true;
-            ports = [
-              23
+          home = {
+            directories = [
+              ".local/share/nvim"
+              ".local/share/zsh"
+              ".local/share/zoxide"
+              ".local/state/lazygit"
+              ".local/share/opencode"
             ];
           };
-          netbird-client.enable = true;
-        };
-
-        services = {
-          pangolin = {
-            enable = true;
-            domain = "pangolin.lab.tux.rs";
-            baseDomain = "lab.tux.rs";
-            environmentFile = innerArgs.config.sops.secrets."pangolin".path;
-          };
-
-          uptime-kuma = {
-            enable = true;
-            domain = "status.lab.tux.rs";
-          };
-
-          mediaflow-proxy = {
-            enable = true;
-            environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
-          };
-
-          trok = {
-            enable = true;
-          };
-        };
-
-        virtualisation = {
-          docker.enable = true;
         };
       };
 
-      sops.secrets = {
-        tux-password = {
-          sopsFile = ./secrets.yaml;
-          neededForUsers = true;
+      networking = {
+        openssh = {
+          enable = true;
+          ports = [
+            23
+          ];
+        };
+        netbird-client.enable = true;
+      };
+
+      services = {
+        pangolin = {
+          enable = true;
+          domain = "pangolin.lab.tux.rs";
+          baseDomain = "lab.tux.rs";
+          environmentFile = innerArgs.config.sops.secrets."pangolin".path;
         };
 
-        gemini-api-key = {
-          sopsFile = ./secrets.yaml;
-          owner = userName;
-        };
-
-        openrouter-api-key = {
-          sopsFile = ./secrets.yaml;
-          owner = userName;
-        };
-
-        opencode-go-api-key = {
-          sopsFile = ./secrets.yaml;
-          owner = userName;
-        };
-
-        netbird-key = {
-          sopsFile = ./secrets.yaml;
-          owner = userName;
-        };
-
-        "cloudflare-credentials/email" = {
-          sopsFile = ./secrets.yaml;
-        };
-
-        "cloudflare-credentials/dns-api-token" = {
-          sopsFile = ./secrets.yaml;
-        };
-
-        aiostreams = {
-          sopsFile = ./secrets.yaml;
+        uptime-kuma = {
+          enable = true;
+          domain = "status.lab.tux.rs";
         };
 
         mediaflow-proxy = {
-          sopsFile = ./secrets.yaml;
+          enable = true;
+          environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
         };
 
-        pangolin = {
-          sopsFile = ./secrets.yaml;
+        trok = {
+          enable = true;
         };
       };
 
-      # --- Networking ---
-      networking = {
-        hostName = hostName;
-        networkmanager.enable = true;
-        firewall.enable = false;
+      virtualisation = {
+        docker.enable = true;
       };
-
-      services.tfolio.enable = true;
-
-      system.stateVersion = "26.05";
     };
+
+    sops.secrets = {
+      tux-password = {
+        sopsFile = ./secrets.yaml;
+        neededForUsers = true;
+      };
+
+      gemini-api-key = {
+        sopsFile = ./secrets.yaml;
+        owner = userName;
+      };
+
+      openrouter-api-key = {
+        sopsFile = ./secrets.yaml;
+        owner = userName;
+      };
+
+      opencode-go-api-key = {
+        sopsFile = ./secrets.yaml;
+        owner = userName;
+      };
+
+      netbird-key = {
+        sopsFile = ./secrets.yaml;
+        owner = userName;
+      };
+
+      "cloudflare-credentials/email" = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      "cloudflare-credentials/dns-api-token" = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      aiostreams = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      mediaflow-proxy = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      pangolin = {
+        sopsFile = ./secrets.yaml;
+      };
+    };
+
+    # --- Networking ---
+    networking = {
+      hostName = hostName;
+      networkmanager.enable = true;
+      firewall.enable = false;
+    };
+
+    services.tfolio.enable = true;
+
+    system.stateVersion = "26.05";
+  };
 }

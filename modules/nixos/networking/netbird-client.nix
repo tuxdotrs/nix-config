@@ -1,16 +1,13 @@
 {
-  flake.modules.nixos.networking =
-    {
-      config,
-      lib,
-      hostName,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.networking = {
+    config,
+    lib,
+    hostName,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.networking.netbird-client;
-    in
-    {
+    in {
       options.tnix.networking.netbird-client = {
         enable = mkEnableOption "Enable netbird client";
       };

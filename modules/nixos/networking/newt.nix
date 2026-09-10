@@ -1,15 +1,12 @@
 {
-  flake.modules.nixos.networking =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.networking = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.networking.newt;
-    in
-    {
+    in {
       options.tnix.networking.newt = {
         enable = mkEnableOption "Newt";
 

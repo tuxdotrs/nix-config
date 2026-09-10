@@ -1,15 +1,12 @@
-{ inputs, ... }: {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+{inputs, ...}: {
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.trok;
-    in
-    {
+    in {
       imports = [
         inputs.trok.nixosModules.default
       ];

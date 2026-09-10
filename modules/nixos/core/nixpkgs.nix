@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   flake.modules.nixos.core = {
     nixpkgs = {
       config = {

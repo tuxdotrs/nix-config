@@ -1,17 +1,14 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.vaultwarden;
       port = toString cfg.port;
       acmeHost = config.tnix.services.nginx.domain;
-    in
-    {
+    in {
       options.tnix.services.vaultwarden = {
         enable = mkEnableOption "Vaultwarden";
 
@@ -106,7 +103,7 @@
 
           postgresql = {
             enable = true;
-            ensureDatabases = [ "vaultwarden" ];
+            ensureDatabases = ["vaultwarden"];
             ensureUsers = [
               {
                 name = "vaultwarden";

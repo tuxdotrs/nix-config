@@ -1,17 +1,14 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.gitea;
       port = toString cfg.port;
       acmeHost = config.tnix.services.nginx.domain;
-    in
-    {
+    in {
       options.tnix.services.gitea = {
         enable = mkEnableOption "Gitea";
 
@@ -109,7 +106,7 @@
 
           postgresql = {
             enable = true;
-            ensureDatabases = [ "gitea" ];
+            ensureDatabases = ["gitea"];
             ensureUsers = [
               {
                 name = "gitea";

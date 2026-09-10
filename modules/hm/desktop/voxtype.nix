@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  flake.modules.homeManager.desktop = { pkgs, ... }: {
+{inputs, ...}: {
+  flake.modules.homeManager.desktop = {pkgs, ...}: {
     imports = [
       inputs.voxtype.homeManagerModules.default
     ];

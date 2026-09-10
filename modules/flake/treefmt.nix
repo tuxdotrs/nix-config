@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   imports = [
     inputs.treefmt-nix.flakeModule
   ];
@@ -9,7 +8,7 @@
       projectRootFile = "flake.nix";
       flakeCheck = true;
       programs = {
-        nixfmt.enable = true;
+        alejandra.enable = true;
       };
     };
   };

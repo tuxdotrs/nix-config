@@ -1,17 +1,14 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.uptime-kuma;
       port = toString cfg.port;
       acmeHost = config.tnix.services.nginx.domain;
-    in
-    {
+    in {
       options.tnix.services.uptime-kuma = {
         enable = mkEnableOption "Uptime Kuma";
 

@@ -1,69 +1,64 @@
 {
-  flake.modules.homeManager.desktop =
-    {
-      pkgs,
-      ...
-    }:
-    {
-      programs.vicinae = {
+  flake.modules.homeManager.desktop = {pkgs, ...}: {
+    programs.vicinae = {
+      enable = true;
+      systemd = {
         enable = true;
-        systemd = {
-          enable = true;
-          autoStart = true;
+        autoStart = true;
+      };
+      useLayerShell = true;
+
+      extensions = with pkgs.vicinae-extensions; [
+        # @TODO broken in upstream repo
+        # bluetooth
+        nix
+        ssh
+        awww-switcher
+        process-manager
+        pulseaudio
+        wifi-commander
+        port-killer
+        silverbullet
+      ];
+
+      settings = {
+        close_on_focus_loss = true;
+        consider_preedit = true;
+        pop_to_root_on_close = true;
+        favicon_service = "twenty";
+        search_files_in_root = true;
+        font = {
+          normal = {
+            size = 10;
+            family = "JetBrainsMono Nerd Font";
+          };
         };
-        useLayerShell = true;
-
-        extensions = with pkgs.vicinae-extensions; [
-          # @TODO broken in upstream repo
-          # bluetooth
-          nix
-          ssh
-          awww-switcher
-          process-manager
-          pulseaudio
-          wifi-commander
-          port-killer
-          silverbullet
-        ];
-
-        settings = {
-          close_on_focus_loss = true;
-          consider_preedit = true;
-          pop_to_root_on_close = true;
-          favicon_service = "twenty";
-          search_files_in_root = true;
-          font = {
-            normal = {
-              size = 10;
-              family = "JetBrainsMono Nerd Font";
-            };
+        theme = {
+          light = {
+            name = "vicinae-light";
+            icon_theme = "default";
           };
-          theme = {
-            light = {
-              name = "vicinae-light";
-              icon_theme = "default";
-            };
-            dark = {
-              name = "vicinae-dark";
-              icon_theme = "default";
-            };
+          dark = {
+            name = "vicinae-dark";
+            icon_theme = "default";
           };
-          launcher_window = {
-            opacity = 0.98;
-          };
+        };
+        launcher_window = {
+          opacity = 0.98;
+        };
 
-          imports = [ "/run/secrets/vicinae.json" ];
+        imports = ["/run/secrets/vicinae.json"];
 
-          providers = {
-            "@sovereign/vicinae-extension-awww-switcher-0" = {
-              "preferences" = {
-                "transitionDuration" = "1";
-                "transitionType" = "center";
-                "wallpaperPath" = "/home/tux/Wallpapers/";
-              };
+        providers = {
+          "@sovereign/vicinae-extension-awww-switcher-0" = {
+            "preferences" = {
+              "transitionDuration" = "1";
+              "transitionType" = "center";
+              "wallpaperPath" = "/home/tux/Wallpapers/";
             };
           };
         };
       };
     };
+  };
 }

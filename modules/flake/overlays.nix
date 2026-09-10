@@ -1,8 +1,4 @@
-{
-  inputs,
-  ...
-}:
-{
+{inputs, ...}: {
   flake.overlays = {
     modifications = final: prev: {
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
@@ -31,12 +27,10 @@
     copyparty = inputs.copyparty.overlays.default;
   };
 
-  perSystem =
-    { system, ... }:
-    {
-      _module.args.pkgs = import inputs.nixpkgs {
-        inherit system;
-        overlays = builtins.attrValues inputs.self.overlays;
-      };
+  perSystem = {system, ...}: {
+    _module.args.pkgs = import inputs.nixpkgs {
+      inherit system;
+      overlays = builtins.attrValues inputs.self.overlays;
     };
+  };
 }

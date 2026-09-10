@@ -1,19 +1,16 @@
-{ inputs, ... }: {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      pkgs,
-      options,
-      ...
-    }:
-    with lib;
-    let
+{inputs, ...}: {
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    pkgs,
+    options,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.copyparty;
       port = toString cfg.port;
       acmeHost = config.tnix.services.nginx.domain;
-    in
-    {
+    in {
       imports = [
         inputs.copyparty.nixosModules.default
       ];
@@ -75,7 +72,7 @@
             accounts = cfg.accounts;
             volumes = cfg.volumes;
             package = pkgs.copyparty.override {
-              extraPackages = [ pkgs.exiftool ];
+              extraPackages = [pkgs.exiftool];
             };
           };
 

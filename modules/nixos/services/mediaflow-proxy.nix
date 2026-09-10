@@ -1,17 +1,14 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.mediaflow-proxy;
       port = toString cfg.port;
       acmeHost = config.tnix.services.nginx.domain;
-    in
-    {
+    in {
       options.tnix.services.mediaflow-proxy = {
         enable = mkEnableOption "MediaFlow Proxy";
 

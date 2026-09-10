@@ -1,17 +1,14 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      userEmail,
-      pkgs,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    userEmail,
+    pkgs,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.pangolin;
-    in
-    {
+    in {
       options.tnix.services.pangolin = {
         enable = mkEnableOption "Pangolin";
 
@@ -77,7 +74,7 @@
 
           postgresql = {
             enable = true;
-            ensureDatabases = [ "pangolin" ];
+            ensureDatabases = ["pangolin"];
             ensureUsers = [
               {
                 name = "pangolin";

@@ -1,16 +1,13 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      userEmail,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    userEmail,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.nginx;
-    in
-    {
+    in {
       options.tnix.services.nginx = {
         enable = mkEnableOption "Nginx";
 
@@ -30,7 +27,7 @@
               "${cfg.domain}" = {
                 group = "nginx";
                 domain = "*.${cfg.domain}";
-                extraDomainNames = [ "${cfg.domain}" ];
+                extraDomainNames = ["${cfg.domain}"];
                 dnsProvider = "cloudflare";
                 credentialFiles = {
                   CLOUDFLARE_EMAIL_FILE = config.sops.secrets."cloudflare-credentials/email".path;
@@ -41,7 +38,7 @@
           };
         };
 
-        users.users.nginx.extraGroups = [ "acme" ];
+        users.users.nginx.extraGroups = ["acme"];
 
         services.nginx = {
           enable = true;

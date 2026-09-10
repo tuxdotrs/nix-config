@@ -1,22 +1,23 @@
-{ inputs, ... }:
-{
-  flake.modules.nixos.alpha =
-    { config, lib, ... }:
-    let
-      hasOptinPersistence = config.tnix.boot.impermanence.enable;
-      isLegacy = config.tnix.boot.legacy.enable;
-    in
-    {
-      imports = [
-        inputs.disko.nixosModules.disko
-      ];
+{inputs, ...}: {
+  flake.modules.nixos.alpha = {
+    config,
+    lib,
+    ...
+  }: let
+    hasOptinPersistence = config.tnix.boot.impermanence.enable;
+    isLegacy = config.tnix.boot.legacy.enable;
+  in {
+    imports = [
+      inputs.disko.nixosModules.disko
+    ];
 
-      disko.devices.disk.primary = {
-        device = "/dev/sda";
-        type = "disk";
-        content = {
-          type = "gpt";
-          partitions = {
+    disko.devices.disk.primary = {
+      device = "/dev/sda";
+      type = "disk";
+      content = {
+        type = "gpt";
+        partitions =
+          {
             ESP = {
               size = "1G";
               type = "EF00";
@@ -36,36 +37,37 @@
               content = {
                 type = "btrfs";
                 # Base subvolumes that always exist
-                subvolumes = {
-                  "/root" = {
-                    mountOptions = [
-                      "compress=zstd"
-                      "noatime"
-                      "space_cache=v2"
-                    ];
-                    mountpoint = "/";
+                subvolumes =
+                  {
+                    "/root" = {
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                        "space_cache=v2"
+                      ];
+                      mountpoint = "/";
+                    };
+                    "/nix" = {
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                        "noacl"
+                        "space_cache=v2"
+                      ];
+                      mountpoint = "/nix";
+                    };
+                  }
+                  # Conditionally merge /persist only when impermanence is enabled
+                  // lib.optionalAttrs hasOptinPersistence {
+                    "/persist" = {
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                        "space_cache=v2"
+                      ];
+                      mountpoint = "/persist";
+                    };
                   };
-                  "/nix" = {
-                    mountOptions = [
-                      "compress=zstd"
-                      "noatime"
-                      "noacl"
-                      "space_cache=v2"
-                    ];
-                    mountpoint = "/nix";
-                  };
-                }
-                # Conditionally merge /persist only when impermanence is enabled
-                // lib.optionalAttrs hasOptinPersistence {
-                  "/persist" = {
-                    mountOptions = [
-                      "compress=zstd"
-                      "noatime"
-                      "space_cache=v2"
-                    ];
-                    mountpoint = "/persist";
-                  };
-                };
               };
             };
           }
@@ -76,7 +78,7 @@
               type = "EF02";
             };
           };
-        };
       };
     };
+  };
 }

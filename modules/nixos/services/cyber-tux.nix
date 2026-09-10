@@ -1,16 +1,13 @@
 {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      pkgs,
-      ...
-    }:
-    with lib;
-    let
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.cyber-tux;
-    in
-    {
+    in {
       options.tnix.services.cyber-tux = {
         enable = mkEnableOption "CyberTux Discord bot";
 
@@ -41,9 +38,9 @@
       config = mkIf cfg.enable {
         systemd.services.cyber-tux = {
           description = "CyberTux Discord bot";
-          after = [ "network-online.target" ];
-          wants = [ "network-online.target" ];
-          wantedBy = [ "multi-user.target" ];
+          after = ["network-online.target"];
+          wants = ["network-online.target"];
+          wantedBy = ["multi-user.target"];
 
           serviceConfig = {
             Type = "simple";
@@ -83,7 +80,7 @@
             RestrictRealtime = true;
             RestrictSUIDSGID = true;
             SystemCallArchitectures = "native";
-            SystemCallFilter = [ "@system-service" ];
+            SystemCallFilter = ["@system-service"];
             UMask = "0077";
           };
         };
@@ -99,7 +96,7 @@
         };
 
         users.groups = mkIf (cfg.group == "cyber-tux") {
-          ${cfg.group} = { };
+          ${cfg.group} = {};
         };
       };
     };

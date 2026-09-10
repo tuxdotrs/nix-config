@@ -1,17 +1,13 @@
-{ inputs, ... }:
-{
-  flake.modules.homeManager.desktop =
-    {
-      config,
-      pkgs,
-      lib,
-      ...
-    }:
-    with lib;
-    let
+{inputs, ...}: {
+  flake.modules.homeManager.desktop = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.desktop.mangowm;
-    in
-    {
+    in {
       imports = [
         inputs.mango.hmModules.mango
       ];
@@ -21,12 +17,12 @@
 
         monitorRule = mkOption {
           type = with types; listOf str;
-          default = [ ];
+          default = [];
         };
 
         tagRule = mkOption {
           type = with types; listOf str;
-          default = [ ];
+          default = [];
         };
       };
 

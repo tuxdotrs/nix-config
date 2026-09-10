@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.shell = { pkgs, ... }: {
+  flake.modules.homeManager.shell = {pkgs, ...}: {
     programs.opencode = {
       enable = true;
       package = pkgs.opencode-git;
@@ -25,7 +25,7 @@
             };
           };
         };
-        plugin = [ "@dietrichgebert/ponytail" ];
+        plugin = ["@dietrichgebert/ponytail"];
       };
     };
   };

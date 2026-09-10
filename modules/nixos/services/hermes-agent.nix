@@ -1,18 +1,15 @@
-{ inputs, ... }: {
-  flake.modules.nixos.services =
-    {
-      config,
-      lib,
-      pkgs,
-      options,
-      userName,
-      ...
-    }:
-    with lib;
-    let
+{inputs, ...}: {
+  flake.modules.nixos.services = {
+    config,
+    lib,
+    pkgs,
+    options,
+    userName,
+    ...
+  }:
+    with lib; let
       cfg = config.tnix.services.hermes-agent;
-    in
-    {
+    in {
       imports = [
         inputs.hermes-agent.nixosModules.default
       ];
@@ -42,7 +39,7 @@
           ];
         };
 
-        users.users.${userName}.extraGroups = [ "hermes" ];
+        users.users.${userName}.extraGroups = ["hermes"];
       };
     };
 }

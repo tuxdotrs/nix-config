@@ -1,6 +1,5 @@
-{ inputs, ... }:
-{
-  flake.modules.nixos.core = { pkgs, ... }: {
+{inputs, ...}: {
+  flake.modules.nixos.core = {pkgs, ...}: {
     imports = [
       inputs.nix-index-database.nixosModules.default
     ];

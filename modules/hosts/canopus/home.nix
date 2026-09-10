@@ -1,6 +1,5 @@
-{ config, ... }:
-{
-  flake.modules.homeManager.canopus = { pkgs, ... }: {
+{config, ...}: {
+  flake.modules.homeManager.canopus = {pkgs, ...}: {
     imports = with config.flake.modules.homeManager; [
       desktop
     ];
@@ -27,8 +26,7 @@
         enable = true;
         settings = {
           authorized_fingerprints = {
-            "f4:4b:17:61:f7:01:a4:a2:e1:c7:8c:1c:7a:f3:8b:87:14:3d:05:3d:a0:8b:cc:e7:88:d8:d8:d2:a4:c2:75:8b" =
-              "sirius";
+            "f4:4b:17:61:f7:01:a4:a2:e1:c7:8c:1c:7a:f3:8b:87:14:3d:05:3d:a0:8b:cc:e7:88:d8:d8:d2:a4:c2:75:8b" = "sirius";
           };
         };
       };
@@ -42,7 +40,7 @@
           position = "0x0",
           scale    = "1",
           disabled = false
-        })' && 
+        })' &&
         hyprctl eval 'hl.monitor({
           output   = "HDMI-A-1",
           mode     = "preferred",
@@ -58,7 +56,7 @@
           position = "0x0",
           scale    = "1",
           disabled = false
-        })' && 
+        })' &&
         hyprctl eval 'hl.monitor({
           output   = "HDMI-A-1",
           mode     = "preferred",
@@ -71,7 +69,7 @@
         hyprctl eval 'hl.monitor({
           output   = "eDP-1",
           disabled = true
-        })' && 
+        })' &&
         hyprctl eval 'hl.monitor({
           output   = "HDMI-A-1",
           mode     = "preferred",
