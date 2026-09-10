@@ -7,6 +7,7 @@
         obs-vaapi
         wlrobs
         obs-source-record
+        obs-advanced-masks
       ];
     };
   };
