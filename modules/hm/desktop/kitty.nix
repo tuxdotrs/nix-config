@@ -20,7 +20,7 @@
         # Window
         window_padding_width = 10;
 
-        foreground = "#a6accd";
+        foreground = "#f1f1f1";
         background = "#0f0f0f";
 
         # Borders
