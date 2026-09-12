@@ -17,7 +17,7 @@
 - [Hosts](#hosts)
 - [Components](#components)
 - [Showcase](#showcase)
-- [Pain](#spent-weeks-on-this-system-configuration-)
+- [Pain](#spent-months-on-this-system-configuration-)
 
 ## Hosts
 
@@ -47,7 +47,7 @@
 ## Showcase
 
 | **Desktop**                                                                                                                 | **Tshell**                                                                                                                |
-| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| :-------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/desktop.png" width="100%">  | <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/tPanel.png" width="100%"> |
 | **Workflow**                                                                                                                | **Neovim**                                                                                                                |
 | <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/workflow.png" width="100%"> | <img src="https://github.com/user-attachments/assets/f881c672-8d77-43ec-b637-df5004c7d11f" width="100%">                  |
