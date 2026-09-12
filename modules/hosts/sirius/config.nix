@@ -23,10 +23,11 @@
           home = {
             directories = [
               "Distrobox"
+              ".steam"
               ".bun"
               ".rustup"
-              ".steam"
               ".cache/awww"
+              ".cache/serpantinum"
               ".config/BraveSoftware"
               ".config/zed"
               ".config/Vencord"
@@ -46,6 +47,7 @@
               ".local/state/lazygit"
               ".local/share/vicinae"
               ".local/share/TelegramDesktop"
+              ".local/share/GalaxyBudsClient"
               ".local/state/serpantinum"
               ".local/share/zed"
             ];

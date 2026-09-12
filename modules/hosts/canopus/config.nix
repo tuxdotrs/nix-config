@@ -27,6 +27,7 @@
               ".bun"
               ".rustup"
               ".cache/awww"
+              ".cache/serpantinum"
               ".config/BraveSoftware"
               ".config/zed"
               ".config/Vencord"
