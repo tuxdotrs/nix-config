@@ -17,6 +17,8 @@
         enable_audio_bell = false;
         confirm_os_window_close = 0;
 
+        cursor_trail = 3;
+
         # Window
         window_padding_width = 10;
 
