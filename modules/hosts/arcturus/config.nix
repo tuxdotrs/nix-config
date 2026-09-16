@@ -113,6 +113,11 @@
         owner = userName;
       };
 
+      zai-coding-plan-api-key = {
+        sopsFile = ./secrets.yaml;
+        owner = userName;
+      };
+
       netbird-key = {
         sopsFile = ./secrets.yaml;
         owner = userName;

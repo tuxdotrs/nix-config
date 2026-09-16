@@ -24,6 +24,11 @@
               apiKey = "{file:/run/secrets/opencode-go-api-key}";
             };
           };
+          zai-coding-plan = {
+            options = {
+              apiKey = "{file:/run/secrets/zai-coding-plan-api-key}";
+            };
+          };
         };
         plugin = ["@dietrichgebert/ponytail"];
       };
