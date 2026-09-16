@@ -29,6 +29,25 @@
           diagnostics = false;
           metrics = false;
         };
+
+        agent = {
+          dock = "right";
+          favorite_models = [];
+          model_parameters = [];
+        };
+
+        collaboration_panel = {
+          button = false;
+        };
+
+        agent_servers = {
+          opencode = {
+            default_config_options = {
+              model = "opencode-go/deepseek-v4.1-flash";
+            };
+            type = "registry";
+          };
+        };
       };
     };
   };
