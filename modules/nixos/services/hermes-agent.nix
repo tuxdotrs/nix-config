@@ -24,7 +24,7 @@
           enable = true;
           settings.model = {
             provider = "opencode-go";
-            default = "deepseek-v4-flash";
+            default = "deepseek-v4.1-flash";
           };
           environmentFiles = cfg.environmentFiles;
           addToSystemPackages = true;

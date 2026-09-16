@@ -7,7 +7,7 @@
         theme = "system";
       };
       settings = {
-        model = "opencode-go/kimi-k3";
+        model = "opencode-go/deepseek-v4.1-flash";
         provider = {
           google = {
             options = {
