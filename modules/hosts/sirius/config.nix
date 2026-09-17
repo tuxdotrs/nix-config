@@ -139,6 +139,8 @@
       davinci-resolve
       telegram-desktop
       impala
+      llm-agents.claude-code
+      llm-agents.orca
     ];
 
     # !!! DO NOT CHANGE THIS !!!

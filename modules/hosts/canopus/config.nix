@@ -139,6 +139,8 @@
       telegram-desktop
       galaxy-buds-client
       impala
+      llm-agents.claude-code
+      llm-agents.orca
     ];
 
     # !!! DO NOT CHANGE THIS !!!

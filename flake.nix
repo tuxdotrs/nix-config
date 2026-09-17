@@ -94,5 +94,6 @@
     voxtype.url = "github:peteonrails/voxtype/v0.7.5";
     opencode.url = "github:anomalyco/opencode";
     serpantinum.url = "github:ilyamiro/serpantinum";
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 }
