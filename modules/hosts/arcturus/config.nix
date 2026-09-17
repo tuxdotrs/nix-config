@@ -25,6 +25,7 @@
               ".bun"
               ".rustup"
               ".config/sops"
+              ".config/nix"
               ".local/share/nvim"
               ".local/share/opencode"
               ".local/share/zsh"

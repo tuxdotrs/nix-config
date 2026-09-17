@@ -33,6 +33,7 @@
               ".config/Vencord"
               ".config/vesktop"
               ".config/sops"
+              ".config/nix"
               ".config/obs-studio"
               ".config/easyeffects"
               ".config/DankMaterialShell"
