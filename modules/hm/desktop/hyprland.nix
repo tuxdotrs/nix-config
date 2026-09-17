@@ -30,6 +30,7 @@
       hyprshot
       wl-clipboard
       wl-screenrec
+      omasnap
       (writeShellScriptBin "hypr-screenshot" ''
         hyprshot -m region -r ppm - | satty --filename -
       '')
