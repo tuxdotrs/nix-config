@@ -25,11 +25,16 @@
           language = "en";
           weatherUnit = "metric";
           weatherInterval = 30;
+          avatarPath = "/home/tux/Wallpapers/tux.png";
+          muteSfx = true;
         };
 
         bar = {
           position = "top";
           style = "modular";
+          time = {
+            format = "hh:mm:ss A";
+          };
           width = 5;
           workspaceCount = 7;
           modules = {
