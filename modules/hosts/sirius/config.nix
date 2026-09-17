@@ -138,6 +138,7 @@
     environment.systemPackages = with pkgs; [
       davinci-resolve
       telegram-desktop
+      galaxy-buds-client
       impala
       llm-agents.claude-code
       llm-agents.orca
