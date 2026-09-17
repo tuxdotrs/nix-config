@@ -51,10 +51,16 @@
               ".local/share/GalaxyBudsClient"
               ".local/state/serpantinum"
               ".local/share/zed"
+
+              ".claude"
+              ".orca"
+              ".config/orca"
             ];
 
             files = [
               ".wakatime.cfg"
+              ".claude.json"
+              ".config/gh/hosts.yml"
             ];
           };
         };
