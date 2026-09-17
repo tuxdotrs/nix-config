@@ -12,7 +12,14 @@
       service.enable = true;
       settings = {
         hotkey.enabled = false;
-        whisper.language = "en";
+        whisper = {
+          language = "en";
+          on_demand_loading = true;
+        };
+
+        parakeet = {
+          on_demand_loading = true;
+        };
       };
     };
   };
