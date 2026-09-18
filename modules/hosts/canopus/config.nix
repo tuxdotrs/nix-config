@@ -56,6 +56,8 @@
               ".claude"
               ".orca"
               ".config/orca"
+              ".zcode"
+              ".config/ZCode"
             ];
 
             files = [
@@ -148,6 +150,7 @@
       impala
       llm-agents.claude-code
       llm-agents.orca
+      llm-agents.zcode
       coder
     ];
 
