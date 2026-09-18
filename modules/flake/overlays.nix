@@ -15,6 +15,18 @@
       opencode-git = inputs.opencode.packages.${prev.stdenv.hostPlatform.system}.default;
       nix-index-small =
         inputs.nix-index-database.packages.${prev.stdenv.hostPlatform.system}.nix-index-with-small-db;
+
+      davinci-resolve = prev.davinci-resolve.override {
+        runCommandLocal = name: env: cmd:
+          if prev.lib.hasSuffix "-src.zip" name
+          then
+            prev.runCommandLocal name (env
+              // {
+                outputHash = "sha256-+3SB32EHpH9/0hM3h8CrO6f7V4ZAmxUFh3P8m6QDeO0=";
+              })
+            cmd
+          else prev.runCommandLocal name env cmd;
+      };
     };
 
     stable-packages = final: _prev: {
