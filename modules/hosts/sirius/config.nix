@@ -34,6 +34,7 @@
               ".config/vesktop"
               ".config/sops"
               ".config/nix"
+              ".config/coderv2"
               ".config/obs-studio"
               ".config/easyeffects"
               ".config/DankMaterialShell"
@@ -148,6 +149,7 @@
       impala
       llm-agents.claude-code
       llm-agents.orca
+      coder
     ];
 
     # !!! DO NOT CHANGE THIS !!!
