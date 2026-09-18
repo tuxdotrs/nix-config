@@ -81,6 +81,12 @@
           };
           configurePangolin = true;
         };
+
+        coder = {
+          enable = true;
+          domain = "coder.lab.tux.rs";
+          configurePangolin = true;
+        };
       };
 
       virtualisation = {
