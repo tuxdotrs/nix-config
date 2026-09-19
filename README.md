@@ -44,17 +44,24 @@
 | Terminal      | Wezterm  | -    |
 | Editor        | Neovim   | -    |
 
+> [!NOTE]
+> Some components in this setup are in different repositories:
+>
+> - [tshell](https://github.com/tuxdotrs/tshell) — Bar and notification daemon
+> - [tnvim](https://github.com/tuxdotrs/tnvim) — Neovim configuration
+> - [twm](https://github.com/tuxdotrs/twm) — Hyprland setup (config, keybinds, and window rules)
+
 ## Showcase
 
-| **Desktop**                                                                                                                 | **Tshell**                                                                                                                |
+|                                                         **Desktop**                                                         |                                                        **Tshell**                                                         |
 | :-------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/desktop.png" width="100%">  | <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/tPanel.png" width="100%"> |
-| **Workflow**                                                                                                                | **Neovim**                                                                                                                |
-| <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/workflow.png" width="100%"> | <img src="https://github.com/user-attachments/assets/f881c672-8d77-43ec-b637-df5004c7d11f" width="100%">                  |
-| **Floating Terminal**                                                                                                       | **Lazygit**                                                                                                               |
-| <img src="https://github.com/user-attachments/assets/3339ecf8-3264-4179-a093-337c844592a6" width="100%">                    | <img src="https://github.com/user-attachments/assets/6df15881-fc2b-41b1-af3b-124fe0599b94" width="100%">                  |
-| **Telescope**                                                                                                               | **Firefox**                                                                                                               |
-| <img src="https://github.com/user-attachments/assets/03be05bc-8ede-4d6e-a341-2761d89b7288" width="100%">                    | <img src="https://github.com/user-attachments/assets/6f12173b-2480-404e-b01a-599115a886c0" width="100%">                  |
+|                                                        **Workflow**                                                         |                                                        **Neovim**                                                         |
+| <img src="https://raw.githubusercontent.com/tuxdotrs/nix-config/refs/heads/main/assets/hyprland/workflow.png" width="100%"> |         <img src="https://github.com/user-attachments/assets/f881c672-8d77-43ec-b637-df5004c7d11f" width="100%">          |
+|                                                    **Floating Terminal**                                                    |                                                        **Lazygit**                                                        |
+|          <img src="https://github.com/user-attachments/assets/3339ecf8-3264-4179-a093-337c844592a6" width="100%">           |         <img src="https://github.com/user-attachments/assets/6df15881-fc2b-41b1-af3b-124fe0599b94" width="100%">          |
+|                                                        **Telescope**                                                        |                                                        **Firefox**                                                        |
+|          <img src="https://github.com/user-attachments/assets/03be05bc-8ede-4d6e-a341-2761d89b7288" width="100%">           |         <img src="https://github.com/user-attachments/assets/6f12173b-2480-404e-b01a-599115a886c0" width="100%">          |
 
 ## Spent months on this system configuration 😢
 
