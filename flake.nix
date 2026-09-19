@@ -95,5 +95,6 @@
     opencode.url = "github:anomalyco/opencode";
     serpantinum.url = "github:ilyamiro/serpantinum";
     llm-agents.url = "github:numtide/llm-agents.nix";
+    twm.url = "github:tuxdotrs/twm";
   };
 }

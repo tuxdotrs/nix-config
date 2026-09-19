@@ -6,6 +6,18 @@
 
     tnix = {
       desktop = {
+        hyprland = {
+          enable = true;
+          monitorConfig = ''
+            hl.monitor({
+              output = "eDP-1",
+              mode = "2560x1440@165",
+              position = "0x0",
+              scale = "1",
+            })
+          '';
+        };
+
         mangowm = {
           enable = true;
           monitorRule = [

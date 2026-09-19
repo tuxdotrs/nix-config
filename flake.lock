@@ -1974,6 +1974,7 @@
         "treefmt-nix": "treefmt-nix_4",
         "trok": "trok",
         "tshell": "tshell",
+        "twm": "twm",
         "vicinae-extensions": "vicinae-extensions",
         "voxtype": "voxtype",
         "wezterm-flake": "wezterm-flake"
@@ -2483,6 +2484,21 @@
       "original": {
         "owner": "tuxdotrs",
         "repo": "tshell",
+        "type": "github"
+      }
+    },
+    "twm": {
+      "locked": {
+        "lastModified": 1789847958,
+        "narHash": "sha256-0XZpBvmt677u2zqy53OI2gBtkJCOtH2lxUAgv3Lvnxc=",
+        "owner": "tuxdotrs",
+        "repo": "twm",
+        "rev": "e3352d44ce24e3319901c4eb30a0758cb0fb6171",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tuxdotrs",
+        "repo": "twm",
         "type": "github"
       }
     },
