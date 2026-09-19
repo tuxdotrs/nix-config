@@ -26,6 +26,7 @@
               ".steam"
               ".bun"
               ".rustup"
+              ".agents"
               ".cache/awww"
               ".cache/serpantinum"
               ".config/BraveSoftware"
