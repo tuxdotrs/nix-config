@@ -31,6 +31,9 @@
               ".local/share/zsh"
               ".local/share/zoxide"
               ".local/state/lazygit"
+
+              ".pi/agent/sessions"
+              ".omp"
             ];
 
             files = [

@@ -59,6 +59,8 @@
               ".config/orca"
               ".zcode"
               ".config/ZCode"
+              ".pi/agent/sessions"
+              ".omp"
             ];
 
             files = [
