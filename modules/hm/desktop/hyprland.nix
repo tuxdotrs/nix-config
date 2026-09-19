@@ -16,6 +16,12 @@
           default = "";
           description = "Hyprland monitor configuration";
         };
+
+        workspaceConfig = mkOption {
+          type = types.lines;
+          default = "";
+          description = "Hyprland workspace configuration";
+        };
       };
 
       config = mkIf cfg.enable {
@@ -34,6 +40,7 @@
             source = pkgs.twm.hyprland;
           };
           ".config/hypr/config/monitors.lua".text = cfg.monitorConfig;
+          ".config/hypr/config/workspaces.lua".text = cfg.workspaceConfig;
         };
 
         home.packages = with pkgs; [
