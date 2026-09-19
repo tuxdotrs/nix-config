@@ -36,6 +36,7 @@
       };
     };
 
+    cachyos-kernel = inputs.nix-cachyos-kernel.overlays.pinned;
     nur = inputs.nur.overlays.default;
     copyparty = inputs.copyparty.overlays.default;
     llm-agents = inputs.llm-agents.overlays.shared-nixpkgs;

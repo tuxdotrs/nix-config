@@ -1,9 +1,8 @@
 {
-  flake.modules.nixos.boot = {pkgs, ...}: {
+  flake.modules.nixos.boot = {
     boot = {
       consoleLogLevel = 0;
       initrd.verbose = false;
-      kernelPackages = pkgs.linuxPackages_zen;
       supportedFilesystems = ["ntfs"];
     };
   };

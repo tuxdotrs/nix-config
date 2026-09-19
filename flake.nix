@@ -83,6 +83,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     sops-nix.url = "github:Mic92/sops-nix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     lan-mouse.url = "github:feschber/lan-mouse";
     hyprland.url = "github:hyprwm/Hyprland";
     awww.url = "git+https://codeberg.org/LGFae/awww";

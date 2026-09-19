@@ -9,6 +9,7 @@
       hardware
     ];
 
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
     boot.initrd.availableKernelModules = [
       "nvme"
       "xhci_pci"

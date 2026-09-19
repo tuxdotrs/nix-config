@@ -17,6 +17,7 @@
         inputs.cardwire.nixosModules.default
       ];
 
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
     boot.kernelParams = ["nvidia-drm.modeset=1"];
     boot.initrd.availableKernelModules = [
       "nvme"

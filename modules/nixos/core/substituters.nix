@@ -14,6 +14,7 @@
         "https://lan-mouse.cachix.org"
         "https://wezterm.cachix.org"
         "https://cache.nixos-cuda.org"
+        "https://attic.xuyh0120.win/lantian"
       ];
       trusted-substituters = [
         "https://nix-on-droid.cachix.org"
@@ -32,6 +33,7 @@
         "lan-mouse.cachix.org-1:KlE2AEZUgkzNKM7BIzMQo8w9yJYqUpor1CAUNRY6OyM="
         "wezterm.cachix.org-1:kAbhjYUC9qvblTE+s7S+kl5XM1zVa4skO+E/1IDWdH0="
         "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       ];
       extra-substituters = ["https://cache.numtide.com"];
       extra-trusted-public-keys = [
