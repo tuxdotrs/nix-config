@@ -154,6 +154,7 @@
       networkmanager = {
         enable = true;
         wifi.backend = "iwd";
+        wifi.powersave = false;
       };
       wireless.iwd = {
         enable = true;
