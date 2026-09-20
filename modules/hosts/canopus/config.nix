@@ -33,6 +33,7 @@
               ".config/zed"
               ".config/Vencord"
               ".config/vesktop"
+              ".config/discord"
               ".config/sops"
               ".config/nix"
               ".config/coderv2"
