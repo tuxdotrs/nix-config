@@ -11,7 +11,10 @@
     programs.nixcord = {
       enable = true;
       user = userName;
-      discord.enable = false;
+      discord = {
+        enable = true;
+        vencord.enable = true;
+      };
       vesktop.enable = true;
       config = {
         themeLinks = [
@@ -37,21 +40,6 @@
             showDates = true;
           };
         };
-      };
-      dorion = {
-        theme = "dark";
-        zoom = "1.1";
-        blur = "acrylic";
-        sysTray = true;
-        openOnStartup = true;
-        autoClearCache = true;
-        disableHardwareAccel = false;
-        rpcServer = true;
-        rpcProcessScanner = true;
-        pushToTalk = true;
-        pushToTalkKeys = ["RControl"];
-        desktopNotifications = true;
-        unreadBadge = true;
       };
     };
   };
