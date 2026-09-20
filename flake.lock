@@ -2576,11 +2576,11 @@
     },
     "twm": {
       "locked": {
-        "lastModified": 1789849521,
-        "narHash": "sha256-FYFqM30bMqGgXHgAMb2K85mhV0kdVuevLGZlViALDCU=",
+        "lastModified": 1789940549,
+        "narHash": "sha256-F6JqRbLebGk7exGlDfBdKH6jimV+SnFb+SspWBhv0uQ=",
         "owner": "tuxdotrs",
         "repo": "twm",
-        "rev": "4b8cf8739b5051b9eab56ee7505dbbd5308868ba",
+        "rev": "b2f1f80dc81e2feb0a7f9f87dadafbb0368f1b43",
         "type": "github"
       },
       "original": {
