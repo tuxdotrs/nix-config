@@ -8,6 +8,7 @@
     with lib; let
       cfg = config.tnix.services.coder;
       port = toString cfg.port;
+      acmeHost = config.tnix.services.nginx.domain;
     in {
       options.tnix.services.coder = {
         enable = mkEnableOption "Coder";
@@ -66,7 +67,7 @@
           };
 
           newt.blueprint.proxy-resources = mkIf cfg.configurePangolin {
-            gitea = {
+            coder = {
               auth = {
                 sso-enabled = false;
               };
