@@ -26,7 +26,6 @@
               ".steam"
               ".bun"
               ".rustup"
-              ".agents"
               ".cache/awww"
               ".cache/serpantinum"
               ".config/BraveSoftware"
@@ -55,6 +54,7 @@
               ".local/state/serpantinum"
               ".local/share/zed"
 
+              ".agents"
               ".claude"
               ".orca"
               ".config/orca"

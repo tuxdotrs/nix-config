@@ -24,7 +24,6 @@
               "Distrobox"
               ".bun"
               ".rustup"
-              ".agents"
               ".config/sops"
               ".config/nix"
               ".local/share/nvim"
@@ -33,6 +32,7 @@
               ".local/share/zoxide"
               ".local/state/lazygit"
 
+              ".agents"
               ".claude"
               ".orca"
               ".config/orca"
