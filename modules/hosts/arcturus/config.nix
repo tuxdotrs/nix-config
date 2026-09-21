@@ -96,6 +96,14 @@
           domain = "coder.lab.tux.rs";
           configurePangolin = true;
         };
+
+        orca-server = {
+          enable = true;
+          user = userName;
+          group = "users";
+          home = "/home/tux";
+          pairingAddress = "100.64.0.3";
+        };
       };
 
       virtualisation = {
