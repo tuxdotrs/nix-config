@@ -95,7 +95,10 @@
     voxtype.url = "github:peteonrails/voxtype/v0.7.5";
     opencode.url = "github:anomalyco/opencode";
     serpantinum.url = "github:ilyamiro/serpantinum";
-    llm-agents.url = "github:numtide/llm-agents.nix";
+    # Use forked repo with orca fix until upstream PR is merged
+    # https://github.com/numtide/llm-agents.nix/pull/9630
+    # llm-agents.url = "github:numtide/llm-agents.nix";
+    llm-agents.url = "github:tuxdotrs/llm-agents.nix/fix-orca-headless-xvfb";
     twm.url = "github:tuxdotrs/twm";
   };
 }
