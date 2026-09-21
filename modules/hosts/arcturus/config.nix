@@ -24,6 +24,7 @@
               "Distrobox"
               ".bun"
               ".rustup"
+              ".agents"
               ".config/sops"
               ".config/nix"
               ".local/share/nvim"
@@ -32,12 +33,17 @@
               ".local/share/zoxide"
               ".local/state/lazygit"
 
+              ".claude"
+              ".orca"
+              ".config/orca"
               ".pi/agent/sessions"
               ".omp"
             ];
 
             files = [
               ".wakatime.cfg"
+              ".claude.json"
+              ".config/gh/hosts.yml"
             ];
           };
         };
@@ -172,6 +178,8 @@
 
     environment.systemPackages = with pkgs; [
       impala
+      llm-agents.claude-code
+      llm-agents.orca
     ];
 
     system.stateVersion = "26.05";
