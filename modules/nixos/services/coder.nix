@@ -4,93 +4,92 @@
     lib,
     options,
     ...
-  }:
-    with lib; let
-      cfg = config.tnix.services.coder;
-      port = toString cfg.port;
-      acmeHost = config.tnix.services.nginx.domain;
-    in {
-      options.tnix.services.coder = {
-        enable = mkEnableOption "Coder";
+  }: let
+    cfg = config.tnix.services.coder;
+    port = toString cfg.port;
+    acmeHost = config.tnix.services.nginx.domain;
+  in {
+    options.tnix.services.coder = {
+      enable = lib.mkEnableOption "Coder";
 
-        host = mkOption {
-          type = types.str;
-          default = "127.0.0.1";
-          description = "Host on which Coder listens";
-        };
-
-        port = mkOption {
-          type = types.port;
-          default = 1116;
-          description = "Port on which Coder listens";
-        };
-
-        environment = options.services.coder.environment;
-
-        domain = mkOption {
-          type = types.str;
-          default = "";
-          description = "Domain on which Coder is available";
-        };
-
-        configureNginx = mkOption {
-          type = types.bool;
-          default = false;
-          description = "Whether to configure Nginx as a reverse proxy for Coder";
-        };
-
-        configurePangolin = mkOption {
-          type = types.bool;
-          default = false;
-          description = "Whether to configure Pangolin as a reverse proxy for Coder";
-        };
+      host = lib.mkOption {
+        type = lib.types.str;
+        default = "127.0.0.1";
+        description = "Host on which Coder listens";
       };
 
-      config = mkIf cfg.enable {
-        users.users.coder.extraGroups = ["docker"];
+      port = lib.mkOption {
+        type = lib.types.port;
+        default = 1116;
+        description = "Port on which Coder listens";
+      };
 
-        services = {
+      environment = options.services.coder.environment;
+
+      domain = lib.mkOption {
+        type = lib.types.str;
+        default = "";
+        description = "Domain on which Coder is available";
+      };
+
+      configureNginx = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Whether to configure Nginx as a reverse proxy for Coder";
+      };
+
+      configurePangolin = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Whether to configure Pangolin as a reverse proxy for Coder";
+      };
+    };
+
+    config = lib.mkIf cfg.enable {
+      users.users.coder.extraGroups = ["docker"];
+
+      services = {
+        coder = {
+          enable = true;
+          accessUrl = "https://${cfg.domain}";
+          listenAddress = "${cfg.host}:${port}";
+          environment = cfg.environment;
+        };
+
+        nginx.virtualHosts.${cfg.domain} = lib.mkIf cfg.configureNginx {
+          forceSSL = acmeHost != "";
+          useACMEHost = lib.mkIf (acmeHost != "") acmeHost;
+          locations."/" = {
+            proxyPass = "http://${cfg.host}:${port}";
+            proxyWebsockets = true;
+          };
+        };
+
+        newt.blueprint.proxy-resources = lib.mkIf cfg.configurePangolin {
           coder = {
-            enable = true;
-            accessUrl = "https://${cfg.domain}";
-            listenAddress = "${cfg.host}:${port}";
-            environment = cfg.environment;
-          };
-
-          nginx.virtualHosts.${cfg.domain} = mkIf cfg.configureNginx {
-            forceSSL = acmeHost != "";
-            useACMEHost = mkIf (acmeHost != "") acmeHost;
-            locations."/" = {
-              proxyPass = "http://${cfg.host}:${port}";
-              proxyWebsockets = true;
+            auth = {
+              sso-enabled = false;
             };
-          };
-
-          newt.blueprint.proxy-resources = mkIf cfg.configurePangolin {
-            coder = {
-              auth = {
-                sso-enabled = false;
-              };
-              full-domain = cfg.domain;
-              name = "coder";
-              protocol = "http";
-              targets = [
-                {
+            full-domain = cfg.domain;
+            name = "coder";
+            protocol = "http";
+            targets = [
+              {
+                hostname = "localhost";
+                method = "http";
+                port = cfg.port;
+                healthcheck = {
                   hostname = "localhost";
-                  method = "http";
                   port = cfg.port;
-                  healthcheck = {
-                    hostname = "localhost";
-                    port = cfg.port;
-                    scheme = "http";
-                    method = "GET";
-                    path = "/";
-                  };
-                }
-              ];
-            };
+                  scheme = "http";
+                  method = "GET";
+                  path = "/";
+                };
+              }
+            ];
           };
         };
       };
     };
+  };
 }
