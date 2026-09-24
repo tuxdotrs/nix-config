@@ -20,6 +20,8 @@
         impermanence = {
           enable = true;
 
+          directories = ["/etc/mullvad-vpn"];
+
           home = {
             directories = [
               "Distrobox"
@@ -39,6 +41,7 @@
               ".config/obs-studio"
               ".config/easyeffects"
               ".config/DankMaterialShell"
+              ".config/Mullvad\ VPN"
               ".local/share/Steam"
               ".local/share/lutris"
               ".local/share/net.lutris.Lutris"
@@ -77,6 +80,7 @@
       networking = {
         openssh.enable = true;
         netbird-client.enable = true;
+        mullvad-vpn.enable = true;
       };
 
       virtualisation = {
