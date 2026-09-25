@@ -71,13 +71,13 @@
 
         vaultwarden = {
           enable = true;
-          domain = "bw.lab.tux.rs";
+          domain = "bw.tux.rs";
           configurePangolin = true;
         };
 
         copyparty = {
           enable = true;
-          domain = "files.lab.tux.rs";
+          domain = "files.tux.rs";
           accounts.${userName}.passwordFile = innerArgs.config.sops.secrets.copyparty.path;
           volumes = {
             "/" = {
@@ -93,7 +93,7 @@
 
         coder = {
           enable = true;
-          domain = "coder.lab.tux.rs";
+          domain = "coder.tux.rs";
           configurePangolin = true;
         };
 

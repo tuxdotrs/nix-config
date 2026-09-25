@@ -52,14 +52,14 @@
       services = {
         pangolin = {
           enable = true;
-          domain = "pangolin.lab.tux.rs";
-          baseDomain = "lab.tux.rs";
+          domain = "lab.tux.rs";
+          baseDomain = "tux.rs";
           environmentFile = innerArgs.config.sops.secrets."pangolin".path;
         };
 
         uptime-kuma = {
           enable = true;
-          domain = "status.lab.tux.rs";
+          domain = "status.tux.rs";
         };
 
         mediaflow-proxy = {
