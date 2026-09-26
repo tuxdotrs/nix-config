@@ -60,6 +60,7 @@
               HTTP_PORT = cfg.port;
               DOMAIN = cfg.domain;
               ROOT_URL = "https://${cfg.domain}";
+              SSH_PORT = lib.head config.services.openssh.ports;
             };
           };
           database = {

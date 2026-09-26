@@ -57,6 +57,11 @@
           environmentFile = innerArgs.config.sops.secrets."pangolin".path;
         };
 
+        gitea = {
+          enable = true;
+          domain = "git.tux.rs";
+        };
+
         uptime-kuma = {
           enable = true;
           domain = "status.tux.rs";
