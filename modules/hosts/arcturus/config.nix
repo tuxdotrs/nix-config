@@ -104,6 +104,12 @@
           home = "/home/tux";
           pairingAddress = "100.64.0.3";
         };
+
+        glance = {
+          enable = true;
+          domain = "home.tux.rs";
+          configurePangolin = true;
+        };
       };
 
       virtualisation = {
