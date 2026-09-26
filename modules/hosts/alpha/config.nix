@@ -67,6 +67,12 @@
           domain = "status.tux.rs";
         };
 
+        wakapi = {
+          enable = true;
+          domain = "wakapi.tux.rs";
+          environmentFiles = [innerArgs.config.sops.secrets."wakapi".path];
+        };
+
         mediaflow-proxy = {
           enable = true;
           environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
@@ -130,6 +136,10 @@
       };
 
       pangolin = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      wakapi = {
         sopsFile = ./secrets.yaml;
       };
     };
