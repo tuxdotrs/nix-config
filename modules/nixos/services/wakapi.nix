@@ -71,6 +71,7 @@
             };
 
             server = {
+              listen_ipv4 = cfg.host;
               port = cfg.port;
               public_url = "https://${cfg.domain}";
             };
@@ -101,11 +102,11 @@
             protocol = "http";
             targets = [
               {
-                hostname = "localhost";
+                hostname = cfg.host;
                 method = "http";
                 port = cfg.port;
                 healthcheck = {
-                  hostname = "localhost";
+                  hostname = cfg.host;
                   port = cfg.port;
                   scheme = "http";
                   method = "GET";

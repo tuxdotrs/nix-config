@@ -98,11 +98,11 @@
             protocol = "http";
             targets = [
               {
-                hostname = "localhost";
+                hostname = cfg.host;
                 method = "http";
                 port = cfg.port;
                 healthcheck = {
-                  hostname = "localhost";
+                  hostname = cfg.host;
                   port = cfg.port;
                   scheme = "http";
                   method = "GET";
