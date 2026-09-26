@@ -46,6 +46,13 @@
     };
 
     config = lib.mkIf cfg.enable {
+      assertions = [
+        {
+          assertion = cfg.domain != "";
+          message = "tnix.services.coder.domain must be set when tnix.services.coder.enable is true.";
+        }
+      ];
+
       users.users.coder.extraGroups = ["docker"];
 
       services = {

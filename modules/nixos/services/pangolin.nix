@@ -31,6 +31,17 @@
     };
 
     config = lib.mkIf cfg.enable {
+      assertions = [
+        {
+          assertion = cfg.domain != "";
+          message = "tnix.services.pangolin.domain must be set when tnix.services.pangolin.enable is true.";
+        }
+        {
+          assertion = cfg.domain != "";
+          message = "tnix.services.pangolin.baseDomain must be set when tnix.services.pangolin.enable is true.";
+        }
+      ];
+
       services = {
         pangolin = {
           enable = true;
