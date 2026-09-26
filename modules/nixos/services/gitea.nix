@@ -62,6 +62,14 @@
               ROOT_URL = "https://${cfg.domain}";
               SSH_PORT = lib.head config.services.openssh.ports;
             };
+            "git.timeout" = {
+              DEFAULT = 3600;
+              MIGRATE = 3600;
+              MIRROR = 3600;
+              CLONE = 3600;
+              PULL = 3600;
+              GC = 3600;
+            };
           };
           database = {
             type = "postgres";
