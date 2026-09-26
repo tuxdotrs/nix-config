@@ -30,6 +30,7 @@
               ".rustup"
               ".cache/awww"
               ".cache/serpantinum"
+              ".cache/vicinae"
               ".config/BraveSoftware"
               ".config/zed"
               ".config/Vencord"
