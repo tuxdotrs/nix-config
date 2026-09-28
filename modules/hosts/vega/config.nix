@@ -8,12 +8,11 @@
       networking
     ];
 
-    # @TODO: Broken currently
-    # android-integration.am.enable = true;
-    # android-integration.termux-open-url.enable = true;
-    # android-integration.xdg-open.enable = true;
-    # android-integration.termux-setup-storage.enable = true;
-    # android-integration.termux-reload-settings.enable = true;
+    android-integration.am.enable = true;
+    android-integration.termux-open-url.enable = true;
+    android-integration.xdg-open.enable = true;
+    android-integration.termux-setup-storage.enable = true;
+    android-integration.termux-reload-settings.enable = true;
 
     terminal.font = let
       firacode = pkgs.nerd-fonts.fira-code;
