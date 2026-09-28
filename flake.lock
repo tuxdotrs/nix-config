@@ -2556,11 +2556,11 @@
         "treefmt-nix": "treefmt-nix_5"
       },
       "locked": {
-        "lastModified": 1788821928,
-        "narHash": "sha256-fPuGX8ubreMVwkxLR2itCCrJ5l0lGMptpZz2Lf2USN0=",
+        "lastModified": 1790597930,
+        "narHash": "sha256-Wl4A7FeVCxlup+HnEcUd3KeHqjPiyilRX5TeJQcsT2o=",
         "owner": "tuxdotrs",
         "repo": "trok",
-        "rev": "adf7c84269a517266052d05cbc108d6e5d212f5a",
+        "rev": "667b79b4f96dcc5735c9fa5d4bbd59ffb1981902",
         "type": "github"
       },
       "original": {
