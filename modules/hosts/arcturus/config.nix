@@ -110,6 +110,12 @@
           domain = "home.tux.rs";
           configurePangolin = true;
         };
+
+        dbx = {
+          enable = true;
+          domain = "dbx.tux.rs";
+          configurePangolin = true;
+        };
       };
 
       virtualisation = {
