@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.core = {...}: {
-    environment.enableAllTerminfo = true;
+  flake.modules.nixos.core = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      kitty.terminfo
+      ghostty.terminfo
+      wezterm.terminfo
+    ];
   };
 }
