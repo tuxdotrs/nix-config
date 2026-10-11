@@ -22,8 +22,8 @@
       services.hermes-agent = {
         enable = true;
         settings.model = {
-          provider = "opencode-go";
-          default = "deepseek-v4.1-flash";
+          provider = "zai";
+          default = "glm-5.3-flash";
         };
         environmentFiles = cfg.environmentFiles;
         addToSystemPackages = true;
@@ -37,6 +37,12 @@
           })
         ];
       };
+
+      environment.systemPackages = with pkgs; [
+        nodejs
+        agent-browser
+        ffmpeg
+      ];
 
       users.users.${userName}.extraGroups = ["hermes"];
     };

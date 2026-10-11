@@ -7,7 +7,7 @@
         theme = "system";
       };
       settings = {
-        model = "opencode-go/deepseek-v4.1-flash";
+        model = "zai-coding-plan/glm-5.3-flash";
         provider = {
           google = {
             options = {

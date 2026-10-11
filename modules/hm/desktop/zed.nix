@@ -43,7 +43,7 @@
         agent_servers = {
           opencode = {
             default_config_options = {
-              model = "opencode-go/deepseek-v4.1-flash";
+              model = "zai-coding-plan/glm-5.3-flash";
             };
             type = "registry";
           };
