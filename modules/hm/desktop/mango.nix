@@ -30,7 +30,7 @@
         enable = true;
         settings = {
           # Monitors
-          monitorrule = cfg.monitorRule;
+          monitor_rule = cfg.monitorRule;
 
           focus_cross_monitor = 1;
           exchange_cross_monitor = 1;
@@ -39,7 +39,7 @@
           # Keyboard
           repeat_rate = 25;
           repeat_delay = 600;
-          numlockon = 0;
+          numlock_on = 0;
           xkb_rules_layout = "us";
 
           # Trackpad
@@ -48,9 +48,6 @@
           tap_and_drag = 1;
           drag_lock = 1;
           trackpad_natural_scrolling = 1;
-          disable_while_typing = 1;
-          left_handed = 0;
-          middle_button_emulation = 0;
           swipe_min_threshold = 1;
 
           # Mouse
@@ -71,19 +68,18 @@
 
           # Master-Stack Layout Setting
           new_is_master = 0;
-          default_mfact = 0.5;
-          default_nmaster = 1;
-          smartgaps = 0;
+          default_master_factor = 0.5;
+          default_master_count = 1;
+          smart_gaps = 0;
 
           # Overview Setting
           hotarea_size = 10;
           enable_hotarea = 1;
-          ov_tab_mode = 0;
-          overviewgappi = 15;
-          overviewgappo = 15;
+          overview_gap_inner = 15;
+          overview_gap_outer = 15;
 
           # layouts
-          tagrule = cfg.tagRule;
+          tag_rule = cfg.tagRule;
 
           # Keybindings
           mousebind = [
@@ -95,6 +91,12 @@
             "none, right, 3, viewtoleft_have_client"
             "none, up, 3, toggleoverview"
             "none, down, 3, toggleoverview"
+          ];
+
+          bindc = [
+            # WM
+            "SUPER+SHIFT, Space, togglefloating"
+            "SUPER+SHIFT, Space, centerwin"
           ];
 
           bind = [
@@ -111,8 +113,6 @@
             "SUPER, Q, killclient"
             "SUPER+SHIFT, R, reload_config"
             "SUPER+SHIFT, F, togglefullscreen"
-            "SUPER+SHIFT, Space, togglefloating"
-            "SUPER+SHIFT, Space, centerwin"
 
             "ALT, Tab, toggleoverview"
             "ALT+SHIFT, minus, incgaps, -1"
@@ -185,7 +185,7 @@
           shadows_blur = 15;
           shadows_position_x = 0;
           shadows_position_y = 0;
-          shadowscolor = "0x000000ff";
+          shadows_color = "0x000000ff";
 
           # Animation
           animations = 1;
@@ -197,8 +197,8 @@
           tag_animation_direction = 0;
           zoom_initial_ratio = 0.3;
           zoom_end_ratio = 0.8;
-          fadein_begin_opacity = 0.5;
-          fadeout_begin_opacity = 0.8;
+          fade_in_begin_opacity = 0.5;
+          fade_out_begin_opacity = 0.8;
 
           animation_duration_move = 100;
           animation_duration_open = 100;
@@ -211,29 +211,29 @@
           animation_curve_tag = "0.46, 1.0, 0.29, 1";
           animation_curve_close = "0.08, 0.92, 0, 1";
           animation_curve_focus = "0.46, 1.0, 0.29, 1";
-          animation_curve_opafadeout = "0.5, 0.5, 0.5, 0.5";
-          animation_curve_opafadein = "0.46, 1.0, 0.29, 1";
+          animation_curve_opacity_fade_out = "0.5, 0.5, 0.5, 0.5";
+          animation_curve_opacity_fade_in = "0.46, 1.0, 0.29, 1";
 
           # Appearance
-          borderpx = 0;
-          gappih = 10;
-          gappiv = 10;
-          gappoh = 10;
-          gappov = 10;
+          border_px = 0;
+          gap_inner_horizontal = 10;
+          gap_inner_vertical = 10;
+          gap_outer_horizontal = 10;
+          gap_outer_vertical = 10;
 
-          rootcolor = "0x201b14ff";
-          bordercolor = "0x444444ff";
-          focuscolor = "0xc9b890ff";
-          maximizescreencolor = "0x89aa61ff";
-          urgentcolor = "0xad401fff";
-          scratchpadcolor = "0x516c93ff";
-          globalcolor = "0xb153a7ff";
-          overlaycolor = "0x14a57cff";
+          root_color = "0x201b14ff";
+          border_color = "0x444444ff";
+          focus_color = "0xc9b890ff";
+          maximized_screen_color = "0x89aa61ff";
+          urgent_color = "0xad401fff";
+          scratchpad_color = "0x516c93ff";
+          global_color = "0xb153a7ff";
+          overlay_color = "0x14a57cff";
 
           # Misc
-          syncobj_enable = 1;
+          sync_obj_enable = 1;
 
-          exec-once = [
+          exec_once = [
             "dbus-update-activation-environment --systemd --all; systemctl --user reset-failed && systemctl --user start mango-session.target"
             "awww-daemon"
             "dms run"

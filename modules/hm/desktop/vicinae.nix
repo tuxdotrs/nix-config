@@ -6,7 +6,6 @@
         enable = true;
         autoStart = true;
       };
-      useLayerShell = true;
 
       extensions = with pkgs.vicinae-extensions; [
         nix
@@ -23,6 +22,7 @@
         pop_to_root_on_close = true;
         favicon_service = "twenty";
         search_files_in_root = true;
+        launcher_window.laayer_shell.enabled = true;
         font = {
           normal = {
             size = 10;

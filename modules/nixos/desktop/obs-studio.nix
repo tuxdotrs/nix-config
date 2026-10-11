@@ -7,7 +7,8 @@
         obs-vaapi
         wlrobs
         obs-source-record
-        obs-advanced-masks
+        # @TODO: Broken atm
+        # obs-advanced-masks
       ];
     };
   };
