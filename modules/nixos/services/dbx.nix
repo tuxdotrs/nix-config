@@ -92,7 +92,7 @@
         newt.blueprint.proxy-resources = lib.mkIf cfg.configurePangolin {
           dbx = {
             auth = {
-              sso-enabled = false;
+              sso-enabled = true;
             };
             full-domain = cfg.domain;
             name = "dbx";
