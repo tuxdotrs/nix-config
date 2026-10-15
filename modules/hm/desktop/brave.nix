@@ -30,8 +30,6 @@
       ];
     };
 
-    home.packages = [pkgs.brave];
-
     home.file = builtins.listToAttrs (map extensionJson extensions);
   };
 }
