@@ -57,7 +57,7 @@
           environmentFile = innerArgs.config.sops.secrets."pangolin".path;
         };
 
-        gitea = {
+        forgejo = {
           enable = true;
           domain = "git.tux.rs";
         };

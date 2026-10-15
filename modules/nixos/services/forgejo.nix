@@ -4,41 +4,41 @@
     lib,
     ...
   }: let
-    cfg = config.tnix.services.gitea;
+    cfg = config.tnix.services.forgejo;
     port = toString cfg.port;
     acmeHost = config.tnix.services.nginx.domain;
   in {
-    options.tnix.services.gitea = {
-      enable = lib.mkEnableOption "Gitea";
+    options.tnix.services.forgejo = {
+      enable = lib.mkEnableOption "Forgejo";
 
       host = lib.mkOption {
         type = lib.types.str;
         default = "127.0.0.1";
-        description = "Host on which Gitea listens";
+        description = "Host on which Forgejo listens";
       };
 
       port = lib.mkOption {
         type = lib.types.port;
         default = 1114;
-        description = "Port on which Gitea listens";
+        description = "Port on which Forgejo listens";
       };
 
       domain = lib.mkOption {
         type = lib.types.str;
         default = "";
-        description = "Domain on which Gitea is available";
+        description = "Domain on which Forgejo is available";
       };
 
       configureNginx = lib.mkOption {
         type = lib.types.bool;
         default = false;
-        description = "Whether to configure Nginx as a reverse proxy for Gitea";
+        description = "Whether to configure Nginx as a reverse proxy for Forgejo";
       };
 
       configurePangolin = lib.mkOption {
         type = lib.types.bool;
         default = false;
-        description = "Whether to configure Pangolin as a reverse proxy for Gitea";
+        description = "Whether to configure Pangolin as a reverse proxy for Forgejo";
       };
     };
 
@@ -46,12 +46,12 @@
       assertions = [
         {
           assertion = cfg.domain != "";
-          message = "tnix.services.gitea.domain must be set when tnix.services.gitea.enable is true.";
+          message = "tnix.services.forgejo.domain must be set when tnix.services.forgejo.enable is true.";
         }
       ];
 
       services = {
-        gitea = {
+        forgejo = {
           enable = true;
           settings = {
             service.DISABLE_REGISTRATION = true;
@@ -72,8 +72,8 @@
           };
           database = {
             type = "postgres";
-            name = "gitea";
-            user = "gitea";
+            name = "forgejo";
+            user = "forgejo";
           };
         };
 
@@ -87,12 +87,12 @@
         };
 
         newt.blueprint.proxy-resources = lib.mkIf cfg.configurePangolin {
-          gitea = {
+          forgejo = {
             auth = {
               sso-enabled = false;
             };
             full-domain = cfg.domain;
-            name = "gitea";
+            name = "forgejo";
             protocol = "http";
             targets = [
               {
@@ -113,10 +113,10 @@
 
         postgresql = {
           enable = true;
-          ensureDatabases = ["gitea"];
+          ensureDatabases = ["forgejo"];
           ensureUsers = [
             {
-              name = "gitea";
+              name = "forgejo";
               ensureDBOwnership = true;
             }
           ];

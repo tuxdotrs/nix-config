@@ -48,9 +48,9 @@
               title = "Services";
               sites = [
                 {
-                  title = "Gitea";
+                  title = "Forgejo";
                   url = "https://git.tux.rs";
-                  icon = "si:gitea";
+                  icon = "si:forgejo";
                 }
                 {
                   title = "Coder";
