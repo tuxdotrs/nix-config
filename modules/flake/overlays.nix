@@ -2,6 +2,7 @@
   flake.overlays = {
     modifications = final: prev: {
       omasnap = prev.callPackage ../../packages/omasnap.nix {};
+      localsend-cli = prev.callPackage ../../packages/localsend-cli.nix {};
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
       tshell = inputs.tshell.packages.${prev.stdenv.hostPlatform.system}.default;
       trok = inputs.trok.packages.${prev.stdenv.hostPlatform.system}.default;
@@ -52,5 +53,6 @@
     _module.args.pkgs = pkgs;
 
     packages.omasnap = pkgs.omasnap;
+    packages.localsend-cli = pkgs.localsend-cli;
   };
 }

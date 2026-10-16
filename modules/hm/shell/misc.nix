@@ -10,6 +10,7 @@
       dig
       lsof
       trok
+      localsend-cli
 
       (writeShellScriptBin "hm-override" ''
         #!/usr/bin/env bash
