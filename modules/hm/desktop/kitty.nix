@@ -51,6 +51,8 @@
       };
 
       settings = {
+        notify_on_cmd_finish = "unfocused 5.0 command ${pkgs.libnotify}/bin/notify-send 'Job finished with status: %s'";
+
         background_opacity = "1.0";
 
         copy_on_select = "yes";
