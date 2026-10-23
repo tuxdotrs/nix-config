@@ -3,6 +3,7 @@
     config,
     lib,
     hostName,
+    userName,
     ...
   }: let
     cfg = config.tnix.networking.netbird-client;
@@ -22,6 +23,8 @@
           bin.suffix = "";
         };
       };
+
+      users.users.${userName}.extraGroups = ["netbird-${hostName}"];
     };
   };
 }
