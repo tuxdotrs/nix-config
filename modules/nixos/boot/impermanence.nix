@@ -82,8 +82,6 @@
       };
 
       boot.initrd.systemd = {
-        enable = true;
-
         services.wipe-my-fs = {
           wantedBy = ["initrd.target"];
           after = ["initrd-root-device.target"];

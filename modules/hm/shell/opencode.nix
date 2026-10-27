@@ -3,34 +3,37 @@
     programs.opencode = {
       enable = true;
       package = pkgs.opencode-git;
-      tui = {
-        theme = "system";
-      };
-      settings = {
+      cli = {
         model = "zai-coding-plan/glm-5.3-flash";
+
+        theme = {
+          mode = "system";
+          name = "system";
+        };
+
         provider = {
           google = {
-            options = {
+            settings = {
               apiKey = "{file:/run/secrets/gemini-api-key}";
             };
           };
           openrouter = {
-            options = {
+            settings = {
               apiKey = "{file:/run/secrets/openrouter-api-key}";
             };
           };
           opencode-go = {
-            options = {
+            settings = {
               apiKey = "{file:/run/secrets/opencode-go-api-key}";
             };
           };
           zai-coding-plan = {
-            options = {
+            settings = {
               apiKey = "{file:/run/secrets/zai-coding-plan-api-key}";
             };
           };
         };
-        plugin = ["@dietrichgebert/ponytail"];
+        plugins = ["@dietrichgebert/ponytail"];
       };
     };
   };
