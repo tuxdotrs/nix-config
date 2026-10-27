@@ -93,8 +93,7 @@
     copyparty.url = "github:9001/copyparty";
     hermes-agent.url = "github:NousResearch/hermes-agent";
     voxtype.url = "github:peteonrails/voxtype/v0.7.5";
-    # TODO: Broken Upstream
-    opencode.url = "github:anomalyco/opencode/7b3d4ce3a7dbd2a6d3637722a0d5f22a7d086937";
+    opencode.url = "github:anomalyco/opencode";
     serpantinum.url = "github:ilyamiro/serpantinum";
     llm-agents.url = "github:numtide/llm-agents.nix";
     twm.url = "github:tuxdotrs/twm";
