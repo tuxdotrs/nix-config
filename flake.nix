@@ -93,7 +93,7 @@
     copyparty.url = "github:9001/copyparty";
     hermes-agent.url = "github:NousResearch/hermes-agent";
     voxtype.url = "github:peteonrails/voxtype/v0.7.5";
-    opencode.url = "github:anomalyco/opencode";
+    opencode.url = "github:anomalyco/opencode/v2.2.0";
     serpantinum.url = "github:ilyamiro/serpantinum";
     llm-agents.url = "github:numtide/llm-agents.nix";
     twm.url = "github:tuxdotrs/twm";
