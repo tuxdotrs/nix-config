@@ -43,7 +43,6 @@
       };
 
       home.packages = with pkgs; [
-        ags
         awww
         grim
         slurp
