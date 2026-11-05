@@ -29,6 +29,8 @@
           muteSfx = true;
         };
 
+        dock.enabled = false;
+
         bar = {
           position = "top";
           style = "modular";
@@ -37,6 +39,9 @@
           };
           width = 5;
           workspaceCount = 7;
+          menuShowSettings = true;
+          menuShowLauncher = false;
+          menuStyle = "icon";
           modules = {
             left = [
               "left"
