@@ -64,6 +64,9 @@
         enabled_layouts = "grid";
 
         # Window
+        # kitty persists size/maximized state to ~/.cache/kitty/main.json and
+        # restores it on launch; useless under a tiling compositor
+        remember_window_size = "no";
         window_padding_width = 10;
         window_margin_width = 3;
         window_border_width = "0.5pt";
