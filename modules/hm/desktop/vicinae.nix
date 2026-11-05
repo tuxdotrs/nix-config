@@ -43,7 +43,7 @@
           opacity = 0.98;
         };
 
-        imports = ["/run/secrets/vicinae.json"];
+        imports = ["/run/secrets/vicinae-json"];
 
         providers = {
           "@sovereign/vicinae-extension-awww-switcher-0" = {
