@@ -10,6 +10,7 @@
       networking
       virtualisation
       services
+      monitoring
     ];
 
     tnix = {
@@ -122,6 +123,11 @@
         docker.enable = true;
         distrobox.enable = true;
       };
+
+      monitoring.alloy = {
+        enable = true;
+        environmentFile = innerArgs.config.sops.secrets.alloy.path;
+      };
     };
 
     sops.secrets = {
@@ -170,6 +176,10 @@
       };
 
       hermes = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      alloy = {
         sopsFile = ./secrets.yaml;
       };
     };

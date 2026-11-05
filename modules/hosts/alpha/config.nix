@@ -14,6 +14,7 @@
         networking
         virtualisation
         services
+        monitoring
       ]
       ++ [
         inputs.trok.nixosModules.default
@@ -86,6 +87,23 @@
       virtualisation = {
         docker.enable = true;
       };
+
+      monitoring = {
+        loki.enable = true;
+        prometheus.enable = true;
+
+        grafana = {
+          enable = true;
+          domain = "grafana.tux.rs";
+          adminPasswordFile = innerArgs.config.sops.secrets.grafana-admin-password.path;
+          secretKeyFile = innerArgs.config.sops.secrets.grafana-secret-key.path;
+        };
+
+        alloy = {
+          enable = true;
+          environmentFile = innerArgs.config.sops.secrets.alloy.path;
+        };
+      };
     };
 
     sops.secrets = {
@@ -140,6 +158,20 @@
       };
 
       wakapi = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      grafana-admin-password = {
+        sopsFile = ./secrets.yaml;
+        owner = "grafana";
+      };
+
+      grafana-secret-key = {
+        sopsFile = ./secrets.yaml;
+        owner = "grafana";
+      };
+
+      alloy = {
         sopsFile = ./secrets.yaml;
       };
     };

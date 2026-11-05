@@ -4,13 +4,14 @@
     hostName,
     userName,
     ...
-  }: {
+  } @ innerArgs: {
     imports = with config.flake.modules.nixos; [
       boot
       networking
       desktop
       gaming
       virtualisation
+      monitoring
     ];
 
     tnix = {
@@ -92,6 +93,11 @@
         distrobox.enable = true;
       };
 
+      monitoring.alloy = {
+        enable = true;
+        environmentFile = innerArgs.config.sops.secrets.alloy.path;
+      };
+
       programs.nix-ld.enable = true;
     };
 
@@ -129,6 +135,10 @@
       vicinae-json = {
         sopsFile = ./secrets.yaml;
         owner = userName;
+      };
+
+      alloy = {
+        sopsFile = ./secrets.yaml;
       };
     };
 
