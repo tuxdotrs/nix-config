@@ -55,7 +55,7 @@
           enable = true;
           domain = "lab.tux.rs";
           baseDomain = "tux.rs";
-          environmentFile = innerArgs.config.sops.secrets."pangolin".path;
+          environmentFile = innerArgs.config.sops.secrets.pangolin.path;
         };
 
         forgejo = {
@@ -71,12 +71,12 @@
         wakapi = {
           enable = true;
           domain = "wakapi.tux.rs";
-          environmentFiles = [innerArgs.config.sops.secrets."wakapi".path];
+          environmentFiles = [innerArgs.config.sops.secrets.wakapi.path];
         };
 
         mediaflow-proxy = {
           enable = true;
-          environmentFile = innerArgs.config.sops.secrets."mediaflow-proxy".path;
+          environmentFile = innerArgs.config.sops.secrets.mediaflow-proxy.path;
         };
 
         trok = {
