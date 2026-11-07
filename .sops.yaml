@@ -7,6 +7,7 @@ keys:
     - &canopus age1x36yr8h993srfj29sfpzt4wyz52nztvncpmhgmfs0j26qvfecq3qvcm0an
     - &arcturus age1huqa3hc7wcxk4dpelrzny437nzrx4fnll3d8g9ahznzk268yju5qufapxy
     - &alpha age1mzxxxzhy3us3rd960ufqv7vlxj5cnug86md6x69llg9ujzw2pqws057llf
+    - &rigel age17fhyud5chpfrrxxqhfa2g3m643t6znwfwmxfyk8nsy64hrratsxqzws9qy
 
 creation_rules:
   - path_regex: hosts/sirius/secrets.yaml$
@@ -29,3 +30,8 @@ creation_rules:
       - age:
           - *tux
           - *alpha
+  - path_regex: hosts/rigel/secrets.yaml$
+    key_groups:
+      - age:
+          - *tux
+          - *rigel

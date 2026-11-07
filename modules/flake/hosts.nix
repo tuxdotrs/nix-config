@@ -96,6 +96,7 @@ in {
       canopus = {};
       arcturus = {};
       alpha = {};
+      rigel = {};
       vps = {};
     };
 
