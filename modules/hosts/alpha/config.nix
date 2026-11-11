@@ -137,11 +137,7 @@
         owner = userName;
       };
 
-      "cloudflare-credentials/email" = {
-        sopsFile = ./secrets.yaml;
-      };
-
-      "cloudflare-credentials/dns-api-token" = {
+      cloudflare-dns-token = {
         sopsFile = ./secrets.yaml;
       };
 

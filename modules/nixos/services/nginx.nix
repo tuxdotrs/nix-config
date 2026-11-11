@@ -3,6 +3,7 @@
     config,
     lib,
     userEmail,
+    options,
     ...
   }: let
     cfg = config.tnix.services.nginx;
@@ -15,6 +16,8 @@
         default = "";
         description = "Base domain for the wildcard ACME certificate (disabled when empty)";
       };
+
+      credentialFiles = (options.security.acme.defaults.type.getSubOptions []).credentialFiles;
     };
 
     config = lib.mkIf cfg.enable {
@@ -28,10 +31,7 @@
               domain = "*.${cfg.domain}";
               extraDomainNames = ["${cfg.domain}"];
               dnsProvider = "cloudflare";
-              credentialFiles = {
-                CLOUDFLARE_EMAIL_FILE = config.sops.secrets."cloudflare-credentials/email".path;
-                CLOUDFLARE_DNS_API_TOKEN_FILE = config.sops.secrets."cloudflare-credentials/dns-api-token".path;
-              };
+              credentialFiles = cfg.credentialFiles;
             };
           };
         };
