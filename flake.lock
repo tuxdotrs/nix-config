@@ -2599,11 +2599,11 @@
     },
     "twm": {
       "locked": {
-        "lastModified": 1790467596,
-        "narHash": "sha256-4Az87/zjeXpJMyFgJyoj6XRcVP8P2GGt/z0K1YN9dps=",
+        "lastModified": 1794394612,
+        "narHash": "sha256-MrN3Wbt+n2X3tNkmuBOJe1wbVaI/A7i0BALmWswOybQ=",
         "owner": "tuxdotrs",
         "repo": "twm",
-        "rev": "27326ba4da4260c42a41e3a97011b7a9d519c936",
+        "rev": "94c558651e1150924bc6e6f87a736c0ebb9be8ff",
         "type": "github"
       },
       "original": {
