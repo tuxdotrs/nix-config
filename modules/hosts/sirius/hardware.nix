@@ -48,6 +48,7 @@
       cardwire = {
         enable = true;
         settings.auto_apply_gpu_state = true;
+        settings.experimental_nvidia_block = false;
       };
     };
 
