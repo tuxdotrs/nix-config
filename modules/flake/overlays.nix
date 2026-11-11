@@ -3,6 +3,7 @@
     modifications = final: prev: {
       omasnap = prev.callPackage ../../packages/omasnap.nix {};
       localsend-cli = prev.callPackage ../../packages/localsend-cli.nix {};
+      webmail = prev.callPackage ../../packages/webmail {};
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
       tshell = inputs.tshell.packages.${prev.stdenv.hostPlatform.system}.default;
       trok = inputs.trok.packages.${prev.stdenv.hostPlatform.system}.default;
@@ -42,5 +43,6 @@
 
     packages.omasnap = pkgs.omasnap;
     packages.localsend-cli = pkgs.localsend-cli;
+    packages.webmail = pkgs.webmail;
   };
 }

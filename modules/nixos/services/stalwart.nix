@@ -54,6 +54,45 @@
         description = "Whether to open the mail ports in the firewall";
       };
 
+      webmail = {
+        enable = lib.mkEnableOption ''
+          the branded Bulwark Lite webmail bundle. It is linked at
+          ''${dataDir}/apps/webmail.zip; point the Stalwart Application's
+          resourceUrl at file://<that path> once, then "update applications" after rebuilds
+        '';
+
+        brandName = lib.mkOption {
+          type = lib.types.str;
+          default = "Mailer";
+          description = "Name shown in the webmail UI, login page and PWA manifest";
+        };
+
+        brandRevision = lib.mkOption {
+          type = lib.types.ints.between 1 999;
+          default = 2;
+          description = ''
+            Branding revision baked into the bundle version. Stalwart only installs a newer
+            version, so bump this whenever brandName changes. Reset to 1 when the upstream
+            webmail version changes.
+          '';
+        };
+
+        package = lib.mkOption {
+          type = lib.types.package;
+          default = pkgs.webmail.override {
+            appName = cfg.webmail.brandName;
+            inherit (cfg.webmail) brandRevision;
+          };
+          defaultText = lib.literalExpression ''
+            pkgs.webmail.override {
+              appName = config.tnix.services.stalwart.webmail.brandName;
+              brandRevision = config.tnix.services.stalwart.webmail.brandRevision;
+            }
+          '';
+          description = "Webmail bundle to install. Setting this ignores brandName and brandRevision.";
+        };
+      };
+
       firewallPorts = lib.mkOption {
         type = lib.types.listOf lib.types.port;
         default = [25 465 993 995 4190 443];
@@ -125,6 +164,12 @@
           UMask = "0077";
         };
       };
+
+      # A stable path, so the Application's resourceUrl survives package updates.
+      systemd.tmpfiles.rules = lib.mkIf cfg.webmail.enable [
+        "d ${cfg.dataDir}/apps 0700 ${cfg.user} ${cfg.group} -"
+        "L+ ${cfg.dataDir}/apps/webmail.zip - - - - ${cfg.webmail.package}"
+      ];
 
       users.users = lib.mkIf (cfg.user == "stalwart") {
         ${cfg.user} = {

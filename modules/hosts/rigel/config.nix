@@ -36,6 +36,11 @@
       services = {
         stalwart = {
           enable = true;
+          webmail = {
+            enable = true;
+            brandName = "Mailer";
+            brandRevision = 1;
+          };
           openFirewall = true;
         };
       };
