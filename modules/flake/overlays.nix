@@ -2,6 +2,14 @@
   flake.overlays = {
     modifications = final: prev: {
       omasnap = prev.callPackage ../../packages/omasnap.nix {};
+      # GCC 16 makes strrchr return const char * on const input; project builds with -Werror
+      obs-studio-plugins =
+        prev.obs-studio-plugins
+        // {
+          obs-advanced-masks = prev.obs-studio-plugins.obs-advanced-masks.overrideAttrs (_: {
+            patches = [../../patches/obs-advanced-masks-gcc16.patch];
+          });
+        };
       localsend-cli = prev.callPackage ../../packages/localsend-cli.nix {};
       webmail = prev.callPackage ../../packages/webmail {};
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
