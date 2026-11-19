@@ -12,6 +12,8 @@
         };
       localsend-cli = prev.callPackage ../../packages/localsend-cli.nix {};
       webmail = prev.callPackage ../../packages/webmail {};
+      photocraft = prev.callPackage ../../packages/craft/photocraft.nix {};
+      lightcraft = prev.callPackage ../../packages/craft/lightcraft.nix {};
       tnvim = inputs.tnvim.packages.${prev.stdenv.hostPlatform.system}.default;
       tshell = inputs.tshell.packages.${prev.stdenv.hostPlatform.system}.default;
       trok = inputs.trok.packages.${prev.stdenv.hostPlatform.system}.default;
@@ -52,5 +54,7 @@
     packages.omasnap = pkgs.omasnap;
     packages.localsend-cli = pkgs.localsend-cli;
     packages.webmail = pkgs.webmail;
+    packages.photocraft = pkgs.photocraft;
+    packages.lightcraft = pkgs.lightcraft;
   };
 }

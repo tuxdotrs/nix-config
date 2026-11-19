@@ -165,6 +165,8 @@
     };
 
     environment.systemPackages = with pkgs; [
+      lightcraft
+      photocraft
       davinci-resolve
       telegram-desktop
       galaxy-buds-client
