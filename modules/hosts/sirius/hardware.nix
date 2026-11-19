@@ -1,21 +1,13 @@
-{
-  inputs,
-  config,
-  ...
-}: {
+{config, ...}: {
   flake.modules.nixos.sirius = {
     lib,
     pkgs,
     system,
     ...
   } @ innerArgs: {
-    imports = with config.flake.modules.nixos;
-      [
-        hardware
-      ]
-      ++ [
-        inputs.cardwire.nixosModules.default
-      ];
+    imports = with config.flake.modules.nixos; [
+      hardware
+    ];
 
     boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
     boot.kernelParams = ["nvidia-drm.modeset=1"];
@@ -45,7 +37,7 @@
       xserver.videoDrivers = ["nvidia"];
       power-profiles-daemon.enable = true;
 
-      cardwire = {
+      cardwired = {
         enable = true;
         settings.auto_apply_gpu_state = true;
         settings.experimental_nvidia_block = false;

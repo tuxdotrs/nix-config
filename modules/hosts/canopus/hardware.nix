@@ -15,7 +15,6 @@
       ]
       ++ [
         inputs.nixos-hardware.nixosModules.asus-zephyrus-ga503
-        inputs.cardwire.nixosModules.default
       ];
 
     boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
@@ -47,7 +46,7 @@
       power-profiles-daemon.enable = true;
       upower.enable = true;
 
-      cardwire = {
+      cardwired = {
         enable = true;
         settings = {
           auto_apply_gpu_state = true;
