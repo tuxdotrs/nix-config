@@ -39,6 +39,7 @@
               ".config/orca"
               ".pi/agent/sessions"
               ".omp"
+              ".hermes"
             ];
 
             files = [
