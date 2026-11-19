@@ -97,7 +97,7 @@
                   SELECTED_TYPE="{{.Form.Type}}"
                   COMMITS_TO_SUGGEST=4
 
-                  opencode run --format json --model=google/gemini-3.5-flash-lite --variant=none "
+                  pi -p --no-session --no-tools --no-extensions --no-skills --no-context-files --no-prompt-templates --no-mcp --offline --thinking off --model google/gemini-flash-lite-latest "
                   You are an expert at writing Git commits. Your job is to write commit messages that follow the Conventional Commits format.
 
                   The user has selected: $SELECTED_TYPE
@@ -147,7 +147,7 @@
                   Changes to analyze:
                   $(git diff --cached --stat)
                   $diff
-                  " | JQ_TEXT=text jq -r "select(.type == env.JQ_TEXT) | .part.text? // empty"
+                  " | grep -v "^[[:space:]]*$"
                   '
                 '';
               }
