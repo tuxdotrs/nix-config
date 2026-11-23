@@ -13,8 +13,8 @@
 
       package = lib.mkOption {
         type = lib.types.nullOr lib.types.package;
-        default = pkgs.stalwart_1_0 or null;
-        defaultText = lib.literalExpression "pkgs.stalwart_1_0";
+        default = pkgs.stalwart_1 or null;
+        defaultText = lib.literalExpression "pkgs.stalwart_1";
         description = ''
           Stalwart 1.x package. The upstream services.stalwart module only supports 0.15,
           so this module runs 1.x with its own systemd unit.
@@ -95,7 +95,14 @@
 
       firewallPorts = lib.mkOption {
         type = lib.types.listOf lib.types.port;
-        default = [25 465 993 995 4190 443];
+        default = [
+          25
+          465
+          993
+          995
+          4190
+          443
+        ];
         description = "TCP ports opened when openFirewall is true (Stalwart's default listeners, without the 8080 setup port)";
       };
     };
@@ -104,7 +111,7 @@
       assertions = [
         {
           assertion = cfg.package != null;
-          message = "tnix.services.stalwart: pkgs.stalwart_1_0 is not available in this nixpkgs. Update nixpkgs (nix flake update nixpkgs) or set tnix.services.stalwart.package.";
+          message = "tnix.services.stalwart: pkgs.stalwart_1 is not available in this nixpkgs. Update nixpkgs (nix flake update nixpkgs) or set tnix.services.stalwart.package.";
         }
         {
           assertion = cfg.package == null || lib.versionAtLeast cfg.package.version "1.0";
@@ -114,7 +121,10 @@
 
       systemd.services.stalwart = {
         description = "Stalwart mail and collaboration server";
-        after = ["network-online.target" "local-fs.target"];
+        after = [
+          "network-online.target"
+          "local-fs.target"
+        ];
         wants = ["network-online.target"];
         wantedBy = ["multi-user.target"];
 
@@ -132,7 +142,10 @@
           KillSignal = "SIGINT";
           LimitNOFILE = 65536;
           WorkingDirectory = cfg.dataDir;
-          StateDirectory = [(baseNameOf cfg.dataDir) "${baseNameOf cfg.dataDir}/etc"];
+          StateDirectory = [
+            (baseNameOf cfg.dataDir)
+            "${baseNameOf cfg.dataDir}/etc"
+          ];
           StateDirectoryMode = "0700";
           CacheDirectory = "stalwart";
 
@@ -155,12 +168,19 @@
           ProtectKernelTunables = true;
           ProtectProc = "invisible";
           ProtectSystem = "strict";
-          RestrictAddressFamilies = ["AF_INET" "AF_INET6" "AF_UNIX"];
+          RestrictAddressFamilies = [
+            "AF_INET"
+            "AF_INET6"
+            "AF_UNIX"
+          ];
           RestrictNamespaces = true;
           RestrictRealtime = true;
           RestrictSUIDSGID = true;
           SystemCallArchitectures = "native";
-          SystemCallFilter = ["@system-service" "~@privileged"];
+          SystemCallFilter = [
+            "@system-service"
+            "~@privileged"
+          ];
           UMask = "0077";
         };
       };

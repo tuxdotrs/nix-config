@@ -10,6 +10,16 @@
             patches = [../../patches/obs-advanced-masks-gcc16.patch];
           });
         };
+      # Upstream's release profile (codegen-units = 1, fat LTO) builds the final crate on one core
+      stalwart_1 = (prev.stalwart_1.override {stalwartEnterprise = true;}).overrideAttrs (old: {
+        patches = [inputs.nix-secrets.patches.stalwart];
+        env =
+          old.env
+          // {
+            CARGO_PROFILE_RELEASE_CODEGEN_UNITS = "16";
+            CARGO_PROFILE_RELEASE_LTO = "thin";
+          };
+      });
       localsend-cli = prev.callPackage ../../packages/localsend-cli.nix {};
       webmail = prev.callPackage ../../packages/webmail {};
       photocraft = prev.callPackage ../../packages/craft/photocraft.nix {};
