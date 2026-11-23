@@ -70,6 +70,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nix-secrets = {
+      url = "git+ssh://git@github.com/tuxdotrs/nix-secrets.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11-small";
