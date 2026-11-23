@@ -1,27 +1,22 @@
 {
   flake.modules.homeManager.shell = {pkgs, ...}: {
-    home.file.".pi/agent/auth.json".text = builtins.toJSON {
-      google = {
-        type = "api_key";
-        key = "!cat /run/secrets/gemini-api-key";
-      };
-      openrouter = {
-        type = "api_key";
-        key = "!cat /run/secrets/openrouter-api-key";
-      };
-      opencode-go = {
-        type = "api_key";
-        key = "!cat /run/secrets/opencode-go-api-key";
-      };
-      zai = {
-        type = "api_key";
-        key = "!cat /run/secrets/zai-coding-plan-api-key";
-      };
-    };
-
     programs.pi-coding-agent = {
       enable = true;
       package = pkgs.llm-agents.pi;
+      mutableSettings = true;
+
+      models.providers = {
+        google.apiKey = "!cat /run/secrets/gemini-api-key";
+        openrouter.apiKey = "!cat /run/secrets/openrouter-api-key";
+        opencode-go.apiKey = "!cat /run/secrets/opencode-go-api-key";
+        zai.apiKey = "!cat /run/secrets/zai-coding-plan-api-key";
+        ollama = {
+          api = "openai-completions";
+          apiKey = "ollama";
+          baseUrl = "http://localhost:11434/v1";
+          models = [{id = "llama3.1:8b";}];
+        };
+      };
 
       settings = {
         defaultModel = "glm-5.3-flash";
