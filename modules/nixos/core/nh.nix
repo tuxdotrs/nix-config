@@ -2,6 +2,7 @@
   flake.modules.nixos.core = {
     config,
     userName,
+    pkgs,
     ...
   }: {
     programs.nh = {
@@ -14,5 +15,9 @@
 
       flake = "/home/${userName}/Projects/nixos-config";
     };
+
+    environment.systemPackages = [
+      pkgs.dix
+    ];
   };
 }
