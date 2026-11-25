@@ -97,6 +97,9 @@ in {
       arcturus = {};
       alpha = {};
       rigel = {};
+      capella = {
+        system = "aarch64-linux";
+      };
       vps = {};
     };
 
