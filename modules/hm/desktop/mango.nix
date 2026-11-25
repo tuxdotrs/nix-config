@@ -112,7 +112,7 @@
             # WM
             "SUPER, Q, killclient"
             "SUPER+SHIFT, R, reload_config"
-            "SUPER+SHIFT, F, togglefullscreen"
+            "SUPER+SHIFT, F, togglemaximizescreen"
 
             "ALT, Tab, toggleoverview"
             "ALT+SHIFT, minus, incgaps, -1"
