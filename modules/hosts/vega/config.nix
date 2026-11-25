@@ -1,5 +1,5 @@
 {config, ...}: {
-  flake.modules.nixos.rigel = {
+  flake.modules.nixos.vega = {
     hostName,
     userName,
     ...

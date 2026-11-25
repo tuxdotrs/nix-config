@@ -96,7 +96,7 @@ in {
       canopus = {};
       arcturus = {};
       alpha = {};
-      rigel = {};
+      vega = {};
       capella = {
         system = "aarch64-linux";
       };

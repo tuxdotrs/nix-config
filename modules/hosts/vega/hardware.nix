@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.rigel = {
+  flake.modules.nixos.vega = {
     pkgs,
     lib,
     modulesPath,

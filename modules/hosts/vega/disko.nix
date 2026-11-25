@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.rigel = {
+  flake.modules.nixos.vega = {
     config,
     lib,
     ...
