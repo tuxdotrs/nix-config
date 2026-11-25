@@ -21,18 +21,45 @@
       {
         "name": "host",
         "label": "Host",
-        "type": "query",
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-        "query": {
-          "query": "label_values(node_uname_info, host)",
-          "refId": "host"
-        },
-        "definition": "label_values(node_uname_info, host)",
-        "refresh": 2,
-        "sort": 1,
+        "type": "custom",
+        "query": "sirius,canopus,arcturus,alpha,vega,capella",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "sirius",
+            "value": "sirius"
+          },
+          {
+            "selected": false,
+            "text": "canopus",
+            "value": "canopus"
+          },
+          {
+            "selected": false,
+            "text": "arcturus",
+            "value": "arcturus"
+          },
+          {
+            "selected": false,
+            "text": "alpha",
+            "value": "alpha"
+          },
+          {
+            "selected": false,
+            "text": "vega",
+            "value": "vega"
+          },
+          {
+            "selected": false,
+            "text": "capella",
+            "value": "capella"
+          }
+        ],
         "multi": true,
         "includeAll": true,
         "allValue": ".+",
@@ -44,8 +71,7 @@
           "value": [
             "$__all"
           ]
-        },
-        "options": []
+        }
       }
     ]
   },
@@ -190,6 +216,18 @@
             "uid": "prometheus"
           },
           "refId": "J"
+        },
+        {
+          "expr": "host_order{host=~\"$host\"} and on(host) (time() - timestamp(node_uname_info{host=~\"$host\"}) < 600)",
+          "instant": true,
+          "range": false,
+          "format": "table",
+          "legendFormat": "Order",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "refId": "K"
         }
       ],
       "transformations": [
@@ -214,6 +252,7 @@
               "Value #H": "Cores",
               "Value #I": "Temp",
               "Value #J": "Uptime",
+              "Value #K": "Order",
               "host": "Host"
             },
             "indexByName": {
@@ -227,20 +266,26 @@
               "Value #G": 7,
               "Value #H": 8,
               "Value #I": 9,
-              "Value #J": 10
+              "Value #J": 10,
+              "Value #K": 11
             }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "sort": [
+              {
+                "field": "Order",
+                "desc": false
+              }
+            ]
           }
         }
       ],
       "options": {
         "showHeader": true,
-        "cellHeight": "sm",
-        "sortBy": [
-          {
-            "displayName": "Host",
-            "desc": false
-          }
-        ]
+        "cellHeight": "sm"
       },
       "fieldConfig": {
         "defaults": {
@@ -252,6 +297,18 @@
           }
         },
         "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Order"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          },
           {
             "matcher": {
               "id": "byName",
@@ -535,7 +592,7 @@
         "x": 0,
         "y": 1,
         "w": 24,
-        "h": 7
+        "h": 10
       },
       "datasource": {
         "type": "prometheus",
@@ -549,7 +606,7 @@
       "collapsed": false,
       "gridPos": {
         "x": 0,
-        "y": 8,
+        "y": 11,
         "w": 24,
         "h": 1
       },
@@ -598,7 +655,7 @@
       "id": 4,
       "gridPos": {
         "x": 0,
-        "y": 9,
+        "y": 12,
         "w": 4,
         "h": 3
       },
@@ -648,7 +705,7 @@
       "id": 5,
       "gridPos": {
         "x": 4,
-        "y": 9,
+        "y": 12,
         "w": 4,
         "h": 3
       },
@@ -698,7 +755,7 @@
       "id": 6,
       "gridPos": {
         "x": 8,
-        "y": 9,
+        "y": 12,
         "w": 4,
         "h": 3
       },
@@ -748,7 +805,7 @@
       "id": 7,
       "gridPos": {
         "x": 12,
-        "y": 9,
+        "y": 12,
         "w": 4,
         "h": 3
       },
@@ -799,7 +856,7 @@
       "id": 8,
       "gridPos": {
         "x": 16,
-        "y": 9,
+        "y": 12,
         "w": 8,
         "h": 3
       },
@@ -857,7 +914,7 @@
       "id": 9,
       "gridPos": {
         "x": 0,
-        "y": 12,
+        "y": 15,
         "w": 12,
         "h": 8
       },
@@ -970,7 +1027,7 @@
       "id": 10,
       "gridPos": {
         "x": 12,
-        "y": 12,
+        "y": 15,
         "w": 12,
         "h": 8
       },
@@ -1041,7 +1098,7 @@
       "id": 11,
       "gridPos": {
         "x": 0,
-        "y": 20,
+        "y": 23,
         "w": 8,
         "h": 8
       },
@@ -1117,7 +1174,7 @@
       "id": 12,
       "gridPos": {
         "x": 8,
-        "y": 20,
+        "y": 23,
         "w": 16,
         "h": 8
       },
@@ -1193,7 +1250,7 @@
       "id": 13,
       "gridPos": {
         "x": 0,
-        "y": 28,
+        "y": 31,
         "w": 12,
         "h": 8
       },
@@ -1306,7 +1363,7 @@
       "id": 14,
       "gridPos": {
         "x": 12,
-        "y": 28,
+        "y": 31,
         "w": 12,
         "h": 8
       },
@@ -1359,7 +1416,7 @@
       "id": 15,
       "gridPos": {
         "x": 0,
-        "y": 36,
+        "y": 39,
         "w": 24,
         "h": 7
       },

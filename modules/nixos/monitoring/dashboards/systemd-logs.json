@@ -21,28 +21,25 @@
       {
         "name": "host",
         "label": "Host",
-        "type": "query",
-        "datasource": {
-          "type": "loki",
-          "uid": "loki"
-        },
-        "query": "label_values(host)",
-        "definition": "label_values(host)",
-        "refresh": 2,
+        "type": "custom",
+        "query": "sirius,canopus,arcturus,alpha,vega,capella",
+        "options": [
+          { "selected": true,  "text": "All",      "value": "$__all" },
+          { "selected": false, "text": "sirius",   "value": "sirius" },
+          { "selected": false, "text": "canopus",  "value": "canopus" },
+          { "selected": false, "text": "arcturus", "value": "arcturus" },
+          { "selected": false, "text": "alpha",    "value": "alpha" },
+          { "selected": false, "text": "vega",     "value": "vega" },
+          { "selected": false, "text": "capella",  "value": "capella" }
+        ],
         "multi": true,
         "includeAll": true,
         "allValue": ".+",
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
-        "sort": 1,
-        "options": []
+          "text": ["All"],
+          "value": ["$__all"]
+        }
       },
       {
         "name": "unit",

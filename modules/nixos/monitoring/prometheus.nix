@@ -37,6 +37,27 @@
         # Hosts behind CGNAT can't be scraped, so Alloy pushes to /api/v1/write.
         extraFlags = ["--web.enable-remote-write-receiver"];
         globalConfig.scrape_interval = "10s";
+
+        # Numeric sort key so dashboards can order hosts manually.
+        # This nixpkgs' `rules` is a list of strings joined into one rules
+        # file, so the group is passed as a single JSON document.
+        rules = [
+          (builtins.toJSON {
+            groups = [
+              {
+                name = "host_order";
+                rules = [
+                  { record = "host_order"; expr = "vector(1)"; labels = { host = "sirius"; }; }
+                  { record = "host_order"; expr = "vector(2)"; labels = { host = "canopus"; }; }
+                  { record = "host_order"; expr = "vector(3)"; labels = { host = "arcturus"; }; }
+                  { record = "host_order"; expr = "vector(4)"; labels = { host = "alpha"; }; }
+                  { record = "host_order"; expr = "vector(5)"; labels = { host = "vega"; }; }
+                  { record = "host_order"; expr = "vector(6)"; labels = { host = "capella"; }; }
+                ];
+              }
+            ];
+          })
+        ];
       };
     };
   };
