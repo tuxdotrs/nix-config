@@ -104,7 +104,7 @@ in {
     };
 
     nixOnDroidConfigurations = builtins.mapAttrs mkDroidHost {
-      vega = {};
+      altair = {};
     };
 
     deploy.nodes =

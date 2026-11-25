@@ -1,5 +1,5 @@
 {config, ...}: {
-  flake.modules.nixOnDroid.vega = {
+  flake.modules.nixOnDroid.altair = {
     pkgs,
     userEmail,
     ...
