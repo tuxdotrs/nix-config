@@ -21,6 +21,7 @@
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-amd"];
     boot.extraModulePackages = [];
+    boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
     hardware.cpu.amd.updateMicrocode = lib.mkDefault innerArgs.config.hardware.enableRedistributableFirmware;
 

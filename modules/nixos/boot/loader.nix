@@ -12,8 +12,6 @@
 
     config = lib.mkMerge [
       {
-        boot.binfmt.emulatedSystems = ["aarch64-linux"];
-
         boot.loader = {
           timeout = 5;
           efi.canTouchEfiVariables = true;
