@@ -27,8 +27,10 @@
 | 💻  | `canopus`  | Asus Zephyrus G15 | Ryzen 9 5900HS     | 16GB | RTX 3060                  | Portable workstation for work, gaming, and media on the go.           |
 | ☁️  | `arcturus` | Minisforum MS-A1  | Ryzen 7 8700G      | 32GB | Radeon 780M               | Homelab server for self-hosted services and infrastructure workloads. |
 | ☁️  | `alpha`    | KVM               | 2 Core             | 4GB  |                           | Public-facing server for exposing homelab services to the internet.   |
-| 📱  | `vega`     | Samsung S25 Ultra | Snapdragon 8 Elite | 12GB | Adreno 830                | Primary mobile for daily usage. (Locked)                              |
-| 📱  | `capella`  | Motorola Edge 30  | Snapdragon 778G+   | 8GB  | Adreno 642L               | Secondary mobile for tinkering and experimentation. (Rooted)          |
+| ☁️  | `vega`     | KVM               | 4 Core             | 4GB  |                           | Self-hosted mail server handling email delivery and storage.          |
+| ☁️  | `capella`  | KVM               | 2 Core             | 12GB |                           | NA                                                                    |
+| 📱  | `altair`   | Samsung S25 Ultra | Snapdragon 8 Elite | 12GB | Adreno 830                | Primary mobile for daily usage. (Locked)                              |
+| 📱  | `acrux`    | Motorola Edge 30  | Snapdragon 778G+   | 8GB  | Adreno 642L               | Secondary mobile for tinkering and experimentation. (Rooted)          |
 
 ## Components
 
