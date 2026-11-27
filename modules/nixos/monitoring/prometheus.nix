@@ -47,12 +47,36 @@
               {
                 name = "host_order";
                 rules = [
-                  { record = "host_order"; expr = "vector(1)"; labels = { host = "sirius"; }; }
-                  { record = "host_order"; expr = "vector(2)"; labels = { host = "canopus"; }; }
-                  { record = "host_order"; expr = "vector(3)"; labels = { host = "arcturus"; }; }
-                  { record = "host_order"; expr = "vector(4)"; labels = { host = "alpha"; }; }
-                  { record = "host_order"; expr = "vector(5)"; labels = { host = "vega"; }; }
-                  { record = "host_order"; expr = "vector(6)"; labels = { host = "capella"; }; }
+                  {
+                    record = "host_order";
+                    expr = "vector(1)";
+                    labels = {host = "sirius";};
+                  }
+                  {
+                    record = "host_order";
+                    expr = "vector(2)";
+                    labels = {host = "canopus";};
+                  }
+                  {
+                    record = "host_order";
+                    expr = "vector(3)";
+                    labels = {host = "arcturus";};
+                  }
+                  {
+                    record = "host_order";
+                    expr = "vector(4)";
+                    labels = {host = "alpha";};
+                  }
+                  {
+                    record = "host_order";
+                    expr = "vector(5)";
+                    labels = {host = "vega";};
+                  }
+                  {
+                    record = "host_order";
+                    expr = "vector(6)";
+                    labels = {host = "capella";};
+                  }
                 ];
               }
             ];
