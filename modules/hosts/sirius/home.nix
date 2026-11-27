@@ -80,9 +80,8 @@
           clients = [
             {
               position = "bottom";
-              hostname = "canopus";
+              hostname = "canopus.lan";
               activate_on_startup = true;
-              ips = ["192.168.8.2"];
             }
           ];
         };
